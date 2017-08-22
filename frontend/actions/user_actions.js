@@ -1,16 +1,11 @@
 import * as APIUtil from '../util/session_api';
+import receiveErrors from './errors_actions';
 
 export const RECEIVE_CURRENT_USER = 'RECEIVE_CURRENT_USER';
-export const RECEIVE_ERRORS = 'RECEIVE_ERRORS';
 
 export const receiveCurrentUser = currentUser => ({
   type: RECEIVE_CURRENT_USER,
   currentUser
-});
-
-export const receiveErrors = errors => ({
-  type: RECEIVE_ERRORS,
-  errors
 });
 
 export const login = (user) => dispatch => (
@@ -18,8 +13,6 @@ export const login = (user) => dispatch => (
     .then(res => dispatch(receiveCurrentUser(res)))
     .fail(error => dispatch(receiveErrors(error.responseJSON)))
 );
-
-// error.responseJSON is an array!
 
 export const logout = () => dispatch => (
   APIUtil.logout()
