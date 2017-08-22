@@ -10,14 +10,23 @@ class AuthForm extends React.Component{
     this.handleSubmit = this.handleSubmit.bind(this);
     this.updateState = this.updateState.bind(this);
     this.header = (this.props.formType === "login") ? "Log In" : "Sign Up";
-    this.linkText = (this.props.formType === "login") ? "Sign Up" : "Log In";
-    this.link = (this.props.formType === "login") ? "/signup" : "/login";
+
+    if(this.props.formType === "login"){
+      this.navLink = <Link to="/signup"> Don't have an account? Sign
+                      up instead! </Link>;
+    }
+    else{
+      this.navLink = <Link to="/login"> Already have an account? Sign
+                      in instead! </Link>;
+    }
+
+    this.renderErrors = this.renderErrors.bind(this);
   }
 
   handleSubmit(e) {
     e.preventDefault();
     const user = this.state;
-    this.props.processForm(user); //ADD ERRORS HERE
+    this.props.processForm(user);
   }
 
   updateState(key){
@@ -26,12 +35,25 @@ class AuthForm extends React.Component{
     };
   }
 
+  renderErrors() {
+    return(
+      <ul>
+        {this.props.errors.map((error, i) => (
+          <li key={`error-${i}-{error}`} className="errors">
+            {error}
+          </li>
+        ))}
+      </ul>
+    );
+  }
+
   render(){
     return (
       <div>
         <form>
-          <h1>Logged In: {String(this.props.loggedIn)}</h1>
           <h2>{this.header}</h2>
+          {this.navlink}
+          {this.renderErrors()}
           <label>
             Username:
             <input
@@ -60,7 +82,6 @@ class AuthForm extends React.Component{
 
 
         </form>
-        <Link to={this.link}>{this.linkText}</Link>
       </div>
     );
   }
