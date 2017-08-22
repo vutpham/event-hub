@@ -5,7 +5,15 @@ import configureStore from './store/store';
 import { login, signup, logout } from './util/session_api_util';
 
 document.addEventListener('DOMContentLoaded', () => {
-  const store = configureStore();
+  let store;
+  if (window.currentUser) {
+    const preloadedState = { currentUser: window.currentUser };
+    store = configureStore(preloadedState);
+    delete window.currentUser;
+  }
+  else {
+    store = configureStore();
+  }
   window.store = store;
   const root = document.getElementById('root');
   ReactDOM.render(<Root store={store}/>, root);
