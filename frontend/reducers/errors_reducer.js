@@ -11,3 +11,5 @@ const ErrorsReducer = (state = noErrors, action) => {
       return state;
   }
 };
+
+export default ErrorsReducer;

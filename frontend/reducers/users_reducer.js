@@ -11,3 +11,5 @@ const UserReducer = (state = nullUser, action) => {
       return state;
   }
 };
+
+export default UsersReducer;
