@@ -4,8 +4,10 @@ class Api::UsersController < ApplicationController
     if @user.save
       login(@user)
       render :show
-    else
+    elsif @user.errors
       render json: @user.errors.full_messages, status: 422
+    else
+      render json: ["Username already taken"], status: 400
     end
   end
 
