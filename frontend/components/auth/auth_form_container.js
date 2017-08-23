@@ -3,20 +3,16 @@ import AuthForm from './auth_form';
 import {login, signup} from '../../actions/user_actions';
 
 const mapStateToProps = (state, ownProps) => {
-  const type = (ownProps.location.pathname === '/login') ?
-                "login" : "signup";
   return {
     loggedIn: Boolean(state.currentUser),
     errors: state.errors,
-    formType: type
+    formType: ownProps.type
   };
 };
 
 const mapDispatchToProps = (dispatch, ownProps) => {
-  const action = (ownProps.location.pathname === '/login') ?
-                  login : signup;
   return {
-    processForm: (user) => dispatch(action(user)),
+    signup: (user) => dispatch(signup(user)),
     login: (user) => dispatch(login(user))
   };
 };

@@ -11,7 +11,6 @@ const App = () => (
     <header>
       <NavBarContainer />
     </header>
-      <GreetingContainer />
       <AuthRoute path="/login" component={SessionFormContainer} />
       <AuthRoute path="/signup" component={SessionFormContainer} />
       <div id='main-img-container'></div>

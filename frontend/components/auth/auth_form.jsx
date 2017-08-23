@@ -6,37 +6,56 @@ import { Link } from 'react-router-dom';
 class AuthForm extends React.Component{
   constructor(props){
     super(props);
-    this.state = { username: "", password: ""};
+    this.state = { username: "", password: "", type: this.props.formType};
     this.handleSubmit = this.handleSubmit.bind(this);
     this.updateState = this.updateState.bind(this);
-    this.buttonText = (this.props.formType === "login") ? "Log In" : "Sign Up";
-    this.header = (this.props.formType === "login") ? "LogInChange" : "SignUpChange";
-
-    if(this.props.formType === "login"){
-      this.navLink = <Link to="/signup"> Don't have an account? <span className="highlight">Sign
-                      up</span></Link>;
-      this.header = "Log in to get started";
-    }
-    else{
-      this.navLink = <Link to="/login"> Already have an account? <span className="highlight">Log
-                      in</span></Link>;
-      this.header = "Sign up to get started";
-    }
-
+    this.buttonText = this.props.formType;
+    this.header = (this.props.formType === "Log In") ? "Log in to get started" : "Sign up to get started";
     this.renderErrors = this.renderErrors.bind(this);
     this.guestLogin = this.guestLogin.bind(this);
+    this.processForm = this.processForm.bind(this);
+    this.toggleType = this.toggleType.bind(this);
+
   }
 
   handleSubmit(e) {
     e.preventDefault();
     const user = this.state;
-    this.props.processForm(user);
+    this.processForm(user);
+  }
+
+  processForm(user) {
+    if (this.state.type === "Log In"){
+      this.props.login(user);
+    } else {
+      this.props.signup(user);
+    }
   }
 
   updateState(key){
     return (e) => {
       this.setState({[key]: e.target.value});
     };
+  }
+
+  navLink() {
+    if (this.state.type === "Log In") {
+      return <div>Don't have an account? <span className="highlight">Sign up</span></div>;
+    } else {
+      return <div>Already have an account? <span className="highlight">Log in</span></div>;
+    }
+  }
+
+  toggleType() {
+    this.state.username = "";
+    this.state.password = "";
+    if (this.state.type === "Log In") {
+      this.setState({type: "Sign Up"});
+      this.header = "Sign up to get started";
+    } else {
+      this.header = "Log in to get started";
+      this.setState({type: "Log In"});
+    }
   }
 
   renderErrors() {
@@ -99,7 +118,7 @@ class AuthForm extends React.Component{
         </input>
 
 
-          <h3>{this.navLink}</h3>
+          <h3 onClick={this.toggleType}>{this.navLink()}</h3>
 
         </form>
       </div>

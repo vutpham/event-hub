@@ -21,7 +21,14 @@
  }
 
  #main-img-container{
-   background-image: url("https://s-media-cache-ak0.pinimg.com/600x315/0d/d9/3e/0dd93e30c4c05defe2523596f38528bf.jpg");
-   width: 100%;
+   background-image: url("https://www.seminolehardrockhollywood.com/files/1637/Utilities-EventsCalendar-1250x450.jpg");
+   background-size: contain;
+   width: cover;
    height: 500px;
+   padding: 100px;
+   background-repeat: no-repeat;
+ }
+
+ #main-img-holder {
+   height: 45vh;
  }

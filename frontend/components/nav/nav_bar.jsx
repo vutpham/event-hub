@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from 'react-router-dom';
+import AuthModal from '../modal/auth_modal';
 
 class NavBar extends React.Component{
   constructor(props){
@@ -12,8 +13,7 @@ class NavBar extends React.Component{
     return(
       <ul className="navbar-links" id='logged-in-links'>
         <li className="dropdown">
-          Hello {this.props.currentUser.username}
-        </li>
+          <span id="username"> Hello {this.props.currentUser.username} </span>
         <ul className="dropdown-content">
             <li>
               Saved Events
@@ -32,6 +32,7 @@ class NavBar extends React.Component{
               </button>
             </li>
         </ul>
+        </li>
         <li>
           <button
           className="log-out-button"
@@ -51,6 +52,8 @@ class NavBar extends React.Component{
         <li onClick={this.guestLogin}>Demo</li>
         <li><Link to="/signup">Sign Up</Link></li>
         <li><Link to="/login">Log In</Link></li>
+        <li><AuthModal type="Log In" /></li>
+        <li><AuthModal type="Sign Up" /></li>
       </ul>
     );
   }
