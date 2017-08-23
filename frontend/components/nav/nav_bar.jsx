@@ -13,7 +13,9 @@ class NavBar extends React.Component{
     return(
       <ul className="navbar-links" id='logged-in-links'>
         <li className="dropdown">
-          <span id="username"> Hello {this.props.currentUser.username} </span>
+          <div id="username"> Hello {this.props.currentUser.username}
+            <span id="fa-arrow"><i className="fa fa-angle-down" aria-hidden="true"></i></span>
+            </div>
         <ul className="dropdown-content">
             <li>
               Saved Events
@@ -40,8 +42,8 @@ class NavBar extends React.Component{
           Log Out
           </button>
         </li>
-        <li>Browse Events</li>
-        <li>Create Event</li>
+        <li className="text-li">Browse Events</li>
+        <li className="text-li">Create Event</li>
       </ul>
     );
   }
@@ -49,9 +51,9 @@ class NavBar extends React.Component{
   loggedOutLinks(){
     return(
       <ul className="navbar-links" id='logged-out-links'>
-        <li onClick={this.guestLogin}>Demo</li>
-        <li><Link to="/signup">Sign Up</Link></li>
-        <li><Link to="/login">Log In</Link></li>
+        <li className="text-li" onClick={this.guestLogin}>Demo</li>
+        <li className="text-li"><Link to="/signup">Sign Up</Link></li>
+        <li className="text-li"><Link to="/login">Log In</Link></li>
         <li><AuthModal type="Log In" clearErrors={this.props.clearErrors}/></li>
         <li><AuthModal type="Sign Up" clearErrors={this.props.clearErrors}/></li>
       </ul>

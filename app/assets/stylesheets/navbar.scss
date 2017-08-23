@@ -9,7 +9,7 @@
 
 .logo{
   margin: 0px 15px;
-  padding: 5px;
+  padding: 0px 10px;
 }
 
 .logo a {
@@ -18,7 +18,7 @@
   text-decoration: none;
   color: red;
   letter-spacing: .5px;
-  padding: 22px 20px 10px 0px;
+  padding: 22px 30px 10px 0px;
   border-right: 1px solid #EFF2F5;
 }
 
@@ -33,17 +33,17 @@
 }
 
 .navbar-links li{
-  max-height: 90%;
+  height: 100%;
   border-left: 1px solid #EFF2F5;
   font-size: 12px;
   letter-spacing: 0.5px;
-  border-radius: 0px;
   color: #45494E;
-  padding: 22px 25px 12px 25px;
-  transition: all 0.2s;
-  margin: 5px;
+  padding: 17px 25px 15px 25px;
 }
 
+.navbar-links .text-li {
+  padding: 20px 25px;
+}
 
 .navbar-links a{
   color: #45494E;
@@ -54,30 +54,30 @@
   background-color: #EFF2F5;
 }
 
-.dropdown {
+.navbar-links .dropdown {
   position: relative;
-  display: inline-block;
-  height: 32px;
+  height: 20px;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  margin: 0px 15px;
+  padding-top: 20px 25px;
 }
 
-.dropdown:hover {
-  cursor: pointer;
-  color: #C63D0F;
+#fa-arrow {
+  margin-left: 5px;
+  font-size: 1.2em;
 }
 
 .dropdown:hover .dropdown-content {
+  cursor: pointer;
   background: #f9f9f9;
   display: block;
 }
 
 .dropdown-content {
   display: none;
-  top: 60px;
-  right: -15px;
+  top: 53px;
+  right: -1px;
   color: black;
   position: absolute;
   width: 150%;
