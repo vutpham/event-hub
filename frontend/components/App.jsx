@@ -3,16 +3,17 @@ import { Route } from 'react-router';
 import { AuthRoute } from '../util/route_util';
 import SessionFormContainer from './auth/auth_form_container';
 import GreetingContainer from './auth/greeting_container';
+import NavBarContainer from './nav/nav_bar_container';
 
 
 const App = () => (
   <div>
     <header>
-      <h1>EventHub</h1>
-      <Route path='/' component={GreetingContainer} />
+      <NavBarContainer />
     </header>
       <AuthRoute path="/login" component={SessionFormContainer} />
       <AuthRoute path="/signup" component={SessionFormContainer} />
+      <div id='main-img-container'></div>
   </div>
 );
 

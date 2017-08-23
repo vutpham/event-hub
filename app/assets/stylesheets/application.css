@@ -13,3 +13,15 @@
  *= require_tree .
  *= require_self
  */
+
+ body{
+   font-family: 'Roboto', sans-serif;
+   color: #666A73;
+   font-weight: 300;
+ }
+
+ #main-img-container{
+   background-image: url("https://s-media-cache-ak0.pinimg.com/600x315/0d/d9/3e/0dd93e30c4c05defe2523596f38528bf.jpg");
+   width: 100%;
+   height: 500px;
+ }
