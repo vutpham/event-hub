@@ -4,9 +4,8 @@ class Home extends React.Component {
   render(){
     return(
       <div id="home">
-        <header id="main-img-holder">
+        <img src="./assets/yipeng_cover.jpg" id="main-home-img"></img>
           <div id="main-img-container"></div>
-        </header>
       </div>
     );
   }

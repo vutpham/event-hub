@@ -20,15 +20,7 @@
    font-weight: 300;
  }
 
- #main-img-container{
-   background-image: url("https://www.seminolehardrockhollywood.com/files/1637/Utilities-EventsCalendar-1250x450.jpg");
-   background-size: contain;
-   width: cover;
-   height: 500px;
-   padding: 100px;
-   background-repeat: no-repeat;
- }
-
- #main-img-holder {
-   height: 45vh;
+ #main-home-img {
+   width: 100vw;
+   height: 35vw;
  }
