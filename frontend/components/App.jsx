@@ -4,6 +4,7 @@ import { AuthRoute } from '../util/route_util';
 import SessionFormContainer from './auth/auth_form_container';
 import GreetingContainer from './auth/greeting_container';
 import NavBarContainer from './nav/nav_bar_container';
+import Home from './home/home';
 
 
 const App = () => (
@@ -11,9 +12,7 @@ const App = () => (
     <header>
       <NavBarContainer />
     </header>
-    <div id="main-img-holder">
-      <div id='main-img-container'></div>
-    </div>
+    <Route exact path="/" component={Home} />
   </div>
 );
 
