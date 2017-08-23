@@ -43,7 +43,7 @@ class NavBar extends React.Component{
           </button>
         </li>
         <li className="text-li">Browse Events</li>
-        <li className="text-li">Create Event</li>
+        <div id="create">Create Event</div>
       </ul>
     );
   }
