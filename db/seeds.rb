@@ -11,3 +11,5 @@ user2 = User.create(username: "user2", password: "password")
 user3 = User.create(username: "user3", password: "password")
 user4 = User.create(username: "user4", password: "password")
 user5 = User.create(username: "user5", password: "password")
+
+DemoUser = User.create(username: "Stranger", password: "password")

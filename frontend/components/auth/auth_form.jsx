@@ -24,6 +24,7 @@ class AuthForm extends React.Component{
     }
 
     this.renderErrors = this.renderErrors.bind(this);
+    this.guestLogin = this.guestLogin.bind(this);
   }
 
   handleSubmit(e) {
@@ -48,6 +49,10 @@ class AuthForm extends React.Component{
         ))}
       </ul>
     );
+  }
+
+  guestLogin() {
+    this.props.login({username: "Stranger", password: "password"});
   }
 
   render(){
@@ -89,6 +94,7 @@ class AuthForm extends React.Component{
 
         <input
           type="submit"
+          onClick={this.guestLogin}
           value="Guest Login">
         </input>
 
