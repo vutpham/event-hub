@@ -7,13 +7,13 @@ import NavBarContainer from './nav/nav_bar_container';
 
 
 const App = () => (
-  <div>
+  <div id='app'>
     <header>
       <NavBarContainer />
     </header>
-      <AuthRoute path="/login" component={SessionFormContainer} />
-      <AuthRoute path="/signup" component={SessionFormContainer} />
+    <div id="main-img-holder">
       <div id='main-img-container'></div>
+    </div>
   </div>
 );
 

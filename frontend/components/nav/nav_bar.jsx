@@ -52,8 +52,8 @@ class NavBar extends React.Component{
         <li onClick={this.guestLogin}>Demo</li>
         <li><Link to="/signup">Sign Up</Link></li>
         <li><Link to="/login">Log In</Link></li>
-        <li><AuthModal type="Log In" /></li>
-        <li><AuthModal type="Sign Up" /></li>
+        <li><AuthModal type="Log In" clearErrors={this.props.clearErrors}/></li>
+        <li><AuthModal type="Sign Up" clearErrors={this.props.clearErrors}/></li>
       </ul>
     );
   }

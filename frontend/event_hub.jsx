@@ -21,8 +21,8 @@ document.addEventListener('DOMContentLoaded', () => {
   window.dispatch = store.dispatch;
   // TESTING END
   Modal.setAppElement('body');
-  const root = document.getElementById('root');
-  ReactDOM.render(<Root store={store}/>, root);
+  const content = document.getElementById('content');
+  ReactDOM.render(<Root store={store}/>, content);
 });
 
 window.login = login;

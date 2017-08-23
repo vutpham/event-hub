@@ -50,9 +50,11 @@ class AuthForm extends React.Component{
     this.state.username = "";
     this.state.password = "";
     if (this.state.type === "Log In") {
+      this.props.clearErrors();
       this.setState({type: "Sign Up"});
       this.header = "Sign up to get started";
     } else {
+      this.props.clearErrors();
       this.header = "Log in to get started";
       this.setState({type: "Log In"});
     }

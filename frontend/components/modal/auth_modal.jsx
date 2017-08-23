@@ -13,11 +13,13 @@ class LoginModal extends React.Component{
   }
 
   openModal() {
+    this.props.clearErrors();
     this.setState({modalIsOpen: true});
   }
 
 
   closeModal() {
+    this.props.clearErrors();
     this.setState({modalIsOpen: false});
   }
 
