@@ -2,7 +2,7 @@ import { RECEIVE_EVENT, RECEIVE_EVENTS, DESTROY_EVENT }
        from '../actions/event_actions';
 import merge from 'lodash/merge';
 
-const eventsReducer = (state = {}, action) => {
+const EventsReducer = (state = {}, action) => {
   Object.freeze(state);
   let newState;
   switch(action.type){
@@ -20,3 +20,5 @@ const eventsReducer = (state = {}, action) => {
   }
 
 };
+
+export default EventsReducer;
