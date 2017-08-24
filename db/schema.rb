@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170824175240) do
+ActiveRecord::Schema.define(version: 20170824204633) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -27,6 +27,8 @@ ActiveRecord::Schema.define(version: 20170824175240) do
     t.float    "price",             default: 0.0,                 null: false
     t.datetime "created_at",                                      null: false
     t.datetime "updated_at",                                      null: false
+    t.string   "venue"
+    t.string   "address",                                         null: false
     t.index ["date"], name: "index_events_on_date", using: :btree
     t.index ["host_id"], name: "index_events_on_host_id", using: :btree
     t.index ["price"], name: "index_events_on_price", using: :btree

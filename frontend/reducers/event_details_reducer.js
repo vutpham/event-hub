@@ -1,4 +1,6 @@
-import { RECEIVE_EVENT, DESTROY_EVENT } from '../actions/event_actions';
+import { RECEIVE_EVENT,
+         DESTROY_EVENT,
+         RECEIVE_EVENT_DETAILS } from '../actions/event_actions';
 
 const EventDetailsReducer = (state = {}, action) => {
   Object.freeze(state);
@@ -7,6 +9,8 @@ const EventDetailsReducer = (state = {}, action) => {
       return action.event;
     case DESTROY_EVENT:
       return {};
+    case RECEIVE_EVENT_DETAILS:
+      return action.event;
     default:
       return state;
   }

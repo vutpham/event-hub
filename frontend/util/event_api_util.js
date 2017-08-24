@@ -1,7 +1,8 @@
 export const getEvent = (id) => {
+  const eventId = parseInt(id);
   return $.ajax({
     method: "GET",
-    url: `/api/events/${id}`
+    url: `/api/events/${eventId}`
   });
 };
 
@@ -29,8 +30,9 @@ export const updateEvent = (event) => {
 };
 
 export const deleteEvent = (id) => {
+  const eventId = parseInt(id);
   return $.ajax({
     method: "DELETE",
-    url: `/api/events/${id}`
+    url: `/api/events/${eventId}`
   });
 };
