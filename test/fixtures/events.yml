@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  string: 
+  text: 
+  text: 
+  string: 
+  date: 2017-08-24
+  integer: 
+  integer: 
+  integer: 
+  float: 
+
+two:
+  string: 
+  text: 
+  text: 
+  string: 
+  date: 2017-08-24
+  integer: 
+  integer: 
+  integer: 
+  float: 

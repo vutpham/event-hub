@@ -10,24 +10,11 @@
  * files in this directory. Styles in this file should be added after the last require_* statement.
  * It is generally better to create a new file per style scope.
  *
- *= require_tree .
  *= require_self
  */
-
- html {
-   height: 100%;
-   box-sizing: border-box;
-   background-color: #EFF2F5;
- }
-
- body {
-   font-family: 'Roboto', sans-serif;
-   color: #666A73;
-   font-weight: 300;
-   min-height: 100%;
- }
-
- #main-home-img {
-   width: 100vw;
-   height: 35vw;
- }
+ @import "base/reset.scss";
+ @import "base/colors.scss";
+ @import "base/fonts.scss";
+ @import "base/core.scss";
+ @import "components/*";
+ @import url("https://fonts.googleapis.com/css?family=Mada:200|Roboto:300,500|Signika:600");

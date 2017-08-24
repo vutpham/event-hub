@@ -1,15 +1,15 @@
 .footer {
-  border-top: 6px solid #666A73;
+  border-top: 6px solid $gray;
   padding-top: 1rem;
   text-align: center;
-  background: #282c35;
+  background: $dark-gray;
   position: absolute;
   right: 0;
   bottom: 0;
   left: 0;
 
   small {
-    color: #666a73;
+    color: $gray;
     font-size: 12px;
   }
 }
@@ -20,7 +20,7 @@
   i {
     font-size: 2em;
     margin: 0 8px;
-    color: #666A73;
+    color: $gray;
 
     &:hover {
       color: white;
@@ -28,7 +28,3 @@
   }
 
 }
-
-/**
- * Footer Styles
- */

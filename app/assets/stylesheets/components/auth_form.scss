@@ -38,12 +38,12 @@
 }
 
 .highlight {
-  color: #ff1c67;
+  color: $pink;
   cursor: pointer;
 }
 
 .auth-form .errors{
-  color: #ff1c67;
+  color: $pink;
   min-height: 15px;
   font-size: 12px;
   padding-left: 5px;
@@ -63,19 +63,19 @@
 
 .auth-form input:focus{
   background-color: #F2EDC6;
-  outline-color: pink;
+  outline-color: $light-pink;
 }
 
 .auth-form input[type="submit"]{
   color: white;
-  background-color: red;
+  background-color: $red;
   transition: all 0.3s;
   outline: none;
   border-radius: 50px;
 }
 
 .auth-form input[type="submit"]:hover{
-  background: #ff1c67;
+  background: $pink;
   cursor: pointer;
 }
 

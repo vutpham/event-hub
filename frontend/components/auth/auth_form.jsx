@@ -116,7 +116,7 @@ class AuthForm extends React.Component{
         <input
           type="submit"
           onClick={this.guestLogin}
-          value="Guest Login">
+          value="Guest Account">
         </input>
 
 
