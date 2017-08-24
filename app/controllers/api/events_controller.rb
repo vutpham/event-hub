@@ -1,6 +1,15 @@
-class EventsController < ApplicationController
+class Api::EventsController < ApplicationController
   def index
     @events = Event.all
+  end
+
+  def show
+    @event = Event.find_by(id: params[:id])
+    if @event
+      render :show
+    else
+      render json: ["Event does not exist"], status: 404
+    end
   end
 
   def create

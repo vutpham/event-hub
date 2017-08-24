@@ -11,5 +11,14 @@ user2 = User.create(username: "user2", password: "password")
 user3 = User.create(username: "user3", password: "password")
 user4 = User.create(username: "user4", password: "password")
 user5 = User.create(username: "user5", password: "password")
-
 DemoUser = User.create(username: "Stranger", password: "password")
+
+event1 = Event.create(title: "NBA Finals Game 7",
+                      short_description: "Warriors vs. Cavs",
+                      full_description: "Watch as Steph Curry takes on Lebron James in the epic ending to a trilogy.",
+                      image_url: "http://a.espncdn.com/combiner/i?img=%2Fphoto%2F2015%2F0516%2Fnba_split1x_1296x729.jpg",
+                      date: "06/06/2016",
+                      price: 300.00,
+                      venue: "Oracle Arena",
+                      address: "7000 Coliseum Way, Oakland, CA 94621",
+                      host_id: 1)
