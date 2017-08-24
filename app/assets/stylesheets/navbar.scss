@@ -36,7 +36,7 @@
   height: 100%;
   border-left: 1px solid #EFF2F5;
   font-size: 12px;
-  letter-spacing: 0.5px;
+  letter-spacing: 0.7px;
   color: #45494E;
   padding: 17px 25px 15px 25px;
 }
@@ -67,6 +67,10 @@
   color: #004bc4;
   font-weight: 500;
   padding: 17px 25px 15px 25px;
+  border-left: 1px solid #EFF2F5;
+  padding: 20px 25px;
+  letter-spacing: 0.7px;
+  cursor: pointer;
 }
 
 #create:hover {
