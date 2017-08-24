@@ -1,0 +1,25 @@
+.footer {
+  border-top: 6px solid #666A73;
+  padding-top: 20px;
+  text-align: center;
+  background: #282c35;
+
+  small {
+    color: #666a73;
+  }
+}
+
+.icon-box {
+  margin: 10px 0;
+
+  i {
+    font-size: 2em;
+    margin: 0 8px;
+    color: #666A73;
+
+    &:hover {
+      color: white;
+    }
+  }
+
+}
