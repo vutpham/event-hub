@@ -14,10 +14,17 @@
  *= require_self
  */
 
- body{
+ html {
+   height: 100%;
+   box-sizing: border-box;
+   background-color: #EFF2F5;
+ }
+
+ body {
    font-family: 'Roboto', sans-serif;
    color: #666A73;
    font-weight: 300;
+   min-height: 100%;
  }
 
  #main-home-img {

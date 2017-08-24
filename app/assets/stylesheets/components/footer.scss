@@ -1,8 +1,12 @@
 .footer {
   border-top: 6px solid #666A73;
-  padding-top: 20px;
+  padding-top: 1rem;
   text-align: center;
   background: #282c35;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
 
   small {
     color: #666a73;
@@ -23,3 +27,7 @@
   }
 
 }
+
+/**
+ * Footer Styles
+ */
