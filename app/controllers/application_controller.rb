@@ -1,6 +1,6 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
-  helper_method :current_user, :logged_in?
+  helper_method :current_user, :logged_in?, :upload_preset, :cloud_name
 
   def current_user
     @current_user ||= User.find_by(session_token: session[:session_token])
@@ -20,6 +20,14 @@ class ApplicationController < ActionController::Base
   def log_out
     current_user.reset_session_token
     session[:session_token] = nil
+  end
+
+  def cloud_name
+    ENV['CLOUD_NAME']
+  end
+
+  def upload_preset
+    ENV['UPLOAD_PRESET']
   end
 
 end

@@ -11,4 +11,4 @@ import { createEvent, updateEvent, deleteEvent, fetchEventDetails }
     deleteEvent: (id) => dispatch(deleteEvent(id))
   });
 
-  export default connect(null, mapDispatchToProps)(EventForm);
+  export default connect(mapStateToProps, mapDispatchToProps)(EventForm);

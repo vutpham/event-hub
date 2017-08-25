@@ -7,6 +7,7 @@ import NavBarContainer from './nav/nav_bar_container';
 import Home from './home/home';
 import Footer from './footer';
 import EventDetailContainer from './events/event_detail_container';
+import EventFormContainer from './events/event_form_container';
 
 
 const App = () => (
@@ -16,7 +17,8 @@ const App = () => (
     </header>
     <Switch>
       <Route exact path="/" component={Home} />
-      <Route path="/events/:eventId" component={EventDetailContainer} />
+      <Route exact path="/events/:eventId" component={EventDetailContainer} />
+      <Route exact path="/new-event" component={EventFormContainer} />
     </Switch>
     <Footer />
   </div>

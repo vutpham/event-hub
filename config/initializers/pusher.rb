@@ -7,3 +7,6 @@ Pusher.secret = '20a83ede023deb29ab94'
 Pusher.cluster = 'us2'
 Pusher.logger = Rails.logger
 Pusher.encrypted = true
+
+# Pusher.cloud_name = ENV['CLOUD_NAME']
+# Pusher.upload_preset = ENV['UPLOAD_PRESET']
