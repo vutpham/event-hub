@@ -1,8 +1,14 @@
+.new-event-form-container{
+  margin-left: 200px;
+  max-width: 50%;
+}
+
+
 .new-event-form{
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  align-items: center;
+  max-width: 300px;
 }
 
 .new-event-step-1, .new-event-step-2, .new-event-step-3{

@@ -21,12 +21,18 @@ class EventForm extends React.Component{
   }
 
   handleChange(key){
-    return (e) => this.setState({[key]: e.target.value});
+    return (e) => {
+      this.setState({[key]: e.target.value});
+    };
   }
 
   handleSubmit(e){
     e.preventDefault();
-    this.createEvent(this.state);
+    let urlHolder = document.getElementById('image-url-input');
+    let url = urlHolder.getAttribute('data-url');
+    this.state.price = parseInt(this.state.price);
+    this.state["image_url"] = url;
+    this.props.createEvent(this.state);
   }
 
   renderErrors() {
@@ -45,91 +51,86 @@ class EventForm extends React.Component{
     let {title, short_description, full_description, date, price, venue,
     street_address, city_state_zip, image_url} = this.state;
     return (
-      <form className="new-event-form">
-
-        <div className="new-event-step-1">
-            Title
-            <input
-              type="text"
-              value={title}
-              placeholder="Event Name"
-              onChange={this.handleChange("title")}
-            />
-
-            Location
-            <br></br>
-            <input
-              type="text"
-              value={venue}
-              placeholder="Venue"
-              onChange={this.handleChange("venue")}
-            />
-
-            <input
-              type="text"
-              value={street_address}
-              placeholder="Street Address"
-              onChange={this.handleChange("street_address")}
-            />
-
-            <input
-              type="text"
-              value={city_state_zip}
-              placeholder="City, State, Zip"
-              onChange={this.handleChange("city_state_zip")}
-            />
-
-            Short Description:
-            <input
-              type="text"
-              value={short_description}
-              placeholder="One sentence overview of your event"
-              onChange={this.handleChange("short_description")}
-            />
-
-            Full Description
-            <textarea
-              value={full_description}
-              placeholder="Full Description"
-              onChange={this.handleChange("full_description")}
+      <div className="new-event-form-container">
+        <form className="new-event-form">
+          <h1>Create An Event</h1>
+          <div className="new-event-step-1">
+              Title
+              <input
+                type="text"
+                value={title}
+                placeholder="Event name"
+                onChange={this.handleChange("title")}
               />
 
-            Date:
-            <input
-              type="date"
-              value={date}
-              onChange={this.handleChange("date")}
+              Location
+              <br></br>
+              <input
+                type="text"
+                value={venue}
+                placeholder="Venue"
+                onChange={this.handleChange("venue")}
               />
 
-            Event Type:
-            <input
-              type="date"
-              value={date}
-              onChange={this.handleChange("date")}
+              <input
+                type="text"
+                value={street_address}
+                placeholder="Street Address"
+                onChange={this.handleChange("street_address")}
               />
 
-            Ticket Price:
-            <input
-              type="number"
-              value={price}
-              onChange={this.handleChange("price")}
+              <input
+                type="text"
+                value={city_state_zip}
+                placeholder="City, State, Zip"
+                onChange={this.handleChange("city_state_zip")}
               />
 
+              Short Description:
+              <input
+                type="text"
+                value={short_description}
+                placeholder="One sentence overview of your event"
+                onChange={this.handleChange("short_description")}
+              />
 
-          <select>
-            <option value="OIJF">IMPLEMENT THIS LATER</option>
-          </select>
-        </div>
+              Full Description
+              <textarea
+                value={full_description}
+                placeholder="Full Description"
+                onChange={this.handleChange("full_description")}
+                />
 
-        <div className="new-event-step-2">
-          <UploadButton />
-        </div>
+              Date:
+              <input
+                type="date"
+                value={date}
+                onChange={this.handleChange("date")}
+                />
 
-        <div className="new-event-step-3">
-          <input type="submit" onClick={this.handleSubmit} value="Create Event!"></input>
-        </div>
+              Ticket Price:
+              <input
+                type="number"
+                value={price}
+                onChange={this.handleChange("price")}
+                />
 
-      </form>
+              // Event Type:
+            <select>
+              <option value="OIJF">IMPLEMENT THIS LATER</option>
+            </select>
+          </div>
+
+          <div className="new-event-step-2">
+            <UploadButton />
+          </div>
+
+          <div className="new-event-step-3">
+            <input type="submit" onClick={this.handleSubmit} value="Create Event!"></input>
+          </div>
+
+        </form>
+      </div>
     );
   }
 }

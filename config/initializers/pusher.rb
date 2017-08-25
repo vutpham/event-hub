@@ -8,5 +8,5 @@ Pusher.cluster = 'us2'
 Pusher.logger = Rails.logger
 Pusher.encrypted = true
 
-# Pusher.cloud_name = ENV['CLOUD_NAME']
-# Pusher.upload_preset = ENV['UPLOAD_PRESET']
+# Pusher.cloud_name = ENV['cloud_name']
+# Pusher.upload_preset = ENV['upload_preset']

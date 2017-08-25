@@ -23,11 +23,11 @@ class ApplicationController < ActionController::Base
   end
 
   def cloud_name
-    ENV['CLOUD_NAME']
+    ENV['cloud_name']
   end
 
   def upload_preset
-    ENV['UPLOAD_PRESET']
+    ENV['upload_preset']
   end
 
 end
