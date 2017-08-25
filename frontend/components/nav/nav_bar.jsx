@@ -42,8 +42,7 @@ class NavBar extends React.Component{
           Log Out
           </button>
         </li>
-        <li className="text-li">Browse Events</li>
-        <div id="create">Create Event</div>
+        <div id="create"><Link to="/new-event">Create Event</Link></div>
       </ul>
     );
   }
@@ -69,7 +68,7 @@ class NavBar extends React.Component{
                   this.loggedInLinks() : this.loggedOutLinks());
     return(
       <nav id='main-nav'>
-        <div className="logo"><Link to="/">EventHub</Link></div>
+        <Link to="/"><div className="logo">EventHub</div></Link>
         {navLinks}
       </nav>
     );

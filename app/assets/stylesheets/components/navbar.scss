@@ -10,17 +10,14 @@
 
 .logo{
   margin: 0px 15px;
-  padding: 0px 10px;
 
-  a {
-    font-family: 'Signika', sans-serif;
-    font-size: 1.3em;
-    text-decoration: none;
-    color: $red;
-    letter-spacing: .5px;
-    padding: 22px 30px 10px 0px;
-    border-right: 1px solid $light-gray;
-  }
+  font-family: 'Signika', sans-serif;
+  font-size: 1.3em;
+  text-decoration: none;
+  color: $red;
+  letter-spacing: .5px;
+  border-right: 1px solid $light-gray;
+  padding: 17px 30px;
 
 }
 
@@ -52,7 +49,7 @@
   }
 
   a {
-    color: #45494E;
+    color: $text-gray;
   }
 
   .dropdown {
@@ -111,7 +108,6 @@
 }
 
 #create {
-  color: $blue;
   font-weight: 500;
   padding: 17px 25px 15px 25px;
   border-left: 1px solid $light-gray;
@@ -119,9 +115,15 @@
   letter-spacing: 0.7px;
   cursor: pointer;
 
-  &:hover {
-    color: $dark-blue;
+  a {
+    color: $blue;
+
+    &:hover {
+      color: $dark-blue;
+    }
+
   }
+
 
 }
 
