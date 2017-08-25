@@ -51,6 +51,7 @@ export const updateEvent = (event) => dispatch => {
 };
 
 export const createEvent = (event) => dispatch => {
+  console.log(event);
   return APIUtil.createEvent(event)
     .then((res) => dispatch(receiveEvent(res)))
     .fail( err => dispatch(receiveErrors(err.responseJSON)));
