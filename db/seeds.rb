@@ -20,5 +20,6 @@ event1 = Event.create(title: "NBA Finals Game 7",
                       date: "06/06/2016",
                       price: 300.00,
                       venue: "Oracle Arena",
-                      address: "7000 Coliseum Way, Oakland, CA 94621",
+                      street_address: "7000 Coliseum Way",
+                      city_state_zip: "Oakland, CA 94621",
                       host_id: 1)

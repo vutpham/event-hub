@@ -18,7 +18,7 @@ class EventDetail extends React.Component{
 
   render(){
     const {title, short_description, full_description, image_url, host,
-           price, date, venue, address} = this.props.eventDetails;
+           price, date, venue, street_address, city_state_zip} = this.props.eventDetails;
     return(
       <div id="event-details">
         <div id="event-details-left-col">
@@ -51,7 +51,10 @@ class EventDetail extends React.Component{
                 <div className="event-more-info-attr">Where: </div>
                 <span className="event-more-info-data">
                   <div>{venue}</div>
-                  <div>{address}</div>
+                  <div>
+                    <div>{street_address}</div>
+                    <div>{city_state_zip}</div>
+                  </div>
                 </span>
               </div>
           </span>
