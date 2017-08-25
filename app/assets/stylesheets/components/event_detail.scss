@@ -3,6 +3,7 @@
   flex-direction: row;
   justify-content: center;
   padding: 100px;
+  align-items: flex-start;
 }
 
 .event-detail-img{
@@ -18,6 +19,30 @@
 
 #event-details-left-col{
   margin-right: 50px;
+
+  h1{
+    font-size: 40px;
+    margin-bottom: 30px;
+    font-weight: 700;
+  }
+
+  h2{
+    font-size: 24px;
+    border-bottom: 1px solid black;
+    padding-bottom: 30px;
+    margin-bottom: 30px;
+  }
+
+  h3{
+      font-size: 18px;
+  }
+
+  p{
+    margin: 30px 0px;
+    font-size: 18px;
+    line-height: 150%;
+  }
+
 }
 
 #event-details-right-col{
@@ -25,38 +50,83 @@
 }
 
 
-#event-details-left-col h1{
-  font-size: 40px;
-  margin-bottom: 30px;
-  font-weight: 700;
-}
-
-
-#event-details-left-col h2{
-  font-size: 24px;
-  border-bottom: 1px solid black;
-  padding-bottom: 30px;
-  margin-bottom: 30px;
-}
-
-#event-details-left-col h3{
-    font-size: 18px;
-}
-
-#event-details-left-col p{
-  margin: 30px 0px;
-  font-size: 18px;
-  line-height: 150%;
-}
-
 .event-details{
   display: flex;
   justify-content: flex-start;
+
+  .display-attr{
+    width: 80%;
+  }
+
 }
 
-.events-details .display-attr{
-  width: 20%;
+
+
+.event-info{
+  display: flex;
+  flex-direction: column;
+  padding: 15px 5px;
+  justify-content: center;
 }
-.events-details .display-attr{
-  width: 80%;
+
+.ticket-info{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 15px;
+}
+
+.buy-tickets{
+  margin-left: 20px;
+  width: 60%;
+  padding: 10px 20px;
+  background-color: $green;
+  color: white;
+  text-transform: uppercase;
+  cursor: pointer;
+  font-size: 0.85em;
+  border: 0px;
+  border-radius: 3px;
+  letter-spacing: .5px;
+  transition: all 0.3s;
+
+  &:focus{
+    outline: none;
+  }
+
+  &:active{
+    position:relative;
+    top:1px;
+  }
+
+  &:hover {
+    background-color: $nasty-green;
+  }
+
+}
+
+.event-more-info{
+  display: flex;
+  flex-direction: row;
+  margin-top: 25px;
+  justify-content: flex-start;
+}
+
+.event-more-info-attr{
+  width: 40%;
+}
+.event-more-info-data{
+  width: 60%;
+}
+
+.fa-bookmark-o{
+  color: $blue;
+  transition: all 0.2s;
+
+  &:hover{
+    cursor: pointer;
+    color: $dark-blue;
+  }
+
 }
