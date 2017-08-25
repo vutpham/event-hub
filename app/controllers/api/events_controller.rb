@@ -6,6 +6,7 @@ class Api::EventsController < ApplicationController
   def show
     @event = Event.find_by(id: params[:id])
     if @event
+      @host = @event.host
       render :show
     else
       render json: ["Event does not exist"], status: 404
