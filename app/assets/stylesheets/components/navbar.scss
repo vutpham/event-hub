@@ -35,8 +35,16 @@
     border-left: 1px solid $light-gray;
     font-size: 12px;
     letter-spacing: 0.7px;
-    color: #45494E;
+    color: $text-gray;
     padding: 17px 25px 15px 25px;
+
+    button {
+      border: none;
+      background-color: transparent;
+      text-transform: uppercase;
+      color: $text-gray;
+      font-weight: 100;
+    }
 
     &:hover{
       cursor: pointer;
@@ -90,7 +98,7 @@
     text-transform: none;
     letter-spacing: .7px;
     font-size: 14px;
-    padding: 20px 40px;
+    padding: 5px 0px 5px 10px;
   }
 
   &:hover{
@@ -98,12 +106,9 @@
   }
 
   button{
-    font: inherit;
-    font-size: inherit;
-    padding: inherit;
-    margin: 0px 15px;
-    padding: 16px 0px;
-    font-weight: bolder;
+    border: none;
+    background-color: transparent;
+    padding: 0px 2px 0px 1px;
   }
 }
 
@@ -117,13 +122,10 @@
 
   a {
     color: $blue;
-
     &:hover {
       color: $dark-blue;
     }
-
   }
-
 
 }
 

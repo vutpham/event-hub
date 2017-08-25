@@ -30,6 +30,8 @@ class EventForm extends React.Component{
     e.preventDefault();
     let urlHolder = document.getElementById('image-url-input');
     let url = urlHolder.getAttribute('data-url');
+    console.log(urlHolder);
+    console.log(url);
     this.state.price = parseInt(this.state.price);
     this.state["image_url"] = url;
     this.props.createEvent(this.state);
