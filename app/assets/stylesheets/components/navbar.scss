@@ -21,7 +21,7 @@
 
 }
 
-.navbar-links {
+.navbar-links{
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -30,7 +30,7 @@
   text-transform: uppercase;
   font-size: 0.75em;
 
-  li{
+  li {
     height: 100%;
     border-left: 1px solid $light-gray;
     font-size: 12px;
