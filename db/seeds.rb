@@ -33,6 +33,7 @@ Business = Category.create(name: "Business")
 Parties = Category.create(name: "Parties")
 Classes = Category.create(name: "Classes")
 Food = Category.create(name: "Food & Drink")
+Other = Category.create(name: "Other")
 
 #EVENT_CATEGORY_SEEDS
 

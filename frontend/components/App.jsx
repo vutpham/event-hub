@@ -8,6 +8,8 @@ import Home from './home/home';
 import Footer from './footer';
 import EventDetailContainer from './events/event_detail_container';
 import EventFormContainer from './events/event_form_container';
+import BrowseEventsContainer
+       from './events/browse_events/browse_events_container';
 
 
 const App = () => (
@@ -19,7 +21,8 @@ const App = () => (
     <Switch>
       <Route exact path="/" component={Home} />
       <ProtectedRoute exact path="/events/:eventId" component={EventDetailContainer} />
-      <ProtectedRoute exact path="/new-event" component={EventFormContainer} />
+      <Route exact path="/new-event" component={EventFormContainer} />
+      <Route exact path="/browse-events" component={BrowseEventsContainer} />
     </Switch>
     </div>
 

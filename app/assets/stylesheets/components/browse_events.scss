@@ -1,0 +1,86 @@
+browse-events-container{
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+}
+
+#filter-box-container{
+  margin-left: 150px;
+  margin-right: 200px;
+  width: 300px;
+  height: 600px;
+  border: 1px solid black;
+  margin-top: 50px;
+
+  .filter-box{
+    width: 300px;
+    height: 300px;
+    background-color: red;
+    border: 5px solid black;
+  }
+}
+
+#browse-events-list{
+  display: flex;
+  flex-direction: column;
+}
+
+.price-tag{
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: white;
+}
+
+.browse-event-item{
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  border: 1px solid black;
+  width: 400px;
+  height: 300px;
+  margin-right: 150px;
+  margin-bottom: 50px;
+  margin-top: 50px;
+
+  .browse-event-item-img{
+    object-fit: cover;
+    height: 200px;
+    width: 100%;
+  }
+}
+
+.browse-event-info{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100px;
+  margin-top: 10px;
+
+  .browse-event-title{
+    font-weight: bold;
+    font-size: 20px;
+  }
+
+  .browse-event-footer{
+    border-top: 1px solid gray;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 0px;
+    height: 30px;
+    align-items: center;
+  }
+
+  div {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  .fa-bookmark-o{
+    color: #C63D0F;
+    &:hover{
+      cursor: pointer;
+    }
+  }
+}
