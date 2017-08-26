@@ -30,7 +30,8 @@ class BrowseEvents extends React.Component{
             hix
           </div>
         </div>
-        <ul id="browse-events-list">
+        <ul className="browse-events-list">
+          <h1>Explore Events</h1>
           {events}
         </ul>
       </div>
