@@ -129,6 +129,22 @@
   padding: 50px;
 }
 
+.new-event-form .category-form-box{
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  margin-top: 30px;
+  h5{
+    font-size: 20px;
+    margin-bottom: 15px;
+  }
+  label{
+    margin: 0px;
+    padding: 0px;
+    font-size: 15px;
+  }
+}
+
 .new-event-form label{
   margin-bottom: 10px;
   font-weight: 800;

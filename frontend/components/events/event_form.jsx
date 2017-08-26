@@ -7,7 +7,6 @@ class EventForm extends React.Component{
     super();
     this.state = {
       title: "",
-      short_description: "",
       full_description: "",
       date: "",
       price: 0.00,
@@ -20,28 +19,29 @@ class EventForm extends React.Component{
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
     this.renderErrors = this.renderErrors.bind(this);
-  }
-
-  componentWillMount() {
-    this.props.clearErrors();
-    this.props.fetchCategories();
+    this.addCategory = this.addCategory.bind(this);
   }
 
   handleChange(key){
     return (e) => {
-      this.setState({[key]: e.target.value});
+      return this.setState({[key]: e.target.value});
     };
   }
 
-  addCategory(category) {
+  addCategory(category){
     return (e) => {
       if (this.event_categories[category]){
         delete this.event_categories[category];
-      } else {
+      } else{
         this.event_categories[category] = true;
       }
       console.log(this.event_categories);
     };
+  }
+
+  componentWillMount(){
+    this.props.clearErrors();
+    this.props.fetchCategories();
   }
 
   handleSubmit(e){
@@ -50,13 +50,14 @@ class EventForm extends React.Component{
     let url = urlHolder.getAttribute('data-url');
     this.state.price = parseInt(this.state.price);
     this.state["image_url"] = url;
-    const ids = Object.keys(this.event_categories).map((id) => parseInt(id));
+    const ids = Object.keys(this.event_categories).map((id)=>parseInt(id));
     this.state["category_ids"] = ids;
     this.props.createEvent(this.state)
-      .fail(() => {
+      .fail(()=> {
         let scroll = Scroll.animateScroll;
         scroll.scrollToTop();
-      });
+      }
+    );
   }
 
   renderErrors() {
@@ -77,12 +78,12 @@ class EventForm extends React.Component{
 
     let categoryOptions = this.props.categories.map((category, i)=>(
       <label key={`check-${category.id}-${i}`}>
-        {category.name}
         <input
           type="checkbox"
           onChange={this.addCategory(category.id)}
           value={category.name}>
         </input>
+        {category.name}
       </label>
     ));
 
@@ -107,7 +108,7 @@ class EventForm extends React.Component{
                 onChange={this.handleChange("title")}
               />
 
-            <label>Location </label>
+            <label>Location <span className="required-field">*</span> </label>
               <div id='location-input'>
                 <input
                   type="text"
@@ -153,11 +154,10 @@ class EventForm extends React.Component{
                 onChange={this.handleChange("price")}
                 />
 
-              <label>Event Type <span className="required-field">*</span></label>
-            <select>
-              <option value="OIJF">IMPLEMENT THIS LATER</option>
-            </select>
-            {categoryOptions}
+              <div className='category-form-box'>
+                <h5>Categories</h5>
+                  {categoryOptions}
+              </div>
 
           </div>
 
