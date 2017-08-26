@@ -24,4 +24,10 @@ class Event < ApplicationRecord
 
   belongs_to :host,
     foreign_key: :host_id, class_name: "User"
+
+  def default_image
+    if self.image_url == ""
+      self.image_url = "http://rocciaevents.com/wp-content/uploads/2014/09/event1.gif"
+    end
+  end
 end

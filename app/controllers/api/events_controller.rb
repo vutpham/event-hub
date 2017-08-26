@@ -51,6 +51,15 @@ class Api::EventsController < ApplicationController
     end
   end
 
+  def filter
+    categories = Category.where(id: params[:category_ids])
+    @events = []
+    categories.each do |category|
+      @events.concat(category.events)
+    end
+    render :index
+  end
+
   private
 
   def event_params

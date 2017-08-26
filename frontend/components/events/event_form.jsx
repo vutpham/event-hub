@@ -1,6 +1,7 @@
 import React from 'react';
 import UploadButton from './upload_button/upload_button';
 import Scroll from 'react-scroll';
+import { withRouter } from 'react-router-dom';
 
 class EventForm extends React.Component{
   constructor(){
@@ -53,6 +54,9 @@ class EventForm extends React.Component{
     const ids = Object.keys(this.event_categories).map((id)=>parseInt(id));
     this.state["category_ids"] = ids;
     this.props.createEvent(this.state)
+      .then((res)=>{
+        return this.props.history.push(`/events/${res.event.id}`);
+      })
       .fail(()=> {
         let scroll = Scroll.animateScroll;
         scroll.scrollToTop();
@@ -184,4 +188,4 @@ class EventForm extends React.Component{
   }
 }
 
-export default EventForm;
+export default withRouter(EventForm);

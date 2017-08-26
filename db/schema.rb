@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170826191048) do
+ActiveRecord::Schema.define(version: 20170826222857) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -29,16 +29,16 @@ ActiveRecord::Schema.define(version: 20170826191048) do
   end
 
   create_table "events", force: :cascade do |t|
-    t.string   "title",                                          null: false
-    t.text     "full_description",                               null: false
-    t.string   "image_url",        default: "default_image.jpg", null: false
-    t.date     "date",                                           null: false
-    t.integer  "host_id",                                        null: false
+    t.string   "title",                                                                                      null: false
+    t.text     "full_description",                                                                           null: false
+    t.string   "image_url",        default: "http://rocciaevents.com/wp-content/uploads/2014/09/event1.gif", null: false
+    t.date     "date",                                                                                       null: false
+    t.integer  "host_id",                                                                                    null: false
     t.integer  "total_quantity"
     t.integer  "quantity_left"
-    t.float    "price",            default: 0.0,                 null: false
-    t.datetime "created_at",                                     null: false
-    t.datetime "updated_at",                                     null: false
+    t.float    "price",            default: 0.0,                                                             null: false
+    t.datetime "created_at",                                                                                 null: false
+    t.datetime "updated_at",                                                                                 null: false
     t.string   "venue"
     t.string   "street_address"
     t.string   "city_state_zip"

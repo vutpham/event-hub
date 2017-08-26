@@ -14,4 +14,5 @@ Rails.application.routes.draw do
     resources :categories, only: [:index]
   end
 
+  get 'api/events-filtered' => 'api/events#filter'
 end
