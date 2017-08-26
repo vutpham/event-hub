@@ -26,14 +26,14 @@ event1 = Event.create(title: "Warriors vs. Cavs NBA Finals Game 7",
                       host_id: 1)
 
 event2 = Event.create(title: "Pancakes & Booze Art Show",
-                      full_description: "San Francisco's Largest Underground Art Show featuring:
-                        -100+ Emerging Artists
-                        -Live Body Painting
-                        -Live DJ sets
-                        -Live Art
-                        -FREE Pancake Bar
-                        -21+ EVENT
-                        $20 Line Jumper (limited quantities)
+                      full_description: "San Francisco's Largest Underground Art Show featuring:\n
+                        -100+ Emerging Artists\n
+                        -Live Body Painting\n
+                        -Live DJ sets\n
+                        -Live Art\n
+                        -FREE Pancake Bar\n
+                        -21+ EVENT\n
+                        $20 Line Jumper (limited quantities)\n
                         $10 Door",
                       date: "2017/08/27",
                       image_url: "https://i1.wp.com/secretsofvenusblog.files.wordpress.com/2016/08/14064092_10154404933654144_6540644930333295270_n.jpg?w=816&h=302&crop&ssl=1",
