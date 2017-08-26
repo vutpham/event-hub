@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  namespace :api do
+    get 'categories/index'
+  end
+
   get 'categories/index'
 
   root to: "static_pages#root"

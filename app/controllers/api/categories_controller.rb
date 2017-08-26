@@ -1,4 +1,4 @@
-class CategoriesController < ApplicationController
+class Api::CategoriesController < ApplicationController
   def index
     @categories = Category.all
     render :index

@@ -9,5 +9,5 @@ export const receiveCategories = (categories) => ({
 
 export const fetchCategories = () => dispatch => {
   return APIUtil.getAllCategories()
-    .then(() => dispatch(receiveCategories()));
+    .then((categories) => dispatch(receiveCategories(categories)));
 };
