@@ -19,13 +19,13 @@ class EventDetail extends React.Component{
   }
 
   render(){
-    const {title, short_description, full_description, image_url, host,
+    let {title, full_description, image_url, host,
            price, date, venue, street_address, city_state_zip} = this.props.eventDetails;
+    price = (price === 0 ? "Free" : `$${price}`);
     return(
       <div id="event-details">
         <div id="event-details-left-col">
           <h1>{title} &nbsp; <i className="fa fa-bookmark-o" aria-hidden="true"></i></h1>
-          <h2>{short_description}</h2>
           <h3>Hosted By: {host}</h3>
           <p>Details: {full_description}</p>
         </div>
@@ -35,7 +35,7 @@ class EventDetail extends React.Component{
             <span className="event-info">
 
               <div className="ticket-info">
-                <div>${price}</div>
+                <div>{price}</div>
                 <button className="buy-tickets">Tickets</button>
               </div>
 
