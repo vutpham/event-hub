@@ -36,3 +36,11 @@ export const deleteEvent = (id) => {
     url: `/api/events/${eventId}`
   });
 };
+
+export const getFilteredEvents = (filters) => {
+  return $.ajax({
+    method: "GET",
+    url: "/api/events-filtered",
+    data: filters
+  });
+};
