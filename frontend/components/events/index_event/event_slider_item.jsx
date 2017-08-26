@@ -13,10 +13,12 @@ class EventSliderItem extends React.Component {
     return (
       <div className="event-slider-item">
         <div className="price-tag-slider">{price}</div>
+        <Link to={`/events/${id}`}>
           <img className="event-slider-item-img"
             src={image_url}
             alt="Event Image">
           </img>
+        </Link>
         <span className="event-slider-info">
           <div className="event-slider-header">
             <div className='browse-event-title'>{title}</div>

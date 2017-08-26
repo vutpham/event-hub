@@ -28,9 +28,6 @@
   }
 }
 
-
-
-
 .event-slider-item{
   display: flex;
   flex-direction: column;
@@ -48,6 +45,7 @@
   .event-slider-item-img{
     height: 200px;
     object-fit: cover;
+    width: 100%;
   }
 
   .price-tag-slider{
