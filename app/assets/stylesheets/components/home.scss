@@ -2,6 +2,28 @@
   display: flex;
   justify-content: center;
   margin: 50px 0px;
+
+  .see-more-button{
+    width: 150px;
+    font-size: 18px;
+    color: gray;
+    background-color: #C63D0F;;
+    color: white;
+    padding: 5px 3px;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 3px;
+    box-shadow:inset 0px 1px 0px 0px #dcecfb;
+    text-shadow:0px 1px 0px #528ecc;
+    letter-spacing: 150%;
+    &:hover{
+      cursor: pointer;
+      opacity: 0.6;
+    }
+    &:focus{
+      outline: none;
+    }
+  }
 }
 
 .trending-events-title{
@@ -9,4 +31,8 @@
   font-size: 30px;
   font-weight: bold;
   margin: 20px;
+}
+
+#event-slider-container{
+  margin-top: 20px;
 }

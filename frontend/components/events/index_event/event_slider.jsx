@@ -28,7 +28,9 @@ class EventSlider extends React.Component {
     };
 
     let events = this.props.events.map((event)=>
-      <div><EventItem event={event}/></div>);
+      <div>
+        <EventItem event={event}/>  
+      </div>);
     events = (events.length===0) ? <div></div> : events;
     console.log(events);
     return (

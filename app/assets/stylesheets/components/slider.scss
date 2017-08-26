@@ -1,15 +1,34 @@
+
 .slick-slider, .slick-list{
-  margin: 10px;
+  margin: 30px;
 }
 
 .slick-track:hover{
   cursor: col-resize;
 }
 
-// [data-index="1"]{
-//   margin-left: 10px;
-//   margin-right: 10px
-// }
+.slick-prev{
+  left: -27px !important;
+  z-index: 9999;
+}
+
+.slick-next{
+  right: -7px !important;
+}
+
+.slick-next:before, .slick-prev:before{
+  font-size: 40px !important;
+  color: gray !important;
+  z-index: 9999;
+  opacity: 75%;
+
+
+  &:hover{
+    color: #f2f2f2;
+  }
+}
+
+
 
 
 .event-slider-item{
