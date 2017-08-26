@@ -23,3 +23,17 @@ event1 = Event.create(title: "NBA Finals Game 7",
                       street_address: "7000 Coliseum Way",
                       city_state_zip: "Oakland, CA 94621",
                       host_id: 1)
+
+#CATEGORY SEEDSCa
+
+Sports = Category.create(name: "Sports")
+Music = Category.create(name: "Music")
+Arts = Category.create(name: "Arts")
+Business = Category.create(name: "Business")
+Parties = Category.create(name: "Parties")
+Classes = Category.create(name: "Classes")
+Food = Category.create(name: "Food & Drink")
+
+#EVENT_CATEGORY_SEEDS
+
+event1category = EventCategory.create(event_id: 1, category_id: 1)
