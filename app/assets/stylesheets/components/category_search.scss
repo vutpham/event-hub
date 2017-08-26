@@ -1,0 +1,26 @@
+
+#home-category-search-box{
+  display: flex;
+  flex-direction: column;
+  height: 800px;
+
+  .search-box-row{
+    display: flex;
+    flex-direction: row;
+    margin: 0px 40px;
+
+    img{
+      height: 200px;
+      object-fit: cover;
+    }
+
+    img.sb-r1-c1{
+      width: 60%;
+    }
+
+    img.sb-r1-c2{
+      width: 38%;
+      margin-left: 2%;
+    }
+  }
+}

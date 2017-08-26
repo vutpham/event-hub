@@ -52,7 +52,7 @@ class Api::EventsController < ApplicationController
   end
 
   def filter
-    categories = Category.where(id: params[:category_ids])
+    categories = Category.where(name: params[:category_names])
     @events = []
     categories.each do |category|
       @events.concat(category.events)

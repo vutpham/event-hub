@@ -7,7 +7,9 @@ class BrowseEvents extends React.Component{
   }
 
   componentWillMount(){
-    this.props.fetchAllEvents(this.props.match.params.eventId);
+    if (this.props.events.length === 0) {
+      this.props.fetchAllEvents(this.props.match.params.eventId);
+    }
   }
 
   componentWillReceiveProps(nextProps) {

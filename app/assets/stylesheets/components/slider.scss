@@ -1,4 +1,3 @@
-
 .slick-slider, .slick-list{
   margin: 30px;
 }
@@ -28,13 +27,16 @@
   }
 }
 
+
+
+
 .event-slider-item{
   display: flex;
   flex-direction: column;
   position: relative;
   margin: 10px;
-  border: 1px solid #efefef;
-  background-color: #f2f2f2;
+  // border: 1px solid #efefef;
+  // background-color: #f2f2f2;
 
   .fa-bookman-o{
     position: absolute;
@@ -55,15 +57,11 @@
     right: 0;
   }
 
-  .event-slider-footer{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    margin-top: 5px;
-    font-size: 12px;
-  }
   .event-slider-info{
     padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 
     .browse-event-title{
       margin-bottom: 5px;
@@ -76,5 +74,8 @@
       flex-direction: row;
       justify-content: space-between;
     }
+  }
+
+  .slider-date{
   }
 }

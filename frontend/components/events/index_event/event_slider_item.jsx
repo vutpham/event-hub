@@ -24,7 +24,7 @@ class EventSliderItem extends React.Component {
             <div className='browse-event-title'>{title}</div>
             <i className="fa fa-bookmark-o fa-lg" aria-hidden="true"></i>
           </div>
-              <div>{date} &#8226; {venue}</div>
+              <div className='slider-date'>{date} &#8226; {venue}</div>
         </span>
 
 
