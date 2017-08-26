@@ -11,7 +11,52 @@
   max-width: 300px;
 }
 
+.new-event-form h1{
+  font-size: 30px;
+  margin-bottom: 20px;
+}
+
 .new-event-step-1, .new-event-step-2, .new-event-step-3{
   display: flex;
   flex-direction: column;
+}
+
+.new-event-step-1 input{
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+
+.step-num{
+  display: table-cell;
+  background-color: #0093D7;
+  color: white;
+  width: 50px;
+  font-size: 35px;
+  line-height: 45px;
+  padding-bottom: 5px;
+  padding-left: 0;
+  text-align: center;
+  vertical-align: middle;
+}
+.new-event-step-1 input, .new-event-step-1 select{
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+.new-event-step-2 button{
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+.new-event-step-3 input{
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+.step-header{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.step-name{
+  margin-left: 10px;
+  font-size: 25px;
 }
