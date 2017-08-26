@@ -18,12 +18,11 @@ class EventSliderItem extends React.Component {
             alt="Event Image">
           </img>
         <span className="event-slider-info">
-              <div className='browse-event-title'>{title}</div>
+          <div className="event-slider-header">
+            <div className='browse-event-title'>{title}</div>
+            <i className="fa fa-bookmark-o fa-lg" aria-hidden="true"></i>
+          </div>
               <div>{date} &#8226; {venue}</div>
-              <div className='event-slider-footer'>
-                <div>category</div>
-                <div><i className="fa fa-bookmark-o" aria-hidden="true"></i></div>
-              </div>
         </span>
 
 

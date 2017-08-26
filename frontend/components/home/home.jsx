@@ -9,7 +9,7 @@ class Home extends React.Component {
              id="main-home-img">
         </img>
         <h1 className='trending-events-title'>
-          Trending Events4U
+          Trending on EventHub
         </h1>
         <EventSliderContainer />
         <div className="see-more-button-container">
