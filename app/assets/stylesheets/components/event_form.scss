@@ -1,29 +1,43 @@
-.new-event-form-container{
-  margin-left: 200px;
-  max-width: 50%;
-}
-
-
 .new-event-form{
   display: flex;
-  flex-direction: column;
   justify-content: flex-start;
-  max-width: 300px;
+  align-items: flex-start;;
+  flex-direction: column;
+  padding-left: 150px;
+  width: 60%;
+  min-width: 400px;
 }
 
-.new-event-form h1{
+.new-event-form-container h1{
   font-size: 30px;
+  margin-top: 50px;
   margin-bottom: 20px;
+  text-align: center;
 }
 
 .new-event-step-1, .new-event-step-2, .new-event-step-3{
   display: flex;
   flex-direction: column;
+  width: 100%;
+  margin-top: 30px;
 }
 
 .new-event-step-1 input{
-  margin-top: 10px;
   margin-bottom: 20px;
+  font-family: inherit;
+}
+
+.event-title-input{
+  padding: 5px;
+  margin-bottom: 100px;
+  &:focus{
+    background-color: #F2EDC6;
+  }
+}
+
+.new-event-step-1 input:focus, .new-event-step-1 textarea:focus{
+  outline: none;
+  background-color: #F2EDC6;
 }
 
 .step-num{
@@ -38,25 +52,125 @@
   text-align: center;
   vertical-align: middle;
 }
-.new-event-step-1 input, .new-event-step-1 select{
-  margin-top: 10px;
-  margin-bottom: 20px;
+.new-event-step-1 input[type="text"], .new-event-step-1 select{
+  margin-bottom: 40px;
+  font-size: 16px;
 }
-.new-event-step-2 button{
-  margin-top: 10px;
-  margin-bottom: 20px;
+
+#location-input{
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 50px;
 }
-.new-event-step-3 input{
-  margin-top: 10px;
-  margin-bottom: 20px;
+
+.new-event-step-1 #location-input input{
+  margin: 10px 0px;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid #000000;
+  font-size: 16px;
+  font-family: inherit;
+  &:focus{
+    border-bottom: 3px double black;
+  }
+}
+
+.new-event-step-1 input[type="date"]{
+  width: 160px;
+  padding: 0px 5px 5px 10px;;
+  font-size: 16px
+}
+.new-event-step-1 input[type="number"]{
+  width: 160px;
+  padding: 0px 5px 5px 10px;;
+  font-size: 16px
+}
+
+.new-event-step-3 input[type="submit"]{
+  margin-top: 20px;
+  margin-bottom: 100px;
+  width: 250px;
+  font-size: 25px;
+  height: 40px;
+  color: gray;
+  background-color: #C63D0F;;
+  color: white;
+  cursor: pointer;
+  border-radius: 6px;
+  box-shadow:inset 0px 1px 0px 0px #dcecfb;
+  text-shadow:0px 1px 0px #528ecc;
+  letter-spacing: 150%;
+  &:hover{
+    cursor: pointer;
+    opacity: 0.6;
+  }
+  &:focus{
+    outline: none;
+  }
 }
 .step-header{
   display: flex;
   flex-direction: row;
   align-items: center;
+  border-bottom: 3px dotted black;
+  padding-bottom: 1px;
+  margin-bottom: 5px;
 }
 
 .step-name{
   margin-left: 10px;
   font-size: 25px;
+}
+
+.new-event-form .left-col{
+  padding: 50px;
+}
+.new-event-form .right-col{
+  padding: 50px;
+}
+
+.new-event-form label{
+  margin-bottom: 10px;
+  font-weight: 800;
+  font-size: 18px;
+  margin-top: 10px;
+}
+.new-event-form select{
+  width: 300px;
+}
+
+.new-event-form textarea{
+  font-size: 13px;
+  margin-bottom: 50px;
+  font-family: inherit;
+  resize: none;
+}
+
+.required-field{
+  color: #C63D0F;
+}
+
+.new-event-form .errors{
+  color: #C63D0F;
+}
+
+.upload-form{
+  width: 75%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin-top: 20px;
+}
+.new-event-step-2 button{
+  margin-top: 10px;
+  margin-bottom: 20px;
+  background-color: transparent;
+  border: none;
+  font-size: 25px;
+  border: 4px dashed #0093D7;
+  padding: 10px;
+  &:hover{
+    cursor: pointer;
+    background: #efefef;
+  }
 }

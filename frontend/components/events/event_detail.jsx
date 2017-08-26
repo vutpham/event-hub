@@ -1,5 +1,5 @@
 import React from 'react';
-import { Redirect } from "react-router";
+import { Redirect, withRouter } from "react-router";
 
 class EventDetail extends React.Component{
   constructor(props){
@@ -7,12 +7,14 @@ class EventDetail extends React.Component{
   }
 
   componentWillMount(){
-    this.props.fetchEventDetails(this.props.match.params.eventId);
+    this.props.fetchEventDetails(this.props.match.params.eventId)
+      .fail(() => this.props.history.push("/"));
   }
 
   componentWillReceiveProps(nextProps) {
     if (this.props.match.params.eventId !== nextProps.match.params.eventId) {
-      this.props.fetchEventDetails(nextProps.match.params.eventId);
+      this.props.fetchEventDetails(nextProps.match.params.eventId)
+        .fail(() => this.props.history.push("/"));
     }
   }
 
@@ -64,4 +66,4 @@ class EventDetail extends React.Component{
   }
 }
 
-export default EventDetail;
+export default withRouter(EventDetail);

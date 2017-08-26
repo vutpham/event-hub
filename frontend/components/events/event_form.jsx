@@ -1,5 +1,6 @@
 import React from 'react';
 import UploadButton from './upload_button/upload_button';
+import Scroll from 'react-scroll';
 
 class EventForm extends React.Component{
   constructor(){
@@ -20,6 +21,10 @@ class EventForm extends React.Component{
     this.renderErrors = this.renderErrors.bind(this);
   }
 
+  componentWillMount() {
+    this.props.clearErrors();
+  }
+
   handleChange(key){
     return (e) => {
       this.setState({[key]: e.target.value});
@@ -34,7 +39,11 @@ class EventForm extends React.Component{
     console.log(url);
     this.state.price = parseInt(this.state.price);
     this.state["image_url"] = url;
-    this.props.createEvent(this.state);
+    this.props.createEvent(this.state)
+      .fail(() => {
+        let scroll = Scroll.animateScroll;
+        scroll.scrollToTop();
+      });
   }
 
   renderErrors() {
@@ -56,92 +65,100 @@ class EventForm extends React.Component{
       <div className="new-event-form-container">
         <form className="new-event-form">
           <h1>Create An Event</h1>
-          <div className="new-event-step-1">
+          {this.renderErrors()}
+
+            <div className='new-event-step-1'>
               <header className="step-header">
                 <span className='step-num'>1</span>
                 <span className="step-name">Event Details</span>
               </header>
-              Title
+
+              <label>Title <span className="required-field">*</span></label>
               <input
+                className="event-title-input"
                 type="text"
                 value={title}
-                placeholder="Short, memorable name"
+                placeholder="Event Name"
                 onChange={this.handleChange("title")}
               />
 
-              Location
-              <input
-                type="text"
-                value={venue}
-                placeholder="Venue"
-                onChange={this.handleChange("venue")}
-              />
+            <label>Location </label>
+              <div id='location-input'>
+                <input
+                  type="text"
+                  value={venue}
+                  placeholder="Venue"
+                  onChange={this.handleChange("venue")}
+                />
 
-              <input
-                type="text"
-                value={street_address}
-                placeholder="Street Address"
-                onChange={this.handleChange("street_address")}
-              />
+                <input
+                  type="text"
+                  value={street_address}
+                  placeholder="Street Address"
+                  onChange={this.handleChange("street_address")}
+                />
 
-              <input
-                type="text"
-                value={city_state_zip}
-                placeholder="City, State, Zip"
-                onChange={this.handleChange("city_state_zip")}
-              />
+                <input
+                  type="text"
+                  value={city_state_zip}
+                  placeholder="City, State, Zip"
+                  onChange={this.handleChange("city_state_zip")}
+                />
+              </div>
 
-              Short Description:
-              <input
-                type="text"
+              <label>Short Description <span className="required-field">*</span> </label>
+              <textarea
                 value={short_description}
+                rows="5"
                 placeholder="One sentence overview of your event"
                 onChange={this.handleChange("short_description")}
               />
 
-              Full Description
+            <label>Full Description <span className="required-field">*</span></label>
               <textarea
                 value={full_description}
+                rows="15"
                 placeholder="Full Description"
                 onChange={this.handleChange("full_description")}
                 />
 
-              Date:
+              <label>Date <span className="required-field">*</span> </label>
               <input
                 type="date"
                 value={date}
                 onChange={this.handleChange("date")}
                 />
 
-              Ticket Price:
+              <label>Ticket Price ($)</label>
               <input
                 type="number"
                 value={price}
                 onChange={this.handleChange("price")}
                 />
 
-              // Event Type:
+              <label>Event Type <span className="required-field">*</span></label>
             <select>
               <option value="OIJF">IMPLEMENT THIS LATER</option>
             </select>
+
           </div>
 
-          <div className="new-event-step-2">
-            <header className="step-header">
-              <span className='step-num'>2</span>
-              <span className="step-name">Upload Image (Optional)</span>
-            </header>
-            <UploadButton />
-          </div>
+            <div className="new-event-step-2">
+              <header className="step-header">
+                <span className='step-num'>2</span>
+                <span className="step-name">Upload Image (Optional)</span>
+              </header>
+              <UploadButton />
+            </div>
 
-          <header className="step-header">
-            <span className='step-num'>3</span>
-            <span className="step-name">Make this Event Live!</span>
-          </header>
 
-          <div className="new-event-step-3">
-            <input type="submit" onClick={this.handleSubmit} value="Create Event!"></input>
-          </div>
+              <div className="new-event-step-3">
+                <header className="step-header">
+                  <span className='step-num'>3</span>
+                  <span className="step-name">Make this Event Live!</span>
+                </header>
+                <input type="submit" onClick={this.handleSubmit} value="Create Event!"></input>
+              </div>
 
         </form>
       </div>

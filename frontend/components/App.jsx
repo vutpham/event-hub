@@ -1,6 +1,6 @@
 import React from 'react';
 import { Route, Switch } from 'react-router';
-import { AuthRoute } from '../util/route_util';
+import { ProtectedRoute, AuthRoute } from '../util/route_util';
 import SessionFormContainer from './auth/auth_form_container';
 import GreetingContainer from './auth/greeting_container';
 import NavBarContainer from './nav/nav_bar_container';
@@ -15,12 +15,17 @@ const App = () => (
     <header>
       <NavBarContainer />
     </header>
+    <div id='main-content'>
     <Switch>
       <Route exact path="/" component={Home} />
-      <Route exact path="/events/:eventId" component={EventDetailContainer} />
-      <Route exact path="/new-event" component={EventFormContainer} />
+      <ProtectedRoute exact path="/events/:eventId" component={EventDetailContainer} />
+      <ProtectedRoute exact path="/new-event" component={EventFormContainer} />
     </Switch>
-    <Footer />
+    </div>
+
+    <footer id='main-footer-container'>
+      <Footer />
+    </footer>
   </div>
 );
 

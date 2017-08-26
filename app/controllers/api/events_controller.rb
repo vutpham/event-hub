@@ -20,7 +20,7 @@ class Api::EventsController < ApplicationController
       @host = @event.host
       render :show
     else
-      render json: @event.errors_full_messages, status: 400
+      render json: @event.errors.full_messages, status: 400
     end
   end
 

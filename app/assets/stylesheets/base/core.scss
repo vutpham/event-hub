@@ -1,14 +1,16 @@
-html {
-  height: 100%;
+body {
   box-sizing: border-box;
-  background-color: #EFF2F5;
+  background-color: $light-gray;
+  color: $gray;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 300;
 }
 
-body {
-  font-family: 'Roboto', sans-serif;
-  color: $gray;
-  font-weight: 300;
-  min-height: 100%;
+body, html {
+  height: 100%;
+  width: 100%;
+  margin: 0px;
+  padding: 0px;
 }
 
 #main-home-img {
