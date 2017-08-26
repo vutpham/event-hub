@@ -3,24 +3,53 @@
   display: flex;
   flex-direction: column;
   height: 800px;
+  margin: 0 auto;
+  max-width: 1250px;
 
   .search-box-row{
     display: flex;
     flex-direction: row;
-    margin: 0px 40px;
+    margin: 10px 40px;
 
     img{
       height: 200px;
       object-fit: cover;
+      opacity: .85;
+      transition: all .3s ease-in-out;
+
+      &:hover{
+        cursor: pointer;
+        opacity: 1;
+        transform: scale(1.04);
+      }
     }
 
     img.sb-r1-c1{
       width: 60%;
     }
-
     img.sb-r1-c2{
       width: 38%;
       margin-left: 2%;
     }
+    img.sb-r2-c1{
+      width: 32%;
+    }
+    img.sb-r2-c2{
+      width: 32%;
+      margin-left: 2%;
+    }
+    img.sb-r2-c3{
+      width: 32%;
+      margin-left: 2%;
+    }
+    img.sb-r3-c1{
+      width: 38%;
+    }
+    img.sb-r3-c2{
+      width: 60%;
+      margin-left: 2%;
+    }
+
+
   }
 }

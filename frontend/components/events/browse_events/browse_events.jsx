@@ -7,7 +7,7 @@ class BrowseEvents extends React.Component{
   }
 
   componentWillMount(){
-    if (this.props.events.length === 0) {
+    if(this.props.events.length === 0){
       this.props.fetchAllEvents(this.props.match.params.eventId);
     }
   }
@@ -19,8 +19,8 @@ class BrowseEvents extends React.Component{
   }
 
   render(){
-    const events = this.props.events.map((event)=> (
-      <BrowseEventsItem event={event} />
+    const events = this.props.events.map((event,i)=> (
+      <BrowseEventsItem event={event} key={`${event.name}-${event.id}-${i}`} />
   ));
     return(
       <div id="browse-events-container">
