@@ -17,6 +17,10 @@
   right: -7px !important;
 }
 
+.slick-next:after{
+  color: gray !important;
+}
+
 .slick-next:before, .slick-prev:before{
   font-size: 40px !important;
   color: gray !important;
@@ -50,6 +54,11 @@
     height: 200px;
     object-fit: cover;
     width: 100%;
+    opacity: .9;
+
+    &:hover{
+      opacity: 1;
+    }
   }
 
   .price-tag-slider{

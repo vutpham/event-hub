@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { withRouter } from 'react-router-dom';
 
@@ -21,46 +20,46 @@ class CategorySearch extends React.Component{
     return(
       <div id="home-category-search-box">
         <div className="search-box-row">
-          <img
+          <div
             className="sb-r1-c1"
-            src="http://res.cloudinary.com/events4u/image/upload/v1495247660/home-concert.jpg"
             onClick={this.navigateToCategory("Music")}
             >
-          </img>
-          <img
+              <span className="pic-text">Music</span>
+          </div>
+          <div
             className="sb-r1-c2"
-            src="http://res.cloudinary.com/events4u/image/upload/v1495246509/Home-cooking-img.jpg"
             onClick={this.navigateToCategory("Food & Drink")}>
-          </img>
+              <span className="pic-text">Food & Drink</span>
+          </div>
         </div>
 
         <div className="search-box-row">
-          <img className="sb-r2-c1"
-            src="http://res.cloudinary.com/events4u/image/upload/v1495254592/class.jpg"
-            onClick={this.navigateToCategory("Food & Drink")}>
-          </img>
-          <img
+          <div className="sb-r2-c1"
+            onClick={this.navigateToCategory("Classes")}>
+            <span className="pic-text">Classes</span>
+          </div>
+          <div
             className="sb-r2-c2"
-            src="http://res.cloudinary.com/events4u/image/upload/v1495252687/Networking-Stock_wrirqo.jpg"
             onClick={this.navigateToCategory("Business")}>
-          </img>
-          <img
+            <span className="pic-text">Business</span>
+          </div>
+          <div
             className="sb-r2-c3"
-            src="http://res.cloudinary.com/events4u/image/upload/v1495253058/party-07_ka52na.jpg"
             onClick={this.navigateToCategory("Parties")}>
-          </img>
+            <span className="pic-text">Parties</span>
+          </div>
         </div>
 
         <div className="search-box-row">
-          <img
+          <div
             className="sb-r3-c1"
-            src="http://res.cloudinary.com/events4u/image/upload/v1495254170/artist.jpg"
             onClick={this.navigateToCategory("Arts")}>
-          </img>
-          <img className="sb-r3-c2"
-            src="http://res.cloudinary.com/events4u/image/upload/v1495253657/stadium.jpg"
+            <span className="pic-text">Arts</span>
+          </div>
+          <div className="sb-r3-c2"
             onClick={this.navigateToCategory("Sports")}>
-          </img>
+            <span className="pic-text">Sports</span>
+          </div>
         </div>
       </div>
     );
