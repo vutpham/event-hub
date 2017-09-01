@@ -5,7 +5,7 @@
 #  id               :integer          not null, primary key
 #  title            :string           not null
 #  full_description :text             not null
-#  image_url        :string           default("default_image.jpg"), not null
+#  image_url        :string           default("http://rocciaevents.com/wp-content/uploads/2014/09/event1.gif"), not null
 #  date             :date             not null
 #  host_id          :integer          not null
 #  total_quantity   :integer

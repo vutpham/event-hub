@@ -21,6 +21,11 @@ class User < ApplicationRecord
   has_many :events,
     class_name: "Event", foreign_key: :host_id
 
+  has_many :bookmarks
+  has_many :bookmarked_events,
+    through: :bookmarks,
+    source: :event
+
   def self.find_by_credentials(username, password)
     @user = User.find_by(username: username)
     return nil unless @user

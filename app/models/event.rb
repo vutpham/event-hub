@@ -5,7 +5,7 @@
 #  id               :integer          not null, primary key
 #  title            :string           not null
 #  full_description :text             not null
-#  image_url        :string           default("default_image.jpg"), not null
+#  image_url        :string           default("http://rocciaevents.com/wp-content/uploads/2014/09/event1.gif"), not null
 #  date             :date             not null
 #  host_id          :integer          not null
 #  total_quantity   :integer
@@ -24,6 +24,19 @@ class Event < ApplicationRecord
 
   belongs_to :host,
     foreign_key: :host_id, class_name: "User"
+
+  has_many :event_categories
+
+  has_many :categories,
+    through: :event_categories,
+    source: :category
+
+  has_many :bookmarks
+  has_many :bookmarked_users,
+    through: :bookmarks,
+    source: :user
+
+  after_initialize :default_image
 
   def default_image
     if self.image_url == ""
