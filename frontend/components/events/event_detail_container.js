@@ -1,4 +1,6 @@
-import { fetchEventDetails } from '../../actions/event_actions';
+import { fetchEventDetails,
+         bookmarkEvent,
+         unBookmarkEvent } from '../../actions/event_actions';
 import EventDetail from './event_detail';
 import { connect } from 'react-redux';
 
@@ -7,7 +9,9 @@ const mapStateToProps = (state) => ({
 });
 
 const mapDispatchToProps = (dispatch) => ({
-  fetchEventDetails: (id) => dispatch(fetchEventDetails(id))
+  fetchEventDetails: (id) => dispatch(fetchEventDetails(id)),
+  bookmarkEvent: (eventId) => dispatch(bookmarkEvent(eventId)),
+  unBookmarkEvent: (eventId) => dispatch(unBookmarkEvent(eventId))
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(EventDetail);

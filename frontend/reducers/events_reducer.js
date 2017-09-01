@@ -10,7 +10,8 @@ const EventsReducer = (state = {}, action) => {
     const newEvent = {id: action.event.id,
                       date: action.event.date,
                       venue: action.event.venue,
-                      image_url: action.event.image_url};
+                      image_url: action.event.image_url,
+                      bookmarked: action.event.bookmarked};
     newState[action.event.id] = newEvent;
     return newState;
     case RECEIVE_EVENTS:
