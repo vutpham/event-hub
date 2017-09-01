@@ -1,12 +1,4 @@
 Rails.application.routes.draw do
-  namespace :api do
-    get 'bookmarks/create'
-  end
-
-  namespace :api do
-    get 'bookmarks/destroy'
-  end
-
   root to: "static_pages#root"
 
   namespace :api, defaults: { format: :json } do
@@ -14,6 +6,7 @@ Rails.application.routes.draw do
     resource :session, only: [:create, :destroy]
     resources :events, only: [:create, :destroy, :update, :index, :show]
     resources :categories, only: [:index]
+    resources :bookmarks, only: [:create, :destroy]
   end
 
   get 'api/events-filtered' => 'api/events#filter'
