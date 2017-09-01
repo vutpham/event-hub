@@ -1,9 +1,11 @@
 Rails.application.routes.draw do
   namespace :api do
-    get 'categories/index'
+    get 'bookmarks/create'
   end
 
-  get 'categories/index'
+  namespace :api do
+    get 'bookmarks/destroy'
+  end
 
   root to: "static_pages#root"
 
