@@ -15,7 +15,6 @@ class EventSlider extends React.Component {
   render() {
     const settings = {
       infinite: true,
-      speed: 500,
       slidesToShow: 3,
       slidesToScroll: 1,
       swipeToSlide: true,
@@ -26,9 +25,12 @@ class EventSlider extends React.Component {
       arrows: true
     };
 
-    let events = this.props.events.map((event)=>
-      <div key={`event-slider${event.id}`}>
-        <EventItem event={event}/>
+    let events = this.props.events.map((event, i)=>
+      <div key={`event-slider${event.id}${i}${event.bookmarked}`}>
+        <EventItem
+          event={event}
+          bookmarkEvent={this.props.bookmarkEvent}
+          unBookmarkEvent={this.props.unBookmarkEvent}/>
       </div>);
     events = (events.length===0) ? <div></div> : events;
     return (

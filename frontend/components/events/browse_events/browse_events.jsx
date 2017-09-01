@@ -20,7 +20,9 @@ class BrowseEvents extends React.Component{
 
   render(){
     const events = this.props.events.map((event,i)=> (
-      <BrowseEventsItem event={event} key={`${event.name}-${event.id}-${i}`} />
+      <BrowseEventsItem event={event} key={`${event.name}-${event.id}-${i}`}
+        bookmarkEvent={this.props.bookmarkEvent}
+        unBookmarkEvent={this.props.unBookmarkEvent}/>
   ));
     return(
       <div id="browse-events-container">

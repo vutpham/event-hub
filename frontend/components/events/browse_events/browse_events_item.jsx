@@ -5,6 +5,17 @@ class BrowseEventsItem extends React.Component{
 
   constructor(props){
     super(props);
+    this.toggleBookmark = this.toggleBookmark.bind(this);
+  }
+
+  toggleBookmark(){
+    let {id, bookmarked} = this.props.event;
+    if(bookmarked){
+      this.props.unBookmarkEvent(id);
+    }
+    else{
+      this.props.bookmarkEvent(id);
+    }
   }
 
   render(){
@@ -12,9 +23,9 @@ class BrowseEventsItem extends React.Component{
     price = (price === 0 ? "Free" : `$${price}`);
     let bookmark;
     if (bookmarked){
-      bookmark = <i className="fa fa-bookmark fa-lg" aria-hidden="true"></i>;
+      bookmark = <i className="fa fa-bookmark fa-lg" onClick={this.toggleBookmark} aria-hidden="true"></i>;
     }
-    else bookmark = <i className="fa fa-bookmark-o fa-lg" aria-hidden="true"></i>;
+    else bookmark = <i className="fa fa-bookmark-o fa-lg" onClick={this.toggleBookmark} aria-hidden="true"></i>;
     return(
       <div className="browse-event-item">
         <div className="price-tag">{price}</div>

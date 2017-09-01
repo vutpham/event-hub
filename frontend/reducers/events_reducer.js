@@ -1,5 +1,7 @@
-import { RECEIVE_EVENT, RECEIVE_EVENTS, DESTROY_EVENT }
+import { RECEIVE_EVENT, RECEIVE_EVENTS, DESTROY_EVENT,
+         ADD_BOOKMARK_TO_EVENT, REMOVE_BOOKMARK_FROM_EVENT }
        from '../actions/event_actions';
+import merge from 'lodash/merge';
 
 const EventsReducer = (state = {}, action) => {
   Object.freeze(state);
@@ -20,6 +22,14 @@ const EventsReducer = (state = {}, action) => {
       newState = Object.assign({}, state);
       delete newState[action.event.id];
       return newState;
+    case ADD_BOOKMARK_TO_EVENT:
+      let bookmarkedEvent = state[action.id];
+      bookmarkedEvent["bookmarked"] = true;
+      return merge({}, state, {[action.id]: bookmarkedEvent});
+    case REMOVE_BOOKMARK_FROM_EVENT:
+      let unbookmarkedEvent = state[action.id];
+      unbookmarkedEvent["bookmarked"] = false;
+      return merge({}, state, {eventId: unbookmarkedEvent});
     default:
       return state;
   }
