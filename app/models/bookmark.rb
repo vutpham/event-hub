@@ -10,7 +10,7 @@
 #
 
 class Bookmark < ApplicationRecord
-  validate :user, :event, presence: true
+  validates :user, :event, presence: true
   belongs_to :user
   belongs_to :event
 end

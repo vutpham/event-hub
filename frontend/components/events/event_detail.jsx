@@ -20,12 +20,18 @@ class EventDetail extends React.Component{
 
   render(){
     let {title, full_description, image_url, host,
-           price, date, venue, street_address, city_state_zip} = this.props.eventDetails;
+           price, date, venue, street_address, city_state_zip, bookmarked} = this.props.eventDetails;
     price = (price === 0 ? "Free" : `$${price}`);
+    let bookmark;
+    if (bookmarked) {
+      bookmark = <i className="fa fa-bookmark fa-lg" aria-hidden="true"></i>;
+    } else {
+      bookmark = <i className="fa fa-bookmark-o fa-lg" aria-hidden="true"></i>;
+    }
     return(
       <div id="event-details">
         <div id="event-details-left-col">
-          <h1>{title} &nbsp; <i className="fa fa-bookmark-o" aria-hidden="true"></i></h1>
+          <h1>{title} &nbsp; {bookmark}</h1>
           <h3>Hosted By: {host}</h3>
           <p>Details: {full_description}</p>
         </div>
