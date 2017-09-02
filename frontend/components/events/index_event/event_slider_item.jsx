@@ -10,6 +10,9 @@ class EventSliderItem extends React.Component{
 
   toggleBookmark(){
     let {id, bookmarked} = this.props.event;
+    console.log(this.props.event);
+    console.log(id);
+    console.log(bookmarked);
     if(bookmarked){
       this.props.unBookmarkEvent(id);
     }

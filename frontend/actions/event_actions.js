@@ -75,14 +75,25 @@ export const fetchFilteredEvents = (filters) => dispatch => {
     .then((events) => dispatch(receiveEvents(events)));
 };
 
-export const bookmarkEvent = eventId => dispatch => {(
-  BookmarkAPIUtil.createBookmark(eventId)
-    .then((events) => dispatch(addBookmarkToEvent(eventId)))
-  );
+
+export const bookmarkEvent = eventId => dispatch => {
+  return BookmarkAPIUtil.createBookmark(eventId)
+    .then((event) => {
+      dispatch(addBookmarkToEvent(eventId));
+    });
 };
 
-export const unbookmarkEvent = eventId => dispatch => {(
-  BookmarkAPIUtil.deleteBookmark(eventId)
-    .then((events) => dispatch(removeBookmarkFromEvent(eventId)))
-  );
+export const unBookmarkEvent = eventId => dispatch => {
+  return BookmarkAPIUtil.deleteBookmark(eventId)
+    .then((event) => dispatch(removeBookmarkFromEvent(eventId)));
+};
+
+export const fetchHostedEvents = () => dispatch => {
+  return APIUtil.getHostedEvents()
+    .then((events) => dispatch(receiveEvents(events)));
+};
+
+export const fetchBookmarkedEvents = () => dispatch => {
+  return APIUtil.getBookmarkedEvents()
+    .then((events) => dispatch(receiveEvents(events)));
 };

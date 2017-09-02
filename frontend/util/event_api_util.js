@@ -44,3 +44,17 @@ export const getFilteredEvents = (filters) => {
     data: filters
   });
 };
+
+export const getBookmarkedEvents = () => {
+  return $.ajax({
+    method: 'get',
+    url: '/api/events-bookmarked',
+  });
+};
+
+export const getHostedEvents = () => {
+  return $.ajax({
+    method: 'get',
+    url: '/api/events-hosted',
+  });
+};

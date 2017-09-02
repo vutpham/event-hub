@@ -5,12 +5,13 @@ import EventsReducer from './events_reducer';
 import EventDetailsReducer from './event_details_reducer';
 import CategoryReducer from './category_reducer';
 
+
 const rootReducer = combineReducers({
   currentUser: UsersReducer,
   errors: ErrorsReducer,
   events: EventsReducer,
   eventDetails: EventDetailsReducer,
-  categories: CategoryReducer
+  categories: CategoryReducer,
 });
 
 export default rootReducer;
