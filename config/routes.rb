@@ -10,4 +10,6 @@ Rails.application.routes.draw do
   end
 
   get 'api/events-filtered' => 'api/events#filter'
+  get 'api/events-bookmarked' => 'api/events#bookmarked_events'
+  get 'api/events-hosted' => 'api/events#hosted_events'
 end

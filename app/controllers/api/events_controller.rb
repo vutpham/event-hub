@@ -69,7 +69,19 @@ class Api::EventsController < ApplicationController
     else
       @bookmarked_events = []
     end
-    
+
+    render :index
+  end
+
+  def hosted_events
+    @events = current_user.events
+    @bookmarked_events = current_user.bookmarked_events
+    render :index
+  end
+
+  def bookmarked_events
+    @events = current_user.bookmarked_events
+    @bookmarked_events = @events
     render :index
   end
 

@@ -10,6 +10,7 @@ import EventDetailContainer from './events/event_detail_container';
 import EventFormContainer from './events/event_form_container';
 import BrowseEventsContainer
        from './events/browse_events/browse_events_container';
+import UserEventsContainer from './events/user_events/user_events_container';
 
 
 const App = () => (
@@ -23,6 +24,7 @@ const App = () => (
       <ProtectedRoute exact path="/events/:eventId" component={EventDetailContainer} />
       <Route exact path="/new-event" component={EventFormContainer} />
       <Route exact path="/browse-events" component={BrowseEventsContainer} />
+      <Route path="/user-events" component={ UserEventsContainer } />
     </Switch>
     </div>
 
