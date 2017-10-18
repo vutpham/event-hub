@@ -42,7 +42,7 @@ class NavBar extends React.Component{
           Log Out
           </button>
         </li>
-        <li><Link to="/browse-events">Browse Events</Link></li>
+        <li><Link to="/browse-events/all">Browse Events</Link></li>
         <div id="create"><Link to="/new-event">Create Event</Link></div>
       </ul>
     );

@@ -24,7 +24,7 @@ const App = () => (
       <Route exact path="/" component={Home} />
       <ProtectedRoute exact path="/events/:eventId" component={EventDetailContainer} />
       <Route exact path="/new-event" component={EventFormContainer} />
-      <Route exact path="/browse-events" component={BrowseEventsContainer} />
+      <Route path="/browse-events/:category" component={ BrowseEventsContainer } />
       <Route path="/user-events" component={ UserEventsContainer } />
     </Switch>
     </div>

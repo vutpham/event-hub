@@ -11,7 +11,7 @@ class CategorySearch extends React.Component{
     return (e) => {
       this.props.fetchFilteredEvents({category_names: [key]})
         .then( () => {
-          this.props.history.push(`browse-events`);
+          this.props.history.push(`browse-events/${key}`);
         });
     };
   }

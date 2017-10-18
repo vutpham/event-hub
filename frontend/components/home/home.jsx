@@ -17,7 +17,7 @@ class Home extends React.Component {
         </h1>
         <EventSliderContainer />
         <div className="see-more-button-container">
-          <Link to="/browse-events" className='see-more-button'>
+          <Link to="/browse-events/all" className='see-more-button'>
             See More Events
           </Link>
         </div>
