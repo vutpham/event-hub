@@ -1,5 +1,6 @@
 import * as APIUtil from '../util/event_api_util';
 import * as BookmarkAPIUtil from '../util/bookmark_api_util';
+import * as TicketAPIUtil from '../util/ticket_api_util';
 import { receiveErrors } from './error_actions';
 
 export const RECEIVE_EVENT = "RECEIVE_EVENT";
@@ -95,5 +96,16 @@ export const fetchHostedEvents = () => dispatch => {
 
 export const fetchBookmarkedEvents = () => dispatch => {
   return APIUtil.getBookmarkedEvents()
+    .then((events) => dispatch(receiveEvents(events)));
+};
+
+
+export const buyTicket = (eventId) => dispatch => {
+  return TicketAPIUtil.createTicket(eventId);
+  //possibly do something to the state?
+};
+
+export const fetchAllTickets = () => dispatch => {
+  return APIUtil.getPurchasedEvents()
     .then((events) => dispatch(receiveEvents(events)));
 };

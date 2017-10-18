@@ -34,7 +34,7 @@ class UserEvents extends React.Component{
       this.props.fetchBookmarkedEvents();
     }
     else if(path === '/user-events/tickets'){
-      return; //replace with fetchTickets
+      this.props.fetchAllTickets();
     }
     else if(path === '/user-events/hosted-events'){
       this.props.fetchHostedEvents();
