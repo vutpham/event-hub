@@ -22,8 +22,17 @@ class User < ApplicationRecord
     class_name: "Event", foreign_key: :host_id
 
   has_many :bookmarks
+
   has_many :bookmarked_events,
     through: :bookmarks,
+    source: :event
+
+  has_many :tickets,
+    foreign_key: :user_id,
+    class_name: "Ticket"
+    
+  has_many :purchased_events,
+    through: :tickets,
     source: :event
 
   def self.find_by_credentials(username, password)

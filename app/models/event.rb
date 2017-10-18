@@ -36,6 +36,12 @@ class Event < ApplicationRecord
     through: :bookmarks,
     source: :user
 
+  has_many :tickets
+
+  has_many :attendants,
+    through: :tickets,
+    source: :owner
+
   after_initialize :default_image
 
   def default_image
