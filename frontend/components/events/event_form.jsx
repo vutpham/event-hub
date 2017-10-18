@@ -36,7 +36,6 @@ class EventForm extends React.Component{
       } else{
         this.event_categories[category] = true;
       }
-      console.log(this.event_categories);
     };
   }
 

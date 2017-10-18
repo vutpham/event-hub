@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { withRouter } from 'react-router-dom';
 
@@ -7,10 +6,10 @@ class UserEvents extends React.Component{
     super(props);
     this.dynamicSelector = this.dynamicSelector.bind(this);
     this.goTo = this.goTo.bind(this);
+    this.fetchMatchingEvents = this.fetchMatchingEvents.bind(this);
   }
 
   dynamicSelector(int){
-    console.log(this.props.location.pathname);
     if(this.props.location.pathname === '/user-events/bookmarks' && int === 1){
       return " selected";
     }
@@ -25,8 +24,31 @@ class UserEvents extends React.Component{
     }
   }
 
+  componentDidMount(){
+    this.fetchMatchingEvents(this.props.location.pathname);
+  }
+
+  fetchMatchingEvents(path){
+    if(path === '/user-events/bookmarks'){
+      this.props.fetchBookmarkedEvents();
+    }
+    else if(path === '/user-events/tickets'){
+      return; //replace with fetchTickets
+    }
+    else if(path === '/user-events/hosted-events'){
+      this.props.fetchHostedEvents();
+    }
+    else{
+      this.props.history.push('/user-events/bookmarks');
+      this.props.fetchBookmarkedEvents();
+    }
+  }
+
   goTo(path){
-    return () => this.props.history.push(path);
+    return () => {
+      this.props.history.push(path);
+      this.fetchMatchingEvents(path);
+    };
   }
 
 

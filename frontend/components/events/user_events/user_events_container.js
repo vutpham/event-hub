@@ -1,6 +1,7 @@
 import { connect } from 'react-redux';
 import UserEvents from './user_events';
-import { getBookmarkedEvents, getHostedEvents } from '../../../actions/event_actions';
+import { fetchBookmarkedEvents,
+         fetchHostedEvents } from '../../../actions/event_actions';
 import { allEvents } from '../../../reducers/selectors';
 
 const mapStateToProps = (state) => ({
@@ -9,8 +10,8 @@ const mapStateToProps = (state) => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-  getBookmarkedEvents: () => dispatch(getBookmarkedEvents()),
-  getHostedEvents: () => dispatch(getHostedEvents())
+  fetchBookmarkedEvents: () => dispatch(fetchBookmarkedEvents()),
+  fetchHostedEvents: () => dispatch(fetchHostedEvents())
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(UserEvents);
