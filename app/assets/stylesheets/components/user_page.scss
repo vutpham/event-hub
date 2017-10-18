@@ -1,0 +1,31 @@
+#account-page{
+  display: flex;
+  flex-direction: column;
+
+  h1{
+    text-align: center;
+    margin: 50px;
+    font-size: 30px;
+  }
+
+  .account-page-header{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+
+    .selected{
+      font-weight: bold;
+      background-color: red;
+    }
+    span{
+      margin: 40px;
+      padding: 20px;
+      font-size: 20px;
+      &:hover{
+        cursor: pointer;
+      }
+    }
+
+  }
+
+}

@@ -18,13 +18,13 @@ class NavBar extends React.Component{
             </div>
         <ul className="dropdown-content">
             <li>
-              Saved Events
+              <Link to="/user-events/bookmarks">Saved Events</Link>
             </li>
             <li>
-              Tickets
+              <Link to="/user-events/tickets">Tickets</Link>
             </li>
             <li>
-              Hosted Events
+              <Link to="/user-events/hosted-events">Hosted Events</Link>
             </li>
             <li>
               <button
