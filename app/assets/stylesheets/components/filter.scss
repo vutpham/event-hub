@@ -1,9 +1,26 @@
+.filters{
+  padding: 10px;
+  margin: 20px 0px;
+  border: 1px solid black;
+  h2{
+    font-size: 20px;
+    text-decoration: underline;
+    margin-bottom: 10px;
+  }
+
+}
+
 .categories-filter-list{
+  li{
+    margin: 5px 0px;
+  }
   li:hover{
     cursor: pointer;
+    background-color: #efefef;
   }
   .selected{
     font-weight: bolder;
-    font-size: 20px;
+    margin-left: 5px;
+    color: #C63D0F;
   }
 }

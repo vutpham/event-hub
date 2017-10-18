@@ -30,7 +30,7 @@ class Filter extends React.Component{
     else if(this.props.location.pathname === '/browse-events/Music' && int === 4){
       return " selected";
     }
-    else if(this.props.location.pathname === '/browse-events/Food%20&%20Drink' && int === 5){
+    else if(this.props.location.pathname === '/browse-events/Food & Drink' && int === 5){
       return " selected";
     }
     else if(this.props.location.pathname === '/browse-events/Parties' && int === 6){
