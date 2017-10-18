@@ -1,5 +1,6 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
+import MyEvents from './my_events';
 
 class UserEvents extends React.Component{
   constructor(props){
@@ -52,7 +53,6 @@ class UserEvents extends React.Component{
   }
 
 
-
   render(){
     return(
       <div id="account-page">
@@ -86,6 +86,10 @@ class UserEvents extends React.Component{
           </nav>
         </header>
         <div className="account-page-display">
+          <MyEvents
+            events={this.props.events}
+            bookmarkEvent={this.props.bookmarkEvent}
+            unBookmarkEvent={this.props.unBookmarkEvent}/>
         </div>
       </div>
     );
