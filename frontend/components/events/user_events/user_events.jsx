@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { withRouter } from 'react-router-dom';
 import MyEvents from './my_events';
@@ -27,6 +28,12 @@ class UserEvents extends React.Component{
 
   componentDidMount(){
     this.fetchMatchingEvents(this.props.location.pathname);
+  }
+
+  componentWillReceiveProps(nextProps) {
+    if (this.props.location.pathname !== nextProps.location.pathname) {
+      this.fetchMatchingEvents(nextProps.location.pathname);
+    }
   }
 
   fetchMatchingEvents(path){

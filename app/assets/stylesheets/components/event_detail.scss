@@ -19,32 +19,6 @@
 
 #event-details-left-col{
   margin-right: 50px;
-
-  h1{
-    font-size: 40px;
-    margin-bottom: 30px;
-    padding-bottom: 30px;
-    font-weight: 700;
-    border-bottom: 1px solid black;
-  }
-
-  h2{
-    font-size: 24px;
-    border-bottom: 1px solid black;
-    padding-bottom: 30px;
-    margin-bottom: 30px;
-  }
-
-  h3{
-      font-size: 18px;
-  }
-
-  p{
-    margin: 30px 0px;
-    font-size: 18px;
-    line-height: 150%;
-  }
-
 }
 
 #event-details-right-col{
@@ -52,17 +26,43 @@
 }
 
 
-.event-details{
-  display: flex;
-  justify-content: flex-start;
-
-  .display-attr{
-    width: 80%;
-  }
-
+#event-details-left-col h1{
+  font-size: 40px;
+  margin-bottom: 30px;
+  padding-bottom: 30px;
+  font-weight: 700;
+  border-bottom: 1px solid black;
 }
 
 
+#event-details-left-col h2{
+  font-size: 24px;
+  border-bottom: 1px solid black;
+  padding-bottom: 30px;
+  margin-bottom: 30px;
+}
+
+#event-details-left-col h3{
+    font-size: 18px;
+}
+
+#event-details-left-col p{
+  margin: 30px 0px;
+  font-size: 18px;
+  line-height: 150%;
+}
+
+.event-details{
+  display: flex;
+  justify-content: flex-start;
+}
+
+.events-details .display-attr{
+  width: 20%;
+}
+.events-details .display-attr{
+  width: 80%;
+}
 
 .event-info{
   display: flex;
@@ -80,32 +80,25 @@
 }
 
 .buy-tickets{
-  margin-left: 20px;
-  width: 60%;
-  padding: 10px 20px;
-  background-color: $green;
+  padding: 5px;
+  width: 100%;
+  background-color: #99CCCC;
   color: white;
-  text-transform: uppercase;
+  font-weight: bold;
   cursor: pointer;
-  font-size: 0.85em;
-  border: 0px;
-  border-radius: 3px;
-  letter-spacing: .5px;
-  transition: all 0.3s;
+  border-radius: 6px;
+  box-shadow:inset 0px 1px 0px 0px #dcecfb;
+  text-shadow:0px 1px 0px #528ecc;
+  letter-spacing: 150%;
+}
 
-  &:focus{
-    outline: none;
-  }
+.buy-tickets:focus{
+  outline: none;
+}
 
-  &:active{
-    position:relative;
-    top:1px;
-  }
-
-  &:hover {
-    background-color: $nasty-green;
-  }
-
+.buy-tickets:active{
+  position:relative;
+  top:1px;
 }
 
 .event-more-info{
@@ -122,13 +115,10 @@
   width: 60%;
 }
 
-.fa-bookmark-o .fa-bookmark{
-  color: $blue;
-  transition: all 0.2s;
+.fa-bookmark-o{
+  color: #C63D0F;
+}
 
-  &:hover{
-    cursor: pointer;
-    color: $dark-blue;
-  }
-
+.fa-bookmark-o:hover, .fa-bookmark:hover{
+  cursor: pointer;
 }

@@ -1,0 +1,76 @@
+.ReactModal__Content--after-open{
+  padding: 0px !important;
+  background-color: #efefef !important;
+}
+
+.checkout-modal{
+  margin-left: 0px;
+  width: 60%;
+  padding: 5px;
+}
+
+.checkout-form{
+  width: 50vw;
+  min-width: 300px;
+
+  header.checkout-header{
+    padding: 20px;
+    text-align: center;
+    font-size: 25px;
+    width: 100%;
+    background-color: #efefef;
+  }
+
+  section.checkout-ticket{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 10px;
+    padding: 10px;
+    border: 1px solid black;
+    border-radius: 4px;
+    font-size: 18px;
+    align-items: center;
+    background-color: white;
+
+    span{
+      text-align: center;
+      margin: 10px;
+    }
+
+    select{
+      width: 80px;
+      max-width: 100%;
+      font-size: 18px;
+      box-sizing: border-box;
+      overflow: visible;
+    }
+  }
+
+  .checkout-footer{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    margin: 10px;
+    font-size: 16px;
+
+    .checkout-options{
+      img{
+        width: 35px;
+        height: 22px;
+        margin: 3px;
+      }
+    }
+
+    input[type="submit"]{
+      font-size: 14px;
+      background-color: #C63D0F;
+      color: white;
+      padding: 5px;
+      border: 1px solid #C63D0F;
+      border-radius: 3px;
+    }
+  }
+
+}

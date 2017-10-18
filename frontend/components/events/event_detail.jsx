@@ -1,5 +1,7 @@
+
 import React from 'react';
 import { Redirect, withRouter } from "react-router";
+import CheckoutModal from '../modal/checkout_modal';
 
 class EventDetail extends React.Component{
   constructor(props){
@@ -33,7 +35,7 @@ class EventDetail extends React.Component{
 
   render(){
     let {title, full_description, image_url, host,
-           price, date, venue, street_address, city_state_zip, bookmarked} = this.props.eventDetails;
+           price, date, venue, street_address, city_state_zip, bookmarked, id} = this.props.eventDetails;
     price = (price === 0 ? "Free" : `$${price}`);
     let bookmark;
     if (bookmarked){
@@ -54,7 +56,10 @@ class EventDetail extends React.Component{
 
               <div className="ticket-info">
                 <div>{price}</div>
-                <button className="buy-tickets">Tickets</button>
+                <CheckoutModal
+                  eventId={id}
+                  price={this.props.eventDetails.price}
+                    />
               </div>
 
               <div className="event-more-info">
