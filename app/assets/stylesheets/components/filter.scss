@@ -1,7 +1,6 @@
 .filters{
-  padding: 10px;
+  padding: 30px;
   margin: 20px 0px;
-  border: 1px solid black;
   h2{
     font-size: 20px;
     text-decoration: underline;
@@ -12,7 +11,8 @@
 
 .categories-filter-list{
   li{
-    margin: 5px 0px;
+    margin: 0px;
+    line-height: 30px;
   }
   li:hover{
     cursor: pointer;
@@ -20,7 +20,7 @@
   }
   .selected{
     font-weight: bolder;
-    margin-left: 5px;
+    padding-left: 5px;
     color: #C63D0F;
   }
 }

@@ -19,8 +19,9 @@ class BrowseEventsItem extends React.Component{
   }
 
   render(){
-    let {title, image_url, date, venue, price, id, bookmarked} = this.props.event;
+    let {title, image_url, date, venue, price, id, bookmarked, categories} = this.props.event;
     price = (price === 0 ? "Free" : `$${price}`);
+    categories = categories.join(" ∙ ");
     let dateString = new Date(date);
     dateString = dateString.toDateString();
     let bookmark;
@@ -41,7 +42,7 @@ class BrowseEventsItem extends React.Component{
               <div className='browse-event-title'>{title}</div>
               <div>{dateString} &#8226; {venue}</div>
               <div className='browse-event-footer'>
-                <div>category</div>
+                <div>{categories}</div>
                 <div>{bookmark}</div>
               </div>
         </span>

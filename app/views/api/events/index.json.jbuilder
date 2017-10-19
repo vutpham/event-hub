@@ -9,5 +9,6 @@
     json.set! :bookmarked, (@bookmarked_events.include?(event))
     json.set! :street_address, event.street_address
     json.set! :city_state_zip, event.city_state_zip
+    json.set! :categories, (event.categories.map{|category| category.name})
   end
 end

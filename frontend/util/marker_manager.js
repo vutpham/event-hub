@@ -33,7 +33,8 @@ class MarkerManager {
         eventId: event.id
       });
       let infowindow = new google.maps.InfoWindow({
-        content: event.title
+        content: event.title,
+        disableAutoPan: true
       });
       marker.addListener('mouseover', () => infowindow.open(this.map, marker));
       marker.addListener('mouseout', () => infowindow.close(this.map, marker));

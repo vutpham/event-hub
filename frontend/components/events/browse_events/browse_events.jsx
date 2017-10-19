@@ -23,7 +23,7 @@ class BrowseEvents extends React.Component{
     return(
       <div id="browse-events-container">
         <div id="filter-box-container">
-          <div>
+          <div className="google-map-box">
             <EventMap events={this.props.events}/>
           </div>
           <FilterContainer category={category}/>

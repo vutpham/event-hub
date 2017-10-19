@@ -22,10 +22,10 @@ const App = () => (
     <div id='main-content'>
     <Switch>
       <Route exact path="/" component={Home} />
-      <ProtectedRoute exact path="/events/:eventId" component={EventDetailContainer} />
+      <Route exact path="/events/:eventId" component={EventDetailContainer} />
       <Route exact path="/new-event" component={EventFormContainer} />
       <Route path="/browse-events/:category" component={ BrowseEventsContainer } />
-      <Route path="/user-events" component={ UserEventsContainer } />
+      <ProtectedRoute path="/user-events" component={ UserEventsContainer } />
     </Switch>
     </div>
 

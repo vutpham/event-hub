@@ -3,6 +3,7 @@ json.extract! event, :id, :title, :full_description,
                      :quantity_left, :price, :venue, :street_address,
                      :city_state_zip
 json.set! :host, host
+json.set! :categories, (event.categories.map{|category| category.name})
 
 if current_user
   bookmarked = current_user.bookmarked_events.include?(event)

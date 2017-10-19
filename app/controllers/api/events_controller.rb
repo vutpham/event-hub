@@ -1,6 +1,6 @@
 class Api::EventsController < ApplicationController
   def index
-    @events = Event.all
+    @events = Event.includes(:categories).all
 
     if current_user
       @bookmarked_events = current_user.bookmarked_events
@@ -61,7 +61,7 @@ class Api::EventsController < ApplicationController
     categories = Category.where(name: params[:category_names])
     @events = []
     categories.each do |category|
-      @events.concat(category.events)
+      @events.concat(category.events.includes(:categories))
     end
 
     if current_user
@@ -74,19 +74,19 @@ class Api::EventsController < ApplicationController
   end
 
   def hosted_events
-    @events = current_user.events
+    @events = current_user.events.includes(:categories)
     @bookmarked_events = current_user.bookmarked_events
     render :index
   end
 
   def bookmarked_events
-    @events = current_user.bookmarked_events
+    @events = current_user.bookmarked_events.includes(:categories)
     @bookmarked_events = @events
     render :index
   end
 
   def attended_events
-    @events = current_user.purchased_events
+    @events = current_user.purchased_events.includes(:categories)
     @bookmarked_events = current_user.bookmarked_events
     render :index
   end
