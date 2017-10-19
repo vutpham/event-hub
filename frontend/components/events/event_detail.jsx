@@ -36,6 +36,8 @@ class EventDetail extends React.Component{
     let {title, full_description, image_url, host,
            price, date, venue, street_address, city_state_zip, bookmarked, id} = this.props.eventDetails;
     price = (price === 0 ? "Free" : `$${price}`);
+    let dateString = new Date(date);
+    dateString = dateString.toDateString();
     let bookmark;
     if (bookmarked){
       bookmark = <i className="fa fa-bookmark fa-2x" onClick={this.toggleBookmark} aria-hidden="true"></i>;
@@ -80,7 +82,7 @@ class EventDetail extends React.Component{
             <div className='desc-right-col'>
               <span className="event-more-info">
                 <div className="event-more-info-attr">Date</div>
-                <div className="event-more-info-data">{date}</div>
+                <div className="event-more-info-data">{dateString}</div>
               </span>
               <div className="event-more-info">
                 <div className="event-more-info-attr">Location </div>
