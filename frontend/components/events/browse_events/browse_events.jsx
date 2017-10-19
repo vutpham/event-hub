@@ -2,6 +2,7 @@ import React from 'react';
 import BrowseEventsItem from './browse_events_item';
 import FilterContainer from './filter/filter_container';
 import { Route } from 'react-router';
+import EventMap from '../map/event_map';
 
 class BrowseEvents extends React.Component{
   constructor(props){
@@ -22,9 +23,8 @@ class BrowseEvents extends React.Component{
     return(
       <div id="browse-events-container">
         <div id="filter-box-container">
-          <h1>Filter</h1>
           <div>
-            GOOGLE MAP
+            <EventMap events={this.props.events}/>
           </div>
           <FilterContainer category={category}/>
         </div>
