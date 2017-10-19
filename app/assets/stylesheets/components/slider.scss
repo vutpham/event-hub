@@ -44,6 +44,7 @@
   flex-direction: column;
   position: relative;
   margin: 10px;
+  border-radius: 5px;
   // border: 1px solid #efefef;
   // background-color: #f2f2f2;
 
@@ -56,6 +57,7 @@
   .event-slider-item-img{
     height: 200px;
     object-fit: cover;
+    border-radius: 4px;
     width: 100%;
     opacity: .9;
 
@@ -76,6 +78,8 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    background: white;
+    border-radius: 4px;
 
     .browse-event-title{
       margin-bottom: 5px;
