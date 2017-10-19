@@ -1,6 +1,7 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
-  helper_method :current_user, :logged_in?, :upload_preset, :cloud_name
+  helper_method :current_user, :logged_in?, :upload_preset, :cloud_name,
+                :maps_key
 
   def current_user
     @current_user ||= User.find_by(session_token: session[:session_token])

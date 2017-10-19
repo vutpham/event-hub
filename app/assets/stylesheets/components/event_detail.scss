@@ -1,12 +1,14 @@
+
 #event-details{
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   position: relative;
-  justify-content: center;
+  justify-content: flex-start;
   overflow: hidden;
-  align-items: flex-start;
+  align-items: center;
   padding-top: 50px;
-  min-height: 650px;
+  height: 100%;
+
 }
 .blurred-background-img{
   position: absolute;

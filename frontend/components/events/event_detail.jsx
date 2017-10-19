@@ -47,7 +47,6 @@ class EventDetail extends React.Component{
       bookmark = <i className="fa fa-bookmark fa-2x" onClick={this.toggleBookmark} aria-hidden="true"></i>;
     }
     else bookmark = <i className="fa fa-bookmark-o fa-2x" onClick={this.toggleBookmark} aria-hidden="true"></i>;
-    console.log(this.props);
     return(
       <div id="event-details">
         <img
@@ -114,6 +113,7 @@ class EventDetail extends React.Component{
 
           </footer>
 
+          <SingleEventMap event={this.props.eventDetails} />
         </div>
       </div>
     );
