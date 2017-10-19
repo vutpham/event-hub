@@ -13,7 +13,6 @@
     div{
       height: 200px;
       object-fit: cover;
-      opacity: .9;
       transition: all .3s ease-in-out;
       background-size: cover;
       display: flex;
@@ -24,47 +23,94 @@
         cursor: pointer;
         opacity: 1;
         transform: scale(1.05);
+        z-index: 10000;
+        -webkit-filter: brightness(80%); /* Safari */
+        filter: brightness(80%);
       }
     }
 
     .pic-text{
       color: white;
       font-size: 25px;
-
+      letter-spacing: 125%;
       font-weight: bold;
+      margin-top: 30px;
+      -webkit-filter: brightness(100%) !important; /* Safari */
+      filter: brightness(100%) !important;
     }
+
+    .pic-text-secret{
+      visibility: hidden;
+      color: white;
+      font-size: 15px;
+      font-weight: bold;
+      margin-top: 10px;
+      padding: 0px 15px;
+      text-align: center;
+      -webkit-transition: visibility 100ms;
+      transition: visibility 100ms;
+      -webkit-filter: brightness(100%) !important; /* Safari */
+      filter: brightness(100%) !important;
+    }
+
+    .cat-selector{
+      display: flex;
+      flex-direction: column;
+    }
+
 
     .sb-r1-c1{
       width: 60%;
       background-image: url("http://res.cloudinary.com/events4u/image/upload/v1495316021/concert.jpg");
+      &:hover .pic-text-secret{
+        visibility: visible;
+      }
     }
     .sb-r1-c2{
       width: 38%;
       margin-left: 2%;
       background-image: url("http://res.cloudinary.com/events4u/image/upload/v1495246509/Home-cooking-img.jpg");
+      &:hover .pic-text-secret{
+        visibility: visible;
+      }
     }
     .sb-r2-c1{
       width: 32%;
       background-image: url("http://res.cloudinary.com/events4u/image/upload/v1495254592/class.jpg");
+      &:hover .pic-text-secret{
+        visibility: visible;
+      }
     }
     .sb-r2-c2{
       width: 32%;
       background-image: url("http://res.cloudinary.com/events4u/image/upload/v1495320541/conference.jpg");
       margin-left: 2%;
+      &:hover .pic-text-secret{
+        visibility: visible;
+      }
     }
     .sb-r2-c3{
       width: 32%;
       margin-left: 2%;
-      background-image: url("http://res.cloudinary.com/events4u/image/upload/v1495253058/party-07_ka52na.jpg");
+      background-image: url("http://res.cloudinary.com/events4u/image/upload/e_brightness:-17/v1495253058/party-07_ka52na.jpg");
+      &:hover .pic-text-secret{
+        visibility: visible;
+      }
     }
     .sb-r3-c1{
       width: 38%;
       background-image: url("http://res.cloudinary.com/events4u/image/upload/v1495320952/paintbrush.jpg");
+      &:hover .pic-text-secret{
+        visibility: visible;
+      }
     }
     .sb-r3-c2{
       width: 60%;
       margin-left: 2%;
-      background-image: url("http://res.cloudinary.com/events4u/image/upload/v1495323033/football_roq0ur.jpg");
+      background-image: url("http://res.cloudinary.com/events4u/image/upload/e_brightness:-23/v1495323033/football_roq0ur.jpg");
+      &:hover .pic-text-secret{
+        visibility: visible;
+      }
     }
 
 

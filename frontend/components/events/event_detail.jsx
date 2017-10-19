@@ -1,6 +1,7 @@
 import React from 'react';
 import { Redirect, withRouter } from "react-router";
 import CheckoutModal from '../modal/checkout_modal';
+import SingleEventMap from './map/single_event_map';
 
 class EventDetail extends React.Component{
   constructor(props){
@@ -34,8 +35,11 @@ class EventDetail extends React.Component{
 
   render(){
     let {title, full_description, image_url, host,
-           price, date, venue, street_address, city_state_zip, bookmarked, id} = this.props.eventDetails;
+           price, date, venue, street_address, city_state_zip, bookmarked, id, categories} = this.props.eventDetails;
     price = (price === 0 ? "Free" : `$${price}`);
+    if (categories){
+      categories = categories.join(" ∙ ");
+    }
     let dateString = new Date(date);
     dateString = dateString.toDateString();
     let bookmark;
@@ -43,6 +47,7 @@ class EventDetail extends React.Component{
       bookmark = <i className="fa fa-bookmark fa-2x" onClick={this.toggleBookmark} aria-hidden="true"></i>;
     }
     else bookmark = <i className="fa fa-bookmark-o fa-2x" onClick={this.toggleBookmark} aria-hidden="true"></i>;
+    console.log(this.props);
     return(
       <div id="event-details">
         <img
@@ -64,15 +69,26 @@ class EventDetail extends React.Component{
             <CheckoutModal
               eventId={id}
               price={this.props.eventDetails.price}
+              loggedIn={this.props.loggedIn}
             />
           </div>
 
           <footer className='event-description-box'>
             <div className='desc-left-col'>
               <section className='event-description'>
-                <h5>Description</h5>
                 <div>
-                  {full_description}
+                  <h5>Description</h5>
+                  <div>
+                    {full_description}
+                  </div>
+                </div>
+                <div id="tags">
+                  <h5>
+                    Tags
+                  </h5>
+                  <div>
+                    {categories}
+                  </div>
                 </div>
               </section>
               <div className='tags'>
@@ -87,8 +103,8 @@ class EventDetail extends React.Component{
               <div className="event-more-info">
                 <div className="event-more-info-attr">Location </div>
                 <span className="event-more-info-data">
-                  <div>{venue}</div>
-                  <div>
+                  <div className='address'>
+                    <div>{venue}</div>
                     <div>{street_address}</div>
                     <div>{city_state_zip}</div>
                   </div>
@@ -97,6 +113,7 @@ class EventDetail extends React.Component{
             </div>
 
           </footer>
+
         </div>
       </div>
     );

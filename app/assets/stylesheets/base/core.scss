@@ -18,6 +18,34 @@ body, html {
   height: 35vw;
 }
 
+#main-home-img-container{
+  position: relative;
+}
+
+#main-home-img-title{
+  position: absolute;
+  top: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  color: white;
+  font-size: 50px;
+  font-weight: bold;
+  &:hover{
+    cursor: default;
+    -webkit-user-select: none;  /* Chrome all / Safari all */
+    -moz-user-select: none;     /* Firefox all */
+    -ms-user-select: none;      /* IE 10+ */
+    user-select: none;
+  }
+  div{
+    text-align: center;
+  }
+}
+
 .fa-bookmark {
   color: $blue;
 }
