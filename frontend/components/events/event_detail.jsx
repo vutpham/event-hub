@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Redirect, withRouter } from "react-router";
 import CheckoutModal from '../modal/checkout_modal';
@@ -39,41 +38,52 @@ class EventDetail extends React.Component{
     price = (price === 0 ? "Free" : `$${price}`);
     let bookmark;
     if (bookmarked){
-      bookmark = <i className="fa fa-bookmark fa-lg" onClick={this.toggleBookmark} aria-hidden="true"></i>;
+      bookmark = <i className="fa fa-bookmark fa-2x" onClick={this.toggleBookmark} aria-hidden="true"></i>;
     }
-    else bookmark = <i className="fa fa-bookmark-o fa-lg" onClick={this.toggleBookmark} aria-hidden="true"></i>;
+    else bookmark = <i className="fa fa-bookmark-o fa-2x" onClick={this.toggleBookmark} aria-hidden="true"></i>;
     return(
       <div id="event-details">
-        <div id="event-details-left-col">
-          <h1>{title} &nbsp; {bookmark}</h1>
-          <h3>Hosted By: {host}</h3>
-          <p>Details: {full_description}</p>
-        </div>
-        <div id="event-details-right-col">
-
+        <img
+          className="blurred-background-img"
+          src={image_url}>
+        </img>
+        <div className="event-show">
+          <header>
             <img className="event-detail-img" src={image_url}></img>
-            <span className="event-info">
+            <span className="title-box">
+              <h1>{title}</h1>
+              <h3>Hosted By: {host}</h3>
+              <h4>{price}</h4>
+            </span>
 
-              <div className="ticket-info">
-                <div>{price}</div>
-                <CheckoutModal
-                  eventId={id}
-                  price={this.props.eventDetails.price}
-                    />
+          </header>
+          <div className="mid-row">
+            {bookmark}
+            <CheckoutModal
+              eventId={id}
+              price={this.props.eventDetails.price}
+            />
+          </div>
+
+          <footer className='event-description-box'>
+            <div className='desc-left-col'>
+              <section className='event-description'>
+                <h5>Description</h5>
+                <div>
+                  {full_description}
+                </div>
+              </section>
+              <div className='tags'>
+
               </div>
-
-              <div className="event-more-info">
-                <div className="event-more-info-attr">When:</div>
+            </div>
+            <div className='desc-right-col'>
+              <span className="event-more-info">
+                <div className="event-more-info-attr">Date</div>
                 <div className="event-more-info-data">{date}</div>
-              </div>
-
+              </span>
               <div className="event-more-info">
-                <div className="event-more-info-attr">How Long:</div>
-                <div className="event-more-info-data">FILL IN TIME</div>
-              </div>
-
-              <div className="event-more-info">
-                <div className="event-more-info-attr">Where: </div>
+                <div className="event-more-info-attr">Location </div>
                 <span className="event-more-info-data">
                   <div>{venue}</div>
                   <div>
@@ -82,7 +92,9 @@ class EventDetail extends React.Component{
                   </div>
                 </span>
               </div>
-          </span>
+            </div>
+
+          </footer>
         </div>
       </div>
     );
