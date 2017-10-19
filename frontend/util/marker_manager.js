@@ -32,7 +32,11 @@ class MarkerManager {
         map: this.map,
         eventId: event.id
       });
-      marker.addListener('click', () => this.handleClick(event));
+      let infowindow = new google.maps.InfoWindow({
+        content: event.title
+      });
+      marker.addListener('mouseover', () => infowindow.open(this.map, marker));
+      marker.addListener('mouseout', () => infowindow.close(this.map, marker));
       this.markers[marker.eventId] = marker;
     });
 

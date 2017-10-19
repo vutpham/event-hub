@@ -1,4 +1,3 @@
-
 import React from 'react';
 import MarkerManager from '../../../util/marker_manager';
 
@@ -13,7 +12,7 @@ class EventMap extends React.Component{
       zoom: 10
     };
     this.map = new google.maps.Map(this.mapNode, mapOptions);
-    this.MarkerManager = new MarkerManager(this.map);
+    this.MarkerManager = new MarkerManager(this.map, this.handleMarkerClick.bind(this));
     this.MarkerManager.updateMarkers(this.props.events);
   }
 
@@ -25,6 +24,10 @@ class EventMap extends React.Component{
     } else {
       this.MarkerManager.updateMarkers(this.props.events);
     }
+  }
+
+  handleMarkerClick(event) {
+    this.props.history.push(`events/${event.id}`);
   }
 
   render(){
