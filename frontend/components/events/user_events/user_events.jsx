@@ -96,7 +96,9 @@ class UserEvents extends React.Component{
           <MyEvents
             events={this.props.events}
             bookmarkEvent={this.props.bookmarkEvent}
-            unBookmarkEvent={this.props.unBookmarkEvent}/>
+            unBookmarkEvent={this.props.unBookmarkEvent}
+            hosted={this.props.location.pathname === '/user-events/hosted-events'}
+            deleteEvent={this.props.deleteEvent}/>
         </div>
       </div>
     );
