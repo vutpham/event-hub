@@ -1,23 +1,24 @@
 import Modal from 'react-modal';
 import React from 'react';
-import CheckoutContainer from '../checkout/checkout_container';
 import AuthFormContainer from '../auth/auth_form_container';
 
-class CheckoutModal extends React.Component{
+class RedirectModal extends React.Component{
 
   constructor(props){
     super(props);
-    this.state = {modalOpen: true, type: props.type};
+    this.state = {modalIsOpen: true, type: props.type};
     this.openModal = this.openModal.bind(this);
     this.closeModal = this.closeModal.bind(this);
   }
 
   openModal() {
+    this.props.clearErrors();
     this.setState({modalIsOpen: true});
   }
 
 
   closeModal() {
+    this.props.clearErrors();
     this.setState({modalIsOpen: false});
   }
 
@@ -43,21 +44,20 @@ class CheckoutModal extends React.Component{
       };
 
       return(
-        <div className="checkout-modal">
-          <button className="buy-tickets"onClick={this.openModal} >Tickets</button>
+        <div>
+          <h3>Please Log In to Use This Feature</h3>
+          <button onClick={this.openModal}>{this.props.type}</button>
           <Modal
             isOpen={this.state.modalIsOpen}
             onRequestClose={this.closeModal}
             style={style}
             contentLabel="Sign In/Sign Up"
             >
-              <CheckoutContainer
-                price={this.props.price}
-                eventId={this.props.eventId}/>
+              <AuthFormContainer type={this.props.type} />
           </Modal>
         </div>
       );
     }
 }
 
-export default CheckoutModal;
+export default RedirectModal;

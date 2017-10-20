@@ -39,7 +39,6 @@ class EventDetail extends React.Component{
     if (categories){
       categories = categories.join(" ∙ ");
     }
-    console.log(categories);
     let dateString = new Date(date);
     dateString = dateString.toDateString();
     let bookmark;

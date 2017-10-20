@@ -7,9 +7,16 @@ class Home extends React.Component {
   render(){
     return(
       <div id="home">
-        <img src="http://cdn.wallpapersafari.com/97/60/VKjztJ.jpg"
-             id="main-home-img">
-        </img>
+        <div id='main-home-img-container'>
+          <img src="http://cdn.wallpapersafari.com/97/60/VKjztJ.jpg"
+               id="main-home-img">
+          </img>
+          <div id="main-home-img-title">
+            <div>
+            Find Your Next Experience
+            </div>
+          </div>
+        </div>
 
         <section id='event-slider-container'>
         <h1 className='trending-events-title'>

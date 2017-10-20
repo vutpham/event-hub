@@ -1,5 +1,5 @@
 import React from 'react';
-import { Route, Switch } from 'react-router';
+import { Route, Switch, withRouter } from 'react-router';
 import { ProtectedRoute, AuthRoute } from '../util/route_util';
 import SessionFormContainer from './auth/auth_form_container';
 import GreetingContainer from './auth/greeting_container';
@@ -35,4 +35,4 @@ const App = () => (
   </div>
 );
 
-export default App;
+export default withRouter(App);

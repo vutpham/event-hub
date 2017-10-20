@@ -1,20 +1,26 @@
 import Modal from 'react-modal';
 import React from 'react';
 import AuthFormContainer from '../auth/auth_form_container';
+import { withRouter } from 'react-router';
+import { browserHistory } from 'react-router-dom';
 
-class LoginModal extends React.Component{
+class AuthModal extends React.Component{
 
   constructor(props){
     super(props);
     this.state = {modalOpen: true, type: props.type};
     this.openModal = this.openModal.bind(this);
-    // this.afterOpenModal = this.afterOpenModal.bind(this);
     this.closeModal = this.closeModal.bind(this);
   }
+
+
 
   openModal() {
     this.props.clearErrors();
     this.setState({modalIsOpen: true});
+  }
+
+  componentWillReceiveProps(newProps){
   }
 
 
@@ -24,6 +30,10 @@ class LoginModal extends React.Component{
   }
 
     render(){
+      // let url = this.props.location.pathname;
+      // let last_seg = this.props.location.pathname.split("/");
+      // last_seg = last_seg[last_seg.length-1];
+      // let isOpen = this.state.modalIsOpen || (last_seg === "login");
       const style = {
         overlay : {
           position          : 'fixed',
@@ -31,10 +41,10 @@ class LoginModal extends React.Component{
           left              : 0,
           right             : 0,
           bottom            : 0,
-          backgroundColor   : 'rgba(0, 0, 0, 0.75)'
+          backgroundColor   : 'rgba(76, 76, 76, 0.7)'
         },
         content : {
-          top                   : '50%',
+          top                   : '40%',
           left                  : '50%',
           right                 : 'auto',
           bottom                : 'auto',
@@ -43,10 +53,9 @@ class LoginModal extends React.Component{
           border                : '1px solid #D2D6DF'
         }
       };
-
       return(
         <div>
-          <button onClick={this.openModal}>{this.props.type} Modal</button>
+          <button onClick={this.openModal}>{this.props.type}</button>
           <Modal
             isOpen={this.state.modalIsOpen}
             onRequestClose={this.closeModal}
@@ -60,4 +69,4 @@ class LoginModal extends React.Component{
     }
 }
 
-export default LoginModal;
+export default withRouter(AuthModal);
