@@ -58,6 +58,20 @@
     .browse-event-item{
       display: flex;
       justify-content: center;
+      #cancel-event{
+        border-radius: 5px;
+        border: 1px solid #C63D0F;
+        color: #C63D0F;
+        background-color: white;
+        &:hover{
+          -webkit-filter: brightness(80%); /* Safari */
+          filter: brightness(80%);
+          cursor: pointer;
+        }
+        &:focus{
+          outline: none;
+        }
+      }
     }
   }
 }

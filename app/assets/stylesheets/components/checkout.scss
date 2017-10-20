@@ -1,3 +1,4 @@
+
 .ReactModal__Content--after-open{
   padding: 0px !important;
   background-color: #efefef !important;
@@ -70,6 +71,11 @@
       padding: 5px;
       border: 1px solid #C63D0F;
       border-radius: 3px;
+      &:hover{
+        -webkit-filter: brightness(80%); /* Safari */
+        filter: brightness(80%);
+        cursor: pointer;
+      }
     }
   }
 
