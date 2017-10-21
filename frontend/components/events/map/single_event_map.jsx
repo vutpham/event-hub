@@ -8,8 +8,8 @@ class SingleEventMap extends React.Component{
   }
 
   componentWillReceiveProps(nextProps) {
-    if(!nextProps.event) return;
     let {title, street_address, city_state_zip} = nextProps.event;
+
     $.ajax({
       method: "get",
       url: `https:maps.googleapis.com/maps/api/geocode/json?address=${street_address} ${city_state_zip}&key=${window.maps_key}`
@@ -33,9 +33,9 @@ class SingleEventMap extends React.Component{
     });
   }
 
-  componentDidMount(){
-    const mapOptions = {
-      center: { lat: 37.7758, lng: -122.435 }, // this is SF
+  componentWillMount(){
+    let mapOptions = {
+      center: { lat: 1, lng: 1},
       zoom: 15
     };
     this.map = new google.maps.Map(this.mapNode, mapOptions);
@@ -44,6 +44,7 @@ class SingleEventMap extends React.Component{
 
 
   render(){
+    console.log(this.props);
     return(
       <div id="single-map-container" ref={map1 => this.mapNode = map1}>
 
