@@ -11,6 +11,11 @@ class AuthModal extends React.Component{
     this.state = {modalOpen: true, type: props.type};
     this.openModal = this.openModal.bind(this);
     this.closeModal = this.closeModal.bind(this);
+    window.globalOpenModal = () => {
+      this.setState({modalIsOpen: true});
+      this.redirected = true;
+    };
+    window.globalOpenModal = window.globalOpenModal.bind(this);
   }
 
 
@@ -19,10 +24,6 @@ class AuthModal extends React.Component{
     this.props.clearErrors();
     this.setState({modalIsOpen: true});
   }
-
-  componentWillReceiveProps(newProps){
-  }
-
 
   closeModal() {
     this.props.clearErrors();
@@ -62,7 +63,9 @@ class AuthModal extends React.Component{
             style={style}
             contentLabel="Sign In/Sign Up"
             >
-              <AuthFormContainer type={this.props.type} />
+              <AuthFormContainer
+                type={this.props.type}
+                redirected={this.redirected}/>
           </Modal>
         </div>
       );

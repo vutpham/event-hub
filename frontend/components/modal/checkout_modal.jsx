@@ -13,7 +13,12 @@ class CheckoutModal extends React.Component{
   }
 
   openModal() {
-    this.setState({modalIsOpen: true});
+    if(this.props.loggedIn){
+      this.setState({modalIsOpen: true});
+    }
+    else{
+      window.globalOpenModal();
+    }
   }
 
 

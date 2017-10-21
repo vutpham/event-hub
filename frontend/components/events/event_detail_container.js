@@ -5,7 +5,8 @@ import EventDetail from './event_detail';
 import { connect } from 'react-redux';
 
 const mapStateToProps = (state) => ({
-  eventDetails: state.eventDetails
+  eventDetails: state.eventDetails,
+  loggedIn: Boolean(state.currentUser)
 });
 
 const mapDispatchToProps = (dispatch) => ({

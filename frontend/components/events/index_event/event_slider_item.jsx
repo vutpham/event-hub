@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { Link } from 'react-router-dom';
 
@@ -10,11 +11,16 @@ class EventSliderItem extends React.Component{
 
   toggleBookmark(){
     let {id, bookmarked} = this.props.event;
-    if(bookmarked){
-      this.props.unBookmarkEvent(id);
+    if(this.props.loggedIn){
+      if(bookmarked){
+        this.props.unBookmarkEvent(id);
+      }
+      else{
+        this.props.bookmarkEvent(id);
+      }
     }
     else{
-      this.props.bookmarkEvent(id);
+      window.globalOpenModal();
     }
   }
 

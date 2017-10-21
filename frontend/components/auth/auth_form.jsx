@@ -73,7 +73,8 @@ class AuthForm extends React.Component{
   }
 
   guestLogin() {
-    this.props.login({username: "Stranger", password: "password"});
+    this.props.login({username: "Stranger", password: "password"})
+    .then(window.scrollTo(0,0));
   }
 
   render(){

@@ -1,6 +1,7 @@
 import React from 'react';
 import { Redirect, withRouter } from "react-router";
 import CheckoutModal from '../modal/checkout_modal';
+import SingleEventMap from './map/single_event_map';
 
 class EventDetail extends React.Component{
   constructor(props){
@@ -67,6 +68,7 @@ class EventDetail extends React.Component{
             <CheckoutModal
               eventId={id}
               price={this.props.eventDetails.price}
+              loggedIn={this.props.loggedIn}
             />
           </div>
 
@@ -110,6 +112,9 @@ class EventDetail extends React.Component{
             </div>
 
           </footer>
+          <SingleEventMap
+            address={this.props.street_address + " " + city_state_zip}
+            title={this.props.title}/>
         </div>
       </div>
     );

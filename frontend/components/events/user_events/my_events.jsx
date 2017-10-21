@@ -10,12 +10,13 @@ class MyEvents extends React.Component{
     let {events} = this.props;
     events = events.map((event,i) => {
       return <li key={`${i}-${event.id}-user-event`}>
-                <BrowseEventItem
-                  event={event}
-                  bookmarkEvent={this.props.bookmarkEvent}
-                  unBookmarkEvent={this.props.unBookmarkEvent}
-                  hosted={this.props.hosted}
-                  deleteEvent={this.props.deleteEvent} />
+              <BrowseEventItem
+                event={event}
+                bookmarkEvent={this.props.bookmarkEvent}
+                unBookmarkEvent={this.props.unBookmarkEvent}
+                hosted={this.props.hosted}
+                deleteEvent={this.props.deleteEvent}
+                loggedIn="true"/>
             </li>;
     });
     return(

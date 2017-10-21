@@ -7,7 +7,6 @@ class BrowseEventsItem extends React.Component{
     super(props);
     this.toggleBookmark = this.toggleBookmark.bind(this);
     this.cancelEvent = this.cancelEvent.bind(this);
-    console.log(this.props);
   }
 
   cancelEvent(e){
@@ -19,19 +18,26 @@ class BrowseEventsItem extends React.Component{
   }
 
   toggleBookmark(){
-    let {id, bookmarked} = this.props.event;
-    if(bookmarked){
-      this.props.unBookmarkEvent(id);
+    if(this.props.loggedIn){
+      let {id, bookmarked} = this.props.event;
+      if(bookmarked){
+        this.props.unBookmarkEvent(id);
+      }
+      else{
+        this.props.bookmarkEvent(id);
+      }
     }
     else{
-      this.props.bookmarkEvent(id);
+      window.globalOpenModal();
     }
   }
 
   render(){
     let {title, image_url, date, venue, price, id, bookmarked, categories} = this.props.event;
     price = (price === 0 ? "Free" : `$${price}`);
-    categories = categories.join(" ∙ ");
+    if(categories){
+      categories = categories.join(" ∙ ");
+    }
     let dateString = new Date(date);
     dateString = dateString.toDateString();
     let cancelEventButton = "";
