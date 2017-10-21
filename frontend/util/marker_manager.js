@@ -21,7 +21,8 @@ class MarkerManager {
   createMarkerFromEvent(event) {
     $.ajax({
       method: "get",
-      url: `https:maps.googleapis.com/maps/api/geocode/json?address=${event.street_address} ${event.city_state_zip}&key=${window.maps_key}`
+      url: `https://maps.googleapis.com/maps/api/geocode/json?address=${event.street_address} ${event.city_state_zip}&key=${window.maps_key}`,
+      crossDomain: true
     })
     .then(data => {
       const lat = data.results[0].geometry.location.lat;
