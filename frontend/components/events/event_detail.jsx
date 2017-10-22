@@ -21,6 +21,14 @@ class EventDetail extends React.Component{
     }
   }
 
+  componentDidMount(){
+    window.scrollTo(0,0);
+  }
+
+  componentWillUnmount(){
+    this.props.clearEventDetails();
+  }
+
   toggleBookmark(){
     let {id, bookmarked} = this.props.eventDetails;
     if(bookmarked){

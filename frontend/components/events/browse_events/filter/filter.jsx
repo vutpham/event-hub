@@ -57,6 +57,10 @@ class Filter extends React.Component{
     if(category === 'All'){
       this.props.fetchAllEvents();
     }
+    else if(category === 'Search'){
+      let searchString = this.props.match.params.searchString;
+      this.props.fetchFilteredEvents(searchString);
+    }
     else{
       this.props.fetchFilteredEvents({category_names: [category]});
     }
@@ -81,8 +85,7 @@ class Filter extends React.Component{
               Arts</li>
             <li
               onClick={this.filterEvents("Music")}
-              className={"filter-category" + this.dynamicSelector(4)}>
-              Music</li>
+              className={"filter-category" + this.dynamicSelector(4)}>Music</li>
             <li
               onClick={this.filterEvents("Food & Drink")}
               className={"filter-category" + this.dynamicSelector(5)}>

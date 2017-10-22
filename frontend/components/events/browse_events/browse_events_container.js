@@ -3,7 +3,8 @@ import BrowseEvents from './browse_events';
 import { fetchAllEvents,
          bookmarkEvent,
          unBookmarkEvent,
-         deleteEvent } from '../../../actions/event_actions';
+         deleteEvent,
+         fetchMatchingEvents } from '../../../actions/event_actions';
 import { allEvents } from '../../../reducers/selectors';
 
 const mapStateToProps = (state) => ({

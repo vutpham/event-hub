@@ -1,7 +1,7 @@
 import * as APIUtil from '../util/event_api_util';
+import { receiveErrors } from './error_actions';
 import * as BookmarkAPIUtil from '../util/bookmark_api_util';
 import * as TicketAPIUtil from '../util/ticket_api_util';
-import { receiveErrors } from './error_actions';
 
 export const RECEIVE_EVENT = "RECEIVE_EVENT";
 export const RECEIVE_EVENT_DETAILS = "RECEIVE_EVENT_DETAILS";
@@ -9,8 +9,9 @@ export const RECEIVE_EVENTS = "RECEIVE_EVENTS";
 export const DESTROY_EVENT = "DESTROY_EVENT";
 export const ADD_BOOKMARK_TO_EVENT = "ADD_BOOKMARK_TO_EVENT";
 export const REMOVE_BOOKMARK_FROM_EVENT = "REMOVE_BOOKMARK_FROM_EVENT";
+export const CLEAR_EVENT_DETAILS = "CLEAR_EVENT_DETAILS";
 
-export const receiveEvent = event => ({
+export const receiveNewEvent = event => ({
   type: RECEIVE_EVENT,
   event
 });
@@ -28,6 +29,10 @@ export const receiveEvents = events => ({
 export const destroyEvent = id => ({
   type: DESTROY_EVENT,
   id
+});
+
+export const clearEventDetails = () => ({
+  type: CLEAR_EVENT_DETAILS
 });
 
 export const addBookmarkToEvent = id => ({
@@ -48,7 +53,7 @@ export const fetchAllEvents = () => dispatch => {
 
 export const fetchEventDetails = (id) => dispatch => {
   return APIUtil.getEvent(id)
-    .then(res => dispatch(receiveEventDetails(res)))
+    .then(event => dispatch(receiveEventDetails(event)))
     .fail( err => dispatch(receiveErrors(err.responseJSON)));
 };
 
@@ -58,16 +63,15 @@ export const deleteEvent = (id) => dispatch => {
     .fail( err => dispatch(receiveErrors(err.responseJSON)));
 };
 
-export const updateEvent = (event) => dispatch => {
-  return APIUtil.updateEvent(event)
-    .then((res) => dispatch(receiveEvent(res)))
+export const updateEvent = (event1) => dispatch => {
+  return APIUtil.updateEvent(event1)
+    .then((event2) => dispatch(receiveNewEvent(event2)))
     .fail( err => dispatch(receiveErrors(err.responseJSON)));
 };
 
-export const createEvent = (event) => dispatch => {
-  console.log(event);
-  return APIUtil.createEvent(event)
-    .then((res) => dispatch(receiveEvent(res)))
+export const createEvent = (event1) => dispatch => {
+  return APIUtil.createEvent(event1)
+    .then((event2) => dispatch(receiveNewEvent(event2)))
     .fail( err => dispatch(receiveErrors(err.responseJSON)));
 };
 
@@ -75,7 +79,6 @@ export const fetchFilteredEvents = (filters) => dispatch => {
   return APIUtil.getFilteredEvents(filters)
     .then((events) => dispatch(receiveEvents(events)));
 };
-
 
 export const bookmarkEvent = eventId => dispatch => {
   return BookmarkAPIUtil.createBookmark(eventId)
@@ -99,7 +102,6 @@ export const fetchBookmarkedEvents = () => dispatch => {
     .then((events) => dispatch(receiveEvents(events)));
 };
 
-
 export const buyTicket = (eventId) => dispatch => {
   return TicketAPIUtil.createTicket(eventId);
   //possibly do something to the state?
@@ -107,5 +109,10 @@ export const buyTicket = (eventId) => dispatch => {
 
 export const fetchAllTickets = () => dispatch => {
   return APIUtil.getPurchasedEvents()
+    .then((events) => dispatch(receiveEvents(events)));
+};
+
+export const fetchMatchingEvents = (search_string) => dispatch => {
+  return APIUtil.searchEvents(search_string)
     .then((events) => dispatch(receiveEvents(events)));
 };

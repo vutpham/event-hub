@@ -1,4 +1,3 @@
-
 import React from 'react';
 import MarkerManager from '../../../util/marker_manager';
 import values from 'lodash/values';
@@ -32,6 +31,7 @@ class SingleEventMap extends React.Component{
       marker.addListener('mouseover', () => infowindow.open(this.map, marker));
       marker.addListener('mouseout', () => infowindow.close(this.map, marker));
       this.map.setCenter({lat: lat, lng: lng});
+      window.scrollTo(0,0);
     });
   }
 
