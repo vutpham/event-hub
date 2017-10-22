@@ -18,4 +18,5 @@ Rails.application.routes.draw do
   get 'api/events-bookmarked' => 'api/events#bookmarked_events'
   get 'api/events-hosted' => 'api/events#hosted_events'
   get 'api/events-purchased' => 'api/events#attended_events'
+  get 'api/events-search' => 'api/events#search'
 end

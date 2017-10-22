@@ -18,14 +18,13 @@
       display: flex;
       justify-content: center;
       align-items: center;
+      border-radius: 3px;
 
       &:hover{
         cursor: pointer;
-        opacity: 1;
+        -webkit-filter: brightness(90%) !important; /* Safari */
+        filter: brightness(90%) !important;
         transform: scale(1.05);
-        z-index: 10000;
-        -webkit-filter: brightness(80%); /* Safari */
-        filter: brightness(80%);
       }
     }
 
@@ -33,6 +32,7 @@
       color: white;
       font-size: 25px;
       letter-spacing: 125%;
+      z-index: 10000;
       font-weight: bold;
       margin-top: 30px;
       -webkit-filter: brightness(100%) !important; /* Safari */
@@ -49,6 +49,7 @@
       text-align: center;
       -webkit-transition: visibility 100ms;
       transition: visibility 100ms;
+      z-index: 10000;
       -webkit-filter: brightness(100%) !important; /* Safari */
       filter: brightness(100%) !important;
     }
