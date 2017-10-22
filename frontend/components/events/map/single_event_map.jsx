@@ -13,7 +13,7 @@ class SingleEventMap extends React.Component{
     let {title, street_address, city_state_zip} = nextProps.event;
     $.ajax({
       method: "get",
-      url: `https:maps.googleapis.com/maps/api/geocode/json?address=${street_address} ${city_state_zip}&key=${window.maps_key}`,
+      url: `https://maps.googleapis.com/maps/api/geocode/json?address=${street_address} ${city_state_zip}&key=${window.maps_key}`,
       crossDomain: true
     })
     .then(data => {

@@ -93,8 +93,8 @@ class Api::EventsController < ApplicationController
 
   def search
     debugger
-    @events = Event.where("title LIKE :string OR full_description LIKE :string",
-              string: params[:search_string])
+    @events = Event.where("title LIKE ? OR full_description LIKE ?",
+              "%#{params[:search_string]}%", "%#{params[:search_string]}%")
     @bookmarked_events = current_user.bookmarked_events
     render :index
   end
