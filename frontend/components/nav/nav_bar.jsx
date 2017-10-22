@@ -52,8 +52,6 @@ class NavBar extends React.Component{
     return(
       <ul className="navbar-links" id='logged-out-links'>
         <li className="text-li" onClick={this.guestLogin}>Demo</li>
-        <li className="text-li"><Link to="/signup">Sign Up</Link></li>
-        <li className="text-li"><Link to="/login">Log In</Link></li>
         <li><AuthModal type="Log In" clearErrors={this.props.clearErrors}/></li>
         <li><AuthModal type="Sign Up" clearErrors={this.props.clearErrors}/></li>
       </ul>
