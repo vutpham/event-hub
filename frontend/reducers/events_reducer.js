@@ -31,7 +31,7 @@ const EventsReducer = (state = {}, action) => {
       event.bookmarked = false;
       return merge({}, state, {[event.id]: event});
     case RECEIVE_EVENTS:
-      return action.events;
+      return merge({},action.events);
     case DESTROY_EVENT:
       newState = merge({}, state);
       delete newState[action.id];

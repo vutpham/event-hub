@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import EventSliderContainer from '../events/index_event/event_slider_container';
 import EventSearchContainer from './category_search/category_search_container';
+import SearchBar from '../search/search_bar';
 
 class Home extends React.Component {
   render(){
@@ -15,6 +16,7 @@ class Home extends React.Component {
             <div>
             Find Your Next Experience
             </div>
+            <SearchBar />
           </div>
         </div>
 
