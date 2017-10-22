@@ -22,9 +22,22 @@
 
       &:hover{
         cursor: pointer;
-        -webkit-filter: brightness(90%) !important; /* Safari */
-        filter: brightness(90%) !important;
+        // -webkit-filter: brightness(90%) !important; /* Safari */
+        // filter: brightness(90%) !important;
         transform: scale(1.05);
+      }
+    }
+
+    .shadow-img-background{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100%;
+      width: 100%;
+      &:hover{
+        background-color: rgba(0,0,0,0.5);
+        transform: scale(1);
       }
     }
 

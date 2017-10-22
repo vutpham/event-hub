@@ -65,3 +65,11 @@ export const getPurchasedEvents = () => {
     url: '/api/events-purchased',
   });
 };
+
+export const searchEvents = (search_string) => {
+  return $.ajax({
+    method: 'get',
+    url:'/api/events-search',
+    data: {search_string}
+  });
+};
