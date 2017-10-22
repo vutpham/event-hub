@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { withRouter } from 'react-router-dom';
 
@@ -66,22 +65,21 @@ class Filter extends React.Component{
     }
   }
 
-  // componentWillReceiveProps(nextProps){
-  //   debugger;
-  //   if(nextProps.match.params != this.props.match.params){
-  //     let category = this.props.category;
-  //     if(category === 'All'){
-  //       this.props.fetchAllEvents();
-  //     }
-  //     else if(category === 'all'){
-  //       let searchString = this.props.match.params.searchString;
-  //       this.props.fetchMatchingEvents(searchString);
-  //     }
-  //     else{
-  //       this.props.fetchFilteredEvents({category_names: [category]});
-  //     }
-  //   }
-  // }
+  componentWillReceiveProps(nextProps){
+    if(nextProps.match.params != this.props.match.params){
+      let category = nextProps.category;
+      if(category === 'All'){
+        nextProps.fetchAllEvents();
+      }
+      else if(category === 'all'){
+        let searchString = nextProps.match.params.searchString;
+        nextProps.fetchMatchingEvents(searchString);
+      }
+      else{
+        nextProps.fetchFilteredEvents({category_names: [category]});
+      }
+    }
+  }
 
   render(){
     return (

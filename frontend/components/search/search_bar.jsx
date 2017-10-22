@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { withRouter } from 'react-router';
 
@@ -14,7 +15,12 @@ class SearchBar extends React.Component{
     e.preventDefault();
     const searchString = this.state.searchString;
     if(searchString.length > 0){
-      this.props.history.push(`/browse-events/all/${searchString}`);
+      this.props.fetchMatchingEvents(searchString)
+      .then( () => {
+        this.props.history.push(`/browse-events/Search`);
+        this.setState({searchString: ""});
+        }
+      );
     }
   }
 
@@ -25,24 +31,16 @@ class SearchBar extends React.Component{
 
   render(){
     return(
-      <form onSubmit={this.search}>
-        <input
-          className="sb-search-input"
-          placeholder="Enter your search term..."
-          type="search"
-          value={this.state.searchString}
-          onChange={this.handleChange}
-          name="search"
-          id="search"
-        />
-
-        <input
-          className="sb-search-submit"
-          type="submit"
-          value="submit"
-         />
-        <span className="sb-icon-search"></span>
-      </form>
+        <form onSubmit={this.search} className="search">
+          <input
+            placeholder="festival, party, concert..."
+            type="search"
+            value={this.state.searchString}
+            onChange={this.handleChange}
+            className="searchTerm"
+            id="search"
+          />
+        </form>
     );
   }
 }

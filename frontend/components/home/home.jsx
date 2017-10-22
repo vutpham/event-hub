@@ -16,7 +16,6 @@ class Home extends React.Component {
             <div>
             Find Your Next Experience
             </div>
-            <SearchBar />
           </div>
         </div>
 
