@@ -17,22 +17,14 @@ class NavBar extends React.Component{
             <span id="fa-arrow"><i className="fa fa-angle-down" aria-hidden="true"></i></span>
             </div>
         <ul className="dropdown-content">
-            <li>
-              <Link to="/user-events/bookmarks">Saved Events</Link>
-            </li>
-            <li>
-              <Link to="/user-events/tickets">Tickets</Link>
-            </li>
-            <li>
-              <Link to="/user-events/hosted-events">Hosted Events</Link>
-            </li>
-            <li>
-              <button
+              <Link to="/user-events/bookmarks"><li>Saved Events</li></Link>
+              <Link to="/user-events/tickets"><li>Tickets</li></Link>
+              <Link to="/user-events/hosted-events"><li>Hosted Events</li></Link>
+              <li><button
                 className="log-out-button"
                 onClick={this.props.logout}>
                 Log Out
-              </button>
-            </li>
+              </button></li>
         </ul>
         </li>
         <li>
@@ -42,8 +34,8 @@ class NavBar extends React.Component{
           Log Out
           </button>
         </li>
-        <li><Link to="/browse-events/all">Browse Events</Link></li>
-        <div id="create"><Link to="/new-event">Create Event</Link></div>
+        <Link to="/browse-events/all"><li>Browse Events</li></Link>
+        <Link to="/new-event"><div id="create">Create Event</div></Link>
       </ul>
     );
   }

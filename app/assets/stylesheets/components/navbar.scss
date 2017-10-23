@@ -10,7 +10,6 @@
 
 .logo{
   margin: 0px 15px;
-
   font-family: 'Signika', sans-serif;
   font-size: 1.3em;
   text-decoration: none;
@@ -39,11 +38,18 @@
     padding: 17px 25px 15px 25px;
 
     button {
+      display: block;
       border: none;
       background-color: transparent;
       text-transform: uppercase;
       color: $text-gray;
       font-weight: 100;
+      height: 100%;
+      width: 100%;
+
+      &:hover {
+        cursor: pointer;
+      }
     }
 
     &:hover{
@@ -58,6 +64,21 @@
 
   a {
     color: $text-gray;
+
+    #create {
+      font-weight: 500;
+      padding: 17px 25px 15px 25px;
+      border-left: 1px solid $light-gray;
+      padding: 20px 25px;
+      letter-spacing: 0.7px;
+      cursor: pointer;
+      color: $blue;
+
+      &:hover {
+        color: $dark-blue;
+      }
+
+    }
   }
 
   .dropdown {
@@ -71,7 +92,7 @@
     &:hover .dropdown-content {
       cursor: pointer;
       background: #f9f9f9;
-      display: block;
+      display: inline-block;
     }
   }
 
@@ -109,24 +130,14 @@
     border: none;
     background-color: transparent;
     padding: 0px 2px 0px 1px;
-  }
-}
+    display: block;
+    width: 100%;
+    text-align: left;
 
-#create {
-  font-weight: 500;
-  padding: 17px 25px 15px 25px;
-  border-left: 1px solid $light-gray;
-  padding: 20px 25px;
-  letter-spacing: 0.7px;
-  cursor: pointer;
-
-  a {
-    color: $blue;
     &:hover {
-      color: $dark-blue;
+      cursor: pointer;
     }
   }
-
 }
 
 #fa-arrow {
