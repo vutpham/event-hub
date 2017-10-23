@@ -4,7 +4,7 @@
 }
 
 .slick-track:hover{
-  cursor: col-resize;
+  cursor: pointer;
 }
 
 .slick-prev{
@@ -19,12 +19,12 @@
 }
 
 .slick-next:after{
-  color: gray !important;
+  color: red !important;
 }
 
 .slick-next:before, .slick-prev:before{
   font-size: 35px !important;
-  color: gray !important;
+  color: red !important;
   z-index: 9999;
   opacity: 75%;
 
@@ -44,9 +44,17 @@
   flex-direction: column;
   position: relative;
   margin: 10px;
-  border-radius: 5px;
-  // border: 1px solid #efefef;
-  // background-color: #f2f2f2;
+  background-color: white;
+  font-size: 12px;
+  letter-spacing: 0.7px;
+  color: $text-gray;
+
+  &:hover {
+    transform: scale(1.03);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 5px 10px 0 rgba(0, 0, 0, 0.19);
+    -webkit-filter: brightness(95%); /* Safari */
+    filter: brightness(95%);
+  }
 
   .fa-bookman-o{
     position: absolute;
@@ -57,13 +65,8 @@
   .event-slider-item-img{
     height: 200px;
     object-fit: cover;
-    border-radius: 4px;
+    border-radius: 1px;
     width: 100%;
-
-    &:hover{
-      -webkit-filter: brightness(80%); /* Safari */
-      filter: brightness(80%);
-    }
   }
 
   .price-tag-slider{
@@ -73,17 +76,19 @@
   }
 
   .event-slider-info{
-    border-top: 1px solid gray;
+    border-top: 1px solid silver;
+    border-bottom: 1px solid gray;
+    // background-color: white;
     padding: 10px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    border-radius: 4px;
 
     .browse-event-title{
-      margin-bottom: 5px;
+      margin: 5px 0px 5px 0px;
       font-weight: bold;
-      font-size: 18px;
+      font-size: 15px;
+      color: black;
     }
 
     .event-slider-header{
@@ -94,5 +99,6 @@
   }
 
   .slider-date{
+    text-transform: uppercase;
   }
 }

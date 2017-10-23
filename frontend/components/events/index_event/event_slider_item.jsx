@@ -41,11 +41,12 @@ class EventSliderItem extends React.Component{
           </img>
         </Link>
         <span className="event-slider-info">
+          <div className='slider-date'>{date}</div>
             <div className='event-slider-header'>
               <div className='browse-event-title'>{title}</div>
               {bookmark}
             </div>
-              <div className='slider-date'>{date} &#8226; {venue}</div>
+              <div className='slider-venue'>{venue}</div>
         </span>
 
 
