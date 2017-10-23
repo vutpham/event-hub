@@ -21,12 +21,12 @@ class Home extends React.Component {
 
         <section id='event-slider-container'>
         <h1 className='trending-events-title'>
-          Trending on EventHub
+          Popular Events in <span className="area-highlight">San Francisco Bay Area</span>
         </h1>
         <EventSliderContainer />
         <div className="see-more-button-container">
           <Link to="/browse-events/All" className='see-more-button'>
-            See More Events
+            See More
           </Link>
         </div>
         </section>

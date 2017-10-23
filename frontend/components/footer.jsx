@@ -3,7 +3,7 @@ import React from 'react';
 const Footer = (props) => (
   <div className='footer'>
       <div>
-        <small>Inspired by Eventbrite, made by Vu T. Pham</small>
+        <small>Inspired by Eventbrite, made by <a className="portfolio-link" href='https://vutpham.com'>Vu T. Pham</a></small>
         <br/>
         <small>For Portfolio Purposes Only</small>
       </div>
