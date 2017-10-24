@@ -63,19 +63,19 @@ class BrowseEventsItem extends React.Component{
         </div>
         </Link>
 
-        <Link to={`/events/${id}`}>
           <span className="browse-event-info">
+            <Link to={`/events/${id}`}>
             <div className="event-info">
               <div className="browse-event-date">{dateString}</div>
               <div className='browse-event-title'>{title}</div>
               <div className="browse-event-venue">{venue}</div>
             </div>
+          </Link>
             <div className='browse-event-footer'>
               <div className="browse-event-categories">{categories}</div>
               <div>{cancelEventButton || bookmark}</div>
             </div>
           </span>
-        </Link>
       </div>
     );
 }}
