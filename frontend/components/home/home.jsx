@@ -6,14 +6,19 @@ import SearchBar from '../search/search_bar';
 import SlideShow from './home_slideshow';
 
 class Home extends React.Component {
+  constructor(props) {
+    super(props);
+  }
+
   render(){
     return(
       <div id="home">
         <div id='main-home-img-container'>
           <SlideShow />
           <div id="main-home-img-title">
-            <div>
-            Find Your Next Experience
+            <div className='search-title-div'>
+            Find your next experience
+            <SearchBar fetchMatchingEvents={this.props.fetchMatchingEvents}/>
             </div>
           </div>
         </div>

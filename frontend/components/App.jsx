@@ -4,7 +4,7 @@ import { ProtectedRoute, AuthRoute } from '../util/route_util';
 import SessionFormContainer from './auth/auth_form_container';
 import GreetingContainer from './auth/greeting_container';
 import NavBarContainer from './nav/nav_bar_container';
-import Home from './home/home';
+import HomeContainer from './home/home_container';
 import Footer from './footer';
 import EventDetailContainer from './events/event_detail_container';
 import EventFormContainer from './events/event_form_container';
@@ -21,7 +21,7 @@ const App = () => (
     </header>
     <div id='main-content'>
     <Switch>
-      <Route exact path="/" component={Home} />
+      <Route exact path="/" component={HomeContainer} />
       <Route exact path="/events/:eventId" component={EventDetailContainer} />
       <Route exact path="/new-event" component={EventFormContainer} />
       <Route path="/browse-events/:category" component={ BrowseEventsContainer } />

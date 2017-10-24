@@ -1,3 +1,40 @@
+#main-home-img-container{
+  position: relative;
+}
+
+#main-home-img-title{
+  position: absolute;
+  top: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  color: $red;
+  font-size: 45px;
+  letter-spacing: 1.25px;
+
+  &:hover{
+    cursor: default;
+    -webkit-user-select: none;  /* Chrome all / Safari all */
+    -moz-user-select: none;     /* Firefox all */
+    -ms-user-select: none;      /* IE 10+ */
+    user-select: none;
+  }
+  div{
+    text-align: center;
+  }
+
+  .search-title-div {
+    position: absolute;
+    background-color: white;
+    margin-top: 170px;
+    padding: 35px 150px;
+    border-radius: 3px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 5px 10px 0 rgba(0, 0, 0, 0.19);
+  }
+}
 
 .see-more-button-container{
   display: flex;

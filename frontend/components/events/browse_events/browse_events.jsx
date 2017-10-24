@@ -24,8 +24,7 @@ class BrowseEvents extends React.Component{
         />
   ));
     if (events.length === 0){
-      events = <div className="search-results-text">Sorry! We could not find any events matching "{this.props.match.params.searchString}". We are still
-                    a growing web service with a limited number of events. Try some popular searches, like...
+      events = <div className="search-results-text">Sorry! We could not find any events matching your search. Try some popular searches, like...
                     <strong>concert</strong>, <strong>festival</strong>, or <strong>game</strong>! </div>;
     }
     return(
@@ -38,7 +37,7 @@ class BrowseEvents extends React.Component{
               <FilterContainer category={category} search={search}/> } />
         </div>
         <ul className="browse-events-list">
-          <h1>Explore {category} Events</h1>
+          <h1>Explore Events</h1>
           <p>Whether you’re a local, new in town, or just passing through, you’ll
             find something here that piques your interest. Business, food & drink,
             and sports & fitness are some of the most popular types of

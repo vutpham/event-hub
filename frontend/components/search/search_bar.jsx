@@ -13,12 +13,11 @@ class SearchBar extends React.Component{
 
   search(e){
     e.preventDefault();
-    const searchString = this.state.searchString;
+    const searchString = this.state.searchString.toLowerCase();
     if(searchString.length > 0){
       this.props.fetchMatchingEvents(searchString)
       .then( () => {
         this.props.history.push(`/browse-events/Search`);
-        this.setState({searchString: ""});
         }
       );
     }
@@ -33,13 +32,14 @@ class SearchBar extends React.Component{
     return(
         <form onSubmit={this.search} className="search">
           <input
-            placeholder="festival, party, concert..."
+            placeholder="Search events or categories"
             type="search"
             value={this.state.searchString}
             onChange={this.handleChange}
             className="searchTerm"
             id="search"
           />
+        <input type="submit" value="Search"></input>
         </form>
     );
   }

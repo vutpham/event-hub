@@ -14,22 +14,13 @@ input::-webkit-search-cancel-button {
 
 
 input[type=search] {
-	background: #ededed url(http://res.cloudinary.com/events4u/image/upload/v1495604028/search-icon_wbeqim.png) no-repeat 9px center;
 	border: solid 1px #ccc;
-	padding: 5px 10px 5px 32px;
-	width: 160px;
+	padding: 10px 15px;
+	width: 320px;
   font-size: 14px;
-
-	-webkit-border-radius: 5px;
-	-moz-border-radius: 5px;
-	border-radius: 5px;
-
-	-webkit-transition: all .5s;
-	-moz-transition: all .5s;
-	transition: all .5s;
 }
+
 input[type=search]:focus {
-	width: 200px;
 	background-color: #fff;
 	border-color: #C63D0F;;
 
@@ -44,4 +35,21 @@ input:-moz-placeholder {
 }
 input::-webkit-input-placeholder {
 	color: #999;
+}
+
+.search {
+	input[type=submit] {
+		padding: 13px 35px 12px 35px;
+		background-color: $red;
+		color: white;
+		border: 0;
+		text-transform: uppercase;
+		letter-spacing: 1.15px;
+		transition: all 0.3s;
+
+		&:hover {
+			background-color: $dark-red;
+			cursor: pointer;
+		}
+	}
 }
