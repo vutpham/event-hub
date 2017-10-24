@@ -48,6 +48,7 @@
   font-size: 12px;
   letter-spacing: 0.7px;
   color: $text-gray;
+  transition: all 0.3s;
 
   &:hover {
     transform: scale(1.03);

@@ -68,28 +68,16 @@ class UserEvents extends React.Component{
           <nav
             className={"bookmarks-toggle" + this.dynamicSelector(1)}
             onClick={this.goTo('/user-events/bookmarks')}>
-            <span>My Saved Events</span>
-            <span className="fa-stack fa-lg">
-              <i className="fa fa-circle-o fa-stack-2x"></i>
-              <i className="fa fa-bookmark fa-stack-1x"></i>
-            </span>
+            <span>Saved Events</span>
           </nav>
           <nav
             className={"tickets-toggle" + this.dynamicSelector(2)}
             onClick={this.goTo('/user-events/tickets')}>
             <span>My Tickets</span>
-            <span className="fa-stack fa-lg">
-              <i className="fa fa-circle-o fa-stack-2x"></i>
-              <i className="fa fa-ticket fa-stack-1x"></i>
-            </span>
           </nav>
           <nav className={"hosted-events-toggle" + this.dynamicSelector(3)}
             onClick={this.goTo('/user-events/hosted-events')}>
-            <span>My Hosted Events</span>
-            <span className="fa-stack fa-lg">
-              <i className="fa fa-circle-o fa-stack-2x"></i>
-              <i className="fa fa-user fa-stack-1x"></i>
-            </span>
+            <span>Hosted Events</span>
           </nav>
         </header>
         <div className="account-page-display">
