@@ -38,7 +38,7 @@ class BrowseEvents extends React.Component{
               <FilterContainer category={category} search={search}/> } />
         </div>
         <ul className="browse-events-list">
-          <h1>Explore Events</h1>
+          <h1>Explore {category} Events</h1>
           {events}
         </ul>
       </div>

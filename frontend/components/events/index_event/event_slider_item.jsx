@@ -25,7 +25,10 @@ class EventSliderItem extends React.Component{
   }
 
   render(){
-    let {title, image_url, date, venue, id, bookmarked} = this.props.event;
+    let {title, image_url, date, venue, price, id, bookmarked} = this.props.event;
+    price = (price === 0 ? "Free" : `$${price}`);
+    let dateString = new Date(date);
+    dateString = dateString.toDateString();
     let bookmark;
     if (bookmarked){
       bookmark = <i className="fa fa-bookmark fa-lg" onClick={this.toggleBookmark} aria-hidden="true"></i>;
@@ -34,6 +37,7 @@ class EventSliderItem extends React.Component{
 
     return(
       <div className="event-slider-item">
+        <div className="price-tag">{price}</div>
         <Link to={`/events/${id}`}>
           <img className="event-slider-item-img"
             src={image_url}
@@ -41,7 +45,7 @@ class EventSliderItem extends React.Component{
           </img>
         </Link>
         <span className="event-slider-info">
-          <div className='slider-date'>{date}</div>
+          <div className='slider-date'>{dateString}</div>
             <div className='event-slider-header'>
               <div className='browse-event-title'>{title}</div>
               {bookmark}

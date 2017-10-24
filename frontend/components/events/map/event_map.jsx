@@ -8,7 +8,7 @@ class EventMap extends React.Component{
 
   componentDidMount() {
     const mapOptions = {
-      center: { lat: 37.7758, lng: -122.435 }, // this is SF
+      center: { lat: 37.7008, lng: -122.3900 }, // this is SF
       zoom: 10
     };
     this.map = new google.maps.Map(this.mapNode, mapOptions);

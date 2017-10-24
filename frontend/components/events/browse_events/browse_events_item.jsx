@@ -51,23 +51,31 @@ class BrowseEventsItem extends React.Component{
     else bookmark = <i className="fa fa-bookmark-o fa-lg" onClick={this.toggleBookmark} aria-hidden="true"></i>;
     return(
       <div className="browse-event-item">
-        <div className="price-tag">{price}</div>
         <Link to={`/events/${id}`}>
-          <img className="browse-event-item-img"
-            src={image_url}
-            alt="Event Image">
-          </img>
+        <div className="img-price-container">
+            <img className="browse-event-item-img"
+              src={image_url}
+              alt="Event Image">
+            </img>
+          <div className="browse-event-price">
+            { price }
+          </div>
+        </div>
         </Link>
-        <span className="browse-event-info">
+
+        <Link to={`/events/${id}`}>
+          <span className="browse-event-info">
+            <div className="event-info">
+              <div className="browse-event-date">{dateString}</div>
               <div className='browse-event-title'>{title}</div>
-              <div>{dateString} &#8226; {venue}</div>
-              <div className='browse-event-footer'>
-                <div>{categories}</div>
-                <div>{cancelEventButton || bookmark}</div>
-              </div>
-        </span>
-
-
+              <div className="browse-event-venue">{venue}</div>
+            </div>
+            <div className='browse-event-footer'>
+              <div className="browse-event-categories">{categories}</div>
+              <div>{cancelEventButton || bookmark}</div>
+            </div>
+          </span>
+        </Link>
       </div>
     );
 }}
