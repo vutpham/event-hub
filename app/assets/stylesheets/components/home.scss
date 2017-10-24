@@ -47,3 +47,22 @@ h1{
 #events-by-category {
   margin-top: 0px;
 }
+
+#slideshow {
+  position: relative;
+  width: 100vw;
+  height: 35vw;
+  object-fit: cover;
+  background: #000000;
+}
+
+.slide-border {
+  position: absolute;
+}
+
+.slide-image{
+  width: 100vw;
+  height: 35vw;
+  object-fit: cover;
+  opacity: .8;
+}

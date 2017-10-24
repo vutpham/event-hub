@@ -3,15 +3,14 @@ import { Link } from 'react-router-dom';
 import EventSliderContainer from '../events/index_event/event_slider_container';
 import EventSearchContainer from './category_search/category_search_container';
 import SearchBar from '../search/search_bar';
+import SlideShow from './home_slideshow';
 
 class Home extends React.Component {
   render(){
     return(
       <div id="home">
         <div id='main-home-img-container'>
-          <img src="https://res.cloudinary.com/vutpham/image/upload/v1508829096/compressed_yglwgi.jpg"
-               id="main-home-img">
-          </img>
+          <SlideShow />
           <div id="main-home-img-title">
             <div>
             Find Your Next Experience
