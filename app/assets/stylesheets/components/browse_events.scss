@@ -19,6 +19,25 @@
   flex-direction: column;
   min-margin-left: 10px;
   margin-left: 50px;
+
+  h1 {
+    text-align: left;
+    margin: 0px 0px 20px 0px;
+    color: $red;
+  }
+
+  p {
+    width: 700px;
+    line-height: normal;
+    letter-spacing: 1.15px;
+    font-size: 14px;
+    margin-bottom: 20px;
+
+    strong {
+      font-weight: bolder;
+      color: $red;
+    }
+  }
 }
 
 @media screen and ( max-width: 400px ){
@@ -73,6 +92,7 @@
       color: black;
       font-weight: bold;
       padding: 5px;
+      text-align: center;
     }
   }
 

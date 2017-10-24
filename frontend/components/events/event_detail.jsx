@@ -66,7 +66,7 @@ class EventDetail extends React.Component{
             <img className="event-detail-img" src={image_url}></img>
             <span className="title-box">
               <h1>{title}</h1>
-              <h3>Hosted By: {host}</h3>
+              <h3>by {host}</h3>
               <h4>{price}</h4>
             </span>
 

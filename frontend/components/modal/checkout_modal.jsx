@@ -49,7 +49,7 @@ class CheckoutModal extends React.Component{
 
       return(
         <div className="checkout-modal">
-          <button className="buy-tickets"onClick={this.openModal} >Tickets</button>
+          <button className="buy-tickets"onClick={this.openModal} >Register</button>
           <Modal
             isOpen={this.state.modalIsOpen}
             onRequestClose={this.closeModal}

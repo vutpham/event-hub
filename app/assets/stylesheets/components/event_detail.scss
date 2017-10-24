@@ -42,16 +42,25 @@
       background-color: #efefef;
       display: flex;
       flex-direction: column;
-      justify-content: space-around;
-      align-items: center;
+      justify-content: center;
       h1{
         font-size: 30px;
         font-weight: bold;
+        color: black;
+        margin-bottom: 10px;
+      }
+
+      h3 {
+        letter-spacing: 1.25px;
         text-align: center;
       }
-      h3, h4{
-        font-size: 20px;
-        text-align: center;
+
+      h4 {
+        margin-top: 50px;
+        font-size: 25px;
+        font-weight: bold;
+        color: $red;
+        text-align:center;
       }
     }
     height: 350px;
@@ -110,17 +119,19 @@
   width: 28% !important;
 }
 .buy-tickets{
-  padding: 5px;
+  font-size: 14px;
+  text-transform: uppercase;
+  padding: 15px 0px;
   width: 100%;
-  background-color: #99CCCC;
+  background-color: $green;
   color: white;
-  font-weight: bold;
   cursor: pointer;
-  border-radius: 6px;
-  letter-spacing: 150%;
+  border: none;
+  border-radius: 3px;
+  transition: all 0.3s;
+  letter-spacing: 1.25px;
   &:hover{
-    -webkit-filter: brightness(75%); /* Safari */
-    filter: brightness(75%);
+    background-color: $nasty-green
   }
 }
 .buy-tickets:focus{

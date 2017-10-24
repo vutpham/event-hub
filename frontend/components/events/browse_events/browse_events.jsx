@@ -39,6 +39,11 @@ class BrowseEvents extends React.Component{
         </div>
         <ul className="browse-events-list">
           <h1>Explore {category} Events</h1>
+          <p>Whether you’re a local, new in town, or just passing through, you’ll
+            find something here that piques your interest. Business, food & drink,
+            and sports & fitness are some of the most popular types of
+            events. Browse below to see what’s happening in the
+            <strong> San Francisco Bay Area</strong>.</p>
           {events}
         </ul>
       </div>

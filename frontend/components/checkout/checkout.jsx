@@ -53,16 +53,13 @@ class Checkout extends React.Component{
 
           <footer className="checkout-footer">
             <span>
-              QTY:{this.state.quantity}
+              Total:  
+            </span>
+            <span>
+              QTY: {this.state.quantity}
             </span>
             <span>
               {totalPrice}
-            </span>
-            <span className="checkout-options">
-              <img src="http://res.cloudinary.com/events4u/image/upload/v1495403641/Visa.png"></img>
-              <img src="http://res.cloudinary.com/events4u/image/upload/v1495403620/mastercard.png"></img>
-              <img src="http://res.cloudinary.com/events4u/image/upload/v1495403624/american-express.png"></img>
-              <img src="http://res.cloudinary.com/events4u/image/upload/v1495403614/discover.png"></img>
             </span>
             <input type="submit" value={checkoutText} onClick={this.purchase} />
           </footer>
