@@ -9,7 +9,7 @@ class EventSlider extends React.Component {
   }
 
   componentWillMount(){
-    this.props.fetchAllEvents();
+    this.props.fetchSomeEvents();
   }
 
   render() {

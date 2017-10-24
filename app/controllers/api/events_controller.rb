@@ -1,7 +1,7 @@
 class Api::EventsController < ApplicationController
   def index
-    @events = Event.includes(:categories).all
-
+    offset = params[:offset] || 0
+    @events = Event.includes(:categories).limit(10).offset(offset)
     if current_user
       @bookmarked_events = current_user.bookmarked_events
     else
@@ -58,43 +58,59 @@ class Api::EventsController < ApplicationController
   end
 
   def filter
+    #BY CATEGORY
+    offset = params[:offset] || 0
     categories = Category.where(name: params[:category_names])
     @events = []
     categories.each do |category|
-      @events.concat(category.events.includes(:categories))
+      @events.concat(category.events.limit(10).offset(offset).includes(:categories))
     end
-
     if current_user
       @bookmarked_events = current_user.bookmarked_events
     else
       @bookmarked_events = []
     end
-
     render :index
   end
 
   def hosted_events
     @events = current_user.events.includes(:categories)
-    @bookmarked_events = current_user.bookmarked_events
+    if current_user
+      @bookmarked_events = current_user.bookmarked_events
+    else
+      @bookmarked_events = []
+    end
     render :index
   end
 
   def bookmarked_events
     @events = current_user.bookmarked_events.includes(:categories)
-    @bookmarked_events = @events
+    if current_user
+      @bookmarked_events = current_user.bookmarked_events
+    else
+      @bookmarked_events = []
+    end
     render :index
   end
 
   def attended_events
     @events = current_user.purchased_events.includes(:categories)
-    @bookmarked_events = current_user.bookmarked_events
+    if current_user
+      @bookmarked_events = current_user.bookmarked_events
+    else
+      @bookmarked_events = []
+    end
     render :index
   end
 
   def search
     @events = Event.where("title LIKE ? OR full_description LIKE ?",
               "%#{params[:search_string]}%", "%#{params[:search_string]}%")
-    @bookmarked_events = current_user.bookmarked_events
+    if current_user
+      @bookmarked_events = current_user.bookmarked_events
+    else
+      @bookmarked_events = []
+    end
     render :index
   end
 

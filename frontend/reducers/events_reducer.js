@@ -1,5 +1,6 @@
 import { RECEIVE_NEW_EVENT, RECEIVE_EVENTS, DESTROY_EVENT, RECEIVE_EVENT,
-          ADD_BOOKMARK_TO_EVENT, REMOVE_BOOKMARK_FROM_EVENT}
+          ADD_BOOKMARK_TO_EVENT, REMOVE_BOOKMARK_FROM_EVENT, LOAD_EVENTS,
+          CLEAR_EVENTS }
   from '../actions/event_actions';
 import merge from 'lodash/merge';
 
@@ -36,6 +37,10 @@ const EventsReducer = (state = {}, action) => {
       newState = merge({}, state);
       delete newState[action.id];
       return newState;
+    case LOAD_EVENTS:
+      return merge({}, state, action.events);
+    case CLEAR_EVENTS:
+      return {};
     default:
       return state;
   }

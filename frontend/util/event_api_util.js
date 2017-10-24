@@ -6,10 +6,12 @@ export const getEvent = (id) => {
   });
 };
 
-export const getEvents = () => {
+export const getEvents = (offset) => {
+  offset = offset || 0;
   return $.ajax({
     method: "GET",
-    url: '/api/events'
+    url: '/api/events',
+    data: {offset}
   });
 };
 

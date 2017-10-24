@@ -10,6 +10,10 @@ export const DESTROY_EVENT = "DESTROY_EVENT";
 export const ADD_BOOKMARK_TO_EVENT = "ADD_BOOKMARK_TO_EVENT";
 export const REMOVE_BOOKMARK_FROM_EVENT = "REMOVE_BOOKMARK_FROM_EVENT";
 export const CLEAR_EVENT_DETAILS = "CLEAR_EVENT_DETAILS";
+export const RECEIVE_RECOMMENDED_EVENTS = "RECEIVE_RECOMMENDED_EVENTS";
+export const CLEAR_RECOMMENDED_EVENTS = "CLEAR_RECOMMENDED_EVENTS";
+export const LOAD_EVENTS = "LOAD_EVENTS";
+export const CLEAR_EVENTS = "CLEAR_EVENTS";
 
 export const receiveNewEvent = event => ({
   type: RECEIVE_EVENT,
@@ -19,6 +23,10 @@ export const receiveNewEvent = event => ({
 export const receiveEventDetails = event => ({
   type: RECEIVE_EVENT_DETAILS,
   event
+});
+
+export const clearEvents = () => ({
+  type: CLEAR_EVENTS
 });
 
 export const receiveEvents = events => ({
@@ -45,9 +53,23 @@ export const removeBookmarkFromEvent = id => ({
   id
 });
 
-export const fetchAllEvents = () => dispatch => {
-  return APIUtil.getEvents()
-    .then((events) => dispatch(receiveEvents(events)))
+export const receiveRecommendedEvents = events => ({
+  type: RECEIVE_RECOMMENDED_EVENTS,
+  events
+});
+
+export const clearRecommendedEvents = () => ({
+  type: CLEAR_RECOMMENDED_EVENTS,
+});
+
+export const loadEvents = (events) => ({
+  type: LOAD_EVENTS,
+  events
+});
+
+export const fetchSomeEvents = (offset) => dispatch => {
+  return APIUtil.getEvents(offset)
+    .then((events) => dispatch(loadEvents(events)))
     .fail( err => dispatch(receiveErrors(err.responseJSON)));
 };
 
@@ -77,7 +99,7 @@ export const createEvent = (event1) => dispatch => {
 
 export const fetchFilteredEvents = (filters) => dispatch => {
   return APIUtil.getFilteredEvents(filters)
-    .then((events) => dispatch(receiveEvents(events)));
+    .then((events) => dispatch(loadEvents(events)));
 };
 
 export const bookmarkEvent = eventId => dispatch => {
@@ -115,4 +137,9 @@ export const fetchAllTickets = () => dispatch => {
 export const fetchMatchingEvents = (search_string) => dispatch => {
   return APIUtil.searchEvents(search_string)
     .then((events) => dispatch(receiveEvents(events)));
+};
+
+export const fetchRecommendedEvents = () => dispatch => {
+  return APIUtil.getRecommendedEvents()
+    .then((events) => dispatch(receiveRecommendedEvents(events)));
 };
