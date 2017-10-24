@@ -61,6 +61,19 @@ class UserEvents extends React.Component{
 
 
   render(){
+    let noEventsFound;
+    if (this.props.events.length === 0){
+      let path = this.props.location.pathname;
+      if( path === '/user-events/bookmarks'){
+        noEventsFound = <div className="no-results">You don't have any saved events yet! Start clicking the bookmark icon under an event to get started.</div>;
+      }
+      else if (path === '/user-events/tickets'){
+        noEventsFound = <div className="no-results">You don't have any tickets yet!</div>;
+      }
+      else{
+        noEventsFound = <div className="no-results">You haven't hosted any events yet! Create an event to get started hosting your first event! </div>;
+      }
+    }
     return(
       <div id="account-page">
         <h1>Welcome, {this.props.currentUser.username}</h1>
@@ -81,6 +94,7 @@ class UserEvents extends React.Component{
           </nav>
         </header>
         <div className="account-page-display">
+          {noEventsFound}
           <MyEvents
             events={this.props.events}
             bookmarkEvent={this.props.bookmarkEvent}

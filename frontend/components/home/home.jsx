@@ -34,7 +34,7 @@ class Home extends React.Component {
           </Link>
         </div>
         </section>
-        <h1 id="events-by-category">Browse Events By Category</h1>
+        <h1 id="events-by-category">Browse By Top Categories</h1>
         <EventSearchContainer />
       </div>
     );

@@ -22,14 +22,14 @@ class SingleEventMap extends React.Component{
       const marker = new google.maps.Marker({
         position,
         map: this.map,
-        eventId: event.id
+        eventId: event.id,
+        label: "B"
       });
       let infowindow = new google.maps.InfoWindow({
         content: title,
         disableAutoPan: true
       });
-      marker.addListener('mouseover', () => infowindow.open(this.map, marker));
-      marker.addListener('mouseout', () => infowindow.close(this.map, marker));
+      marker.addListener('click', () => infowindow.open(this.map, marker));
       this.map.setCenter({lat: lat, lng: lng});
       window.scrollTo(0,0);
     });
