@@ -12,9 +12,17 @@ class Filter extends React.Component{
   filterEvents(category){
     return (e) => {
       this.props.clearEvents();
-      this.props.fetchFilteredEvents({category_names: [category]});
+      this.props.fetchFilteredEvents({category_names: [category]})
+      .then((res)=>{
+        this.props.history.push(`/browse-events/${category}`);
+        if (Object.keys(res.events).length < 10){
+          document.getElementById("load-button").disabled = true;
+        }
+        else{
+          document.getElementById("load-button").disabled = false;
+        }
+      });
       this.props.history.push(`/browse-events/${category}`);
-      document.getElementById("load-button").disabled = false;
     };
   }
 
@@ -50,16 +58,17 @@ class Filter extends React.Component{
 
   unFilterEvents(e){
     this.props.clearEvents();
-    this.props.fetchSomeEvents(this.props.offset);
+    this.props.fetchSomeEvents();
     this.props.history.push(`/browse-events/All`);
     document.getElementById("load-button").disabled = false;
   }
 
   componentDidMount(){
+    this.props.clearEvents();
     let category = this.props.category;
     document.getElementById("load-button").disabled = false;
     if(category === 'All'){
-      this.props.fetchSomeEvents(this.props.offset);
+      this.props.fetchSomeEvents();
     }
     else if(category === 'Search'){
       return;
