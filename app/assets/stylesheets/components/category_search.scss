@@ -22,9 +22,7 @@
 
       &:hover{
         cursor: pointer;
-        // -webkit-filter: brightness(90%) !important; /* Safari */
-        // filter: brightness(90%) !important;
-        transform: scale(1.05);
+        transform: scale(1.01);
       }
     }
 
@@ -74,30 +72,30 @@
 
 
     .sb-r1-c1{
-      width: 60%;
-      background-image: url("http://res.cloudinary.com/events4u/image/upload/v1495316021/concert.jpg");
+      width: 66%;
+      background-image: url("https://res.cloudinary.com/vutpham/image/upload/v1508828160/concert_2_salfxu.png");
       &:hover .pic-text-secret{
         visibility: visible;
       }
     }
     .sb-r1-c2{
-      width: 38%;
+      width: 32%;
       margin-left: 2%;
-      background-image: url("http://res.cloudinary.com/events4u/image/upload/v1495246509/Home-cooking-img.jpg");
+      background-image: url("https://res.cloudinary.com/vutpham/image/upload/v1508827275/food_wf1xbg.png");
       &:hover .pic-text-secret{
         visibility: visible;
       }
     }
     .sb-r2-c1{
       width: 32%;
-      background-image: url("http://res.cloudinary.com/events4u/image/upload/v1495254592/class.jpg");
+      background-image: url("https://res.cloudinary.com/vutpham/image/upload/v1508827270/classes_jmdtkr.png");
       &:hover .pic-text-secret{
         visibility: visible;
       }
     }
     .sb-r2-c2{
       width: 32%;
-      background-image: url("http://res.cloudinary.com/events4u/image/upload/v1495320541/conference.jpg");
+      background-image: url("https://res.cloudinary.com/vutpham/image/upload/v1508827268/business_e52pqt.png");
       margin-left: 2%;
       &:hover .pic-text-secret{
         visibility: visible;
@@ -106,22 +104,22 @@
     .sb-r2-c3{
       width: 32%;
       margin-left: 2%;
-      background-image: url("http://res.cloudinary.com/events4u/image/upload/e_brightness:-17/v1495253058/party-07_ka52na.jpg");
+      background-image: url("https://res.cloudinary.com/vutpham/image/upload/v1508827276/parties_dpkcgs.png");
       &:hover .pic-text-secret{
         visibility: visible;
       }
     }
     .sb-r3-c1{
-      width: 38%;
-      background-image: url("http://res.cloudinary.com/events4u/image/upload/v1495320952/paintbrush.jpg");
+      width: 32%;
+      background-image: url("https://res.cloudinary.com/vutpham/image/upload/v1508827757/arts_crafts_ysjin1.png");
       &:hover .pic-text-secret{
         visibility: visible;
       }
     }
     .sb-r3-c2{
-      width: 60%;
+      width: 66%;
       margin-left: 2%;
-      background-image: url("http://res.cloudinary.com/events4u/image/upload/e_brightness:-23/v1495323033/football_roq0ur.jpg");
+      background-image: url("https://res.cloudinary.com/vutpham/image/upload/v1508827537/tennis_sx5jwr.png");
       &:hover .pic-text-secret{
         visibility: visible;
       }

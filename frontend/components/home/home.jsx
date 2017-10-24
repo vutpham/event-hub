@@ -9,7 +9,7 @@ class Home extends React.Component {
     return(
       <div id="home">
         <div id='main-home-img-container'>
-          <img src="http://cdn.wallpapersafari.com/97/60/VKjztJ.jpg"
+          <img src="https://res.cloudinary.com/vutpham/image/upload/v1508829096/compressed_yglwgi.jpg"
                id="main-home-img">
           </img>
           <div id="main-home-img-title">
