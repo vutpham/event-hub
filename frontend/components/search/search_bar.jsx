@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { withRouter } from 'react-router';
 
@@ -13,11 +12,12 @@ class SearchBar extends React.Component{
 
   search(e){
     e.preventDefault();
-    const searchString = this.state.searchString.toLowerCase();
+    const searchString = this.state.searchString;
+    console.log(searchString);
     if(searchString.length > 0){
       this.props.fetchMatchingEvents(searchString)
       .then( () => {
-        this.props.history.push(`/browse-events/Search`);
+        this.props.history.push(`/browse-events/Search/${searchString}`);
         }
       );
     }

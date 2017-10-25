@@ -3,16 +3,19 @@
   justify-content: flex-start;
   align-items: flex-start;;
   flex-direction: column;
-  padding-left: 150px;
+  margin-left: 22%;
   width: 60%;
   min-width: 400px;
+  background-color: white;
+  padding: 0px 50px;
 }
 
 .new-event-form-container h1{
   font-size: 30px;
   margin-top: 50px;
   margin-bottom: 20px;
-  text-align: center;
+  align-self: center;
+  color: $red;
 }
 
 .new-event-step-1, .new-event-step-2, .new-event-step-3{
@@ -37,18 +40,6 @@
   border: 2px solid black;
 }
 
-.step-num{
-  display: table-cell;
-  background-color: #0093D7;
-  color: white;
-  width: 50px;
-  font-size: 35px;
-  line-height: 45px;
-  padding-bottom: 5px;
-  padding-left: 0;
-  text-align: center;
-  vertical-align: middle;
-}
 .new-event-step-1 input[type="text"], .new-event-step-1 select{
   margin-bottom: 40px;
   font-size: 16px;
@@ -86,36 +77,28 @@
 .new-event-step-3 input[type="submit"]{
   margin-top: 20px;
   margin-bottom: 100px;
-  width: 250px;
-  font-size: 25px;
-  height: 40px;
-  color: gray;
-  background-color: #C63D0F;;
+  width: 220px;
+  font-size: 20px;
+  height: 50px;
   color: white;
+  background-color: $green;
   cursor: pointer;
   border-radius: 6px;
   text-shadow:0px 1px 0px #528ecc;
-  letter-spacing: 150%;
-  &:hover{
-    cursor: pointer;
-    opacity: 0.6;
+  letter-spacing: 1.25px;
+  transition: 0.3s;
+  &:hover {
+    transform: scale(1.03);
+    background-color: $nasty-green;
+    border: 2px solid $nasty-green;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 5px 10px 0 rgba(0, 0, 0, 0.19);
+    color: white;
   }
   &:focus{
     outline: none;
   }
 }
-.step-header{
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  border-bottom: 1px dotted gray;
-  margin-bottom: 5px;
-}
 
-.step-name{
-  margin-left: 10px;
-  font-size: 25px;
-}
 
 .new-event-form .left-col{
   padding: 50px;
@@ -130,13 +113,20 @@
   align-content: center;
   margin-top: 30px;
   h5{
-    font-size: 20px;
+    font-size: 18px;
     margin-bottom: 15px;
+    font-weight: bold;
+    color: black;
+    text-transform: uppercase;
   }
   label{
     margin: 0px;
     padding: 0px;
     font-size: 15px;
+    text-transform: none;
+    input {
+      margin-right: 10px;
+    }
   }
 }
 
@@ -145,56 +135,34 @@
   font-weight: 800;
   font-size: 18px;
   margin-top: 10px;
-}
-.new-event-form select{
-  width: 300px;
-}
-
-.new-event-form textarea{
-  font-size: 13px;
-  margin-bottom: 50px;
-  font-family: inherit;
-  resize: none;
-  padding: 10px;
+  color: black;
+  text-transform: uppercase;
 }
 
 .required-field{
-  color: #C63D0F;
+  color: $red;
 }
 
 .new-event-form .errors{
-  color: #C63D0F;
+  color: $red;
 }
 
-.new-event-form input[type="checkbox"]{
-  margin-right: 15px;
-}
-
-.upload-form{
-  width: 75%;
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  margin-top: 20px;
-}
 .new-event-step-2 button{
   margin-top: 10px;
   margin-bottom: 20px;
   background-color: transparent;
   border: none;
   font-size: 25px;
-  border: 4px dashed #0093D7;
+  border: 4px solid black;
   padding: 10px;
+  border-radius: 3px;
+  transition: 0.3s;
+  outline: none;
   &:hover{
     cursor: pointer;
-    background: #efefef;
+    transform: scale(1.03);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 5px 10px 0 rgba(0, 0, 0, 0.19);
+    -webkit-filter: brightness(95%); /* Safari */
+    filter: brightness(95%);
   }
-}
-
-.green{
-  color: green;
-}
-
-.green-border{
-    border: 4px dashed green !important;
 }

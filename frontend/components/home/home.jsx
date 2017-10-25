@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import EventSliderContainer from '../events/index_event/event_slider_container';
 import EventSearchContainer from './category_search/category_search_container';
-import SearchBar from '../search/search_bar';
+import SearchBarContainer from '../search/search_bar_container';
 import SlideShow from './home_slideshow';
 
 class Home extends React.Component {
@@ -18,7 +18,7 @@ class Home extends React.Component {
           <div id="main-home-img-title">
             <div className='search-title-div'>
             Find your next experience
-            <SearchBar fetchMatchingEvents={this.props.fetchMatchingEvents}/>
+            <SearchBarContainer fetchMatchingEvents={this.props.fetchMatchingEvents}/>
             </div>
           </div>
         </div>

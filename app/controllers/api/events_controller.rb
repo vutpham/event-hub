@@ -104,8 +104,8 @@ class Api::EventsController < ApplicationController
   end
 
   def search
-    @events = Event.where("title LIKE ? OR full_description LIKE ?",
-              "%#{params[:search_string]}%", "%#{params[:search_string]}%")
+    @events = Event.where("LOWER(title) LIKE LOWER(:search_string) OR LOWER(full_description) LIKE LOWER(:search_string)",
+              search_string: "%#{params[:search_string]}%")
     if current_user
       @bookmarked_events = current_user.bookmarked_events
     else

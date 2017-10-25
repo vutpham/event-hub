@@ -23,8 +23,8 @@ const App = () => (
     <Switch>
       <Route exact path="/" component={HomeContainer} />
       <Route exact path="/events/:eventId" component={EventDetailContainer} />
-      <Route exact path="/new-event" component={EventFormContainer} />
-      <Route path="/browse-events/:category" component={ BrowseEventsContainer } />
+      <ProtectedRoute exact path="/new-event" component={EventFormContainer} />
+      <Route exact path="/browse-events/:category" component={ BrowseEventsContainer } />
       <Route path="/browse-events/:category/:searchString?" component={ BrowseEventsContainer } />
       <ProtectedRoute path="/user-events" component={ UserEventsContainer } />
     </Switch>

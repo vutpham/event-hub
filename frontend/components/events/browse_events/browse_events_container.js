@@ -19,7 +19,8 @@ const mapDispatchToProps = dispatch => ({
   bookmarkEvent: (eventId) => dispatch(bookmarkEvent(eventId)),
   unBookmarkEvent: (eventId) => dispatch(unBookmarkEvent(eventId)),
   fetchFilteredEvents: (filters) => dispatch(fetchFilteredEvents(filters)),
-  clearEvents: () => dispatch(clearEvents())
+  clearEvents: () => dispatch(clearEvents()),
+  fetchMatchingEvents: (searchString) => dispatch(fetchMatchingEvents(searchString))
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(BrowseEvents);

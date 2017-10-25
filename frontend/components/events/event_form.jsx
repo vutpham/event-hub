@@ -97,17 +97,11 @@ class EventForm extends React.Component{
           {this.renderErrors()}
 
             <div className='new-event-step-1'>
-              <header className="step-header">
-                <span className='step-num'>1</span>
-                <span className="step-name">Event Details</span>
-              </header>
-
               <label>Title <span className="required-field">*</span></label>
               <input
                 className="event-title-input"
                 type="text"
                 value={title}
-                placeholder="Give your event a short, memorable name"
                 onChange={this.handleChange("title")}
               />
 
@@ -139,7 +133,6 @@ class EventForm extends React.Component{
               <textarea
                 value={full_description}
                 rows="15"
-                placeholder="Description"
                 onChange={this.handleChange("full_description")}
                 />
 
@@ -165,19 +158,11 @@ class EventForm extends React.Component{
           </div>
 
             <div className="new-event-step-2">
-              <header className="step-header">
-                <span className='step-num'>2</span>
-                <span className="step-name">Upload Image (Optional)</span>
-              </header>
               <UploadButton />
             </div>
 
 
               <div className="new-event-step-3">
-                <header className="step-header">
-                  <span className='step-num'>3</span>
-                  <span className="step-name">Make this Event Live!</span>
-                </header>
                 <input type="submit" onClick={this.handleSubmit} value="Create Event!"></input>
               </div>
 
