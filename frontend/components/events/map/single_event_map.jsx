@@ -22,8 +22,7 @@ class SingleEventMap extends React.Component{
       const marker = new google.maps.Marker({
         position,
         map: this.map,
-        eventId: event.id,
-        label: "B"
+        eventId: event.id
       });
       let infowindow = new google.maps.InfoWindow({
         content: title,
