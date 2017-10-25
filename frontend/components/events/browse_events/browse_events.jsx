@@ -55,8 +55,8 @@ class BrowseEvents extends React.Component{
     window.scrollTo(0,0);
     const category = this.props.match.params.category;
     let searchString = this.props.match.params.searchString;
-    console.log(category);
-    console.log(this.props.events);
+    // console.log(category);
+    // console.log(this.props.events);
     if(category === "Search" && !searchString){
       this.props.fetchSomeEvents();
     }
