@@ -10,7 +10,7 @@ User.destroy_all
 
 vu = User.create(username: "supsupvu", password: "password")
 leo = User.create(username: "leo", password: "password")
-DemoUser = User.create(username: "Stranger", password: "password")
+DemoUser = User.create(username: "DemoUser", password: "password")
 user1 = User.create(username: "Sports Basement", password: "password")
 user2 = User.create(username: "Musical Molly", password: "password")
 user3 = User.create(username: "Arts-n-Crafts", password: "password")

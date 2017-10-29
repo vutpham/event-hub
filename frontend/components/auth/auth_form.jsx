@@ -12,7 +12,7 @@ class AuthForm extends React.Component{
     this.buttonText = this.props.formType;
     this.header = (this.props.formType === "Log In") ? "Log in to get started" : "Sign up to get started";
     this.renderErrors = this.renderErrors.bind(this);
-    this.guestLogin = this.guestLogin.bind(this);
+    this.demoLogin = this.demoLogin.bind(this);
     this.processForm = this.processForm.bind(this);
     this.toggleType = this.toggleType.bind(this);
 
@@ -72,9 +72,28 @@ class AuthForm extends React.Component{
     );
   }
 
-  guestLogin() {
-    this.props.login({username: "Stranger", password: "password"})
-    .then(window.scrollTo(0,0));
+  // guestLogin() {
+  //   this.props.login({username: "Stranger", password: "password"})
+  //   .then(window.scrollTo(0,0));
+  // }
+
+  demoLogin(e){
+    e.preventDefault();
+    const demo = ['DemoUser', 'password'];
+    this.setState({ username: "", password: "" });
+    const username_arr = demo[0].split("");
+    const password_arr = demo[1].split("");
+    const shiftFunction = function(){
+      if(username_arr.length > 0){
+        this.setState({username: this.state.username.concat(username_arr.shift())});
+      } else if (password_arr.length > 0){
+        this.setState({password: this.state.password.concat(password_arr.shift())});
+      } else {
+        clearInterval(stop);
+        this.props.login(this.state);
+      }}.bind(this);
+    const stop = setInterval(shiftFunction, 60);
+    window.scrollTo(0,0);
   }
 
   render(){
@@ -116,7 +135,7 @@ class AuthForm extends React.Component{
 
         <input
           type="submit"
-          onClick={this.guestLogin}
+          onClick={this.demoLogin}
           value="Guest Account">
         </input>
 
