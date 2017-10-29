@@ -6,7 +6,6 @@ class NavBar extends React.Component{
   constructor(props){
     super(props);
     this.loggedInLinks = this.loggedInLinks.bind(this);
-    this.guestLogin = this.guestLogin.bind(this);
   }
 
   loggedInLinks(){
@@ -47,10 +46,6 @@ class NavBar extends React.Component{
         <li><AuthModal type="Sign Up" clearErrors={this.props.clearErrors}/></li>
       </ul>
     );
-  }
-
-  guestLogin() {
-    this.props.login({username: "Stranger", password: "password"});
   }
 
   render(){
