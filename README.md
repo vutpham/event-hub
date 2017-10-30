@@ -1,6 +1,6 @@
 # EventHub
 
-EventHub is a full stack web application inspired by Eventbrite. It was built using Ruby on Rails on the backend, a PostgreSQL database, and React.js with Redux architecture on the front end.
+[EventHub](http://eventhub-app.herokuapp.com/) is a full stack web application inspired by Eventbrite. It was built using Ruby on Rails on the backend, a PostgreSQL database, and React.js with Redux architecture on the front end.
 
 The application allows users to create events, browse events, and register for event tickets.
 
