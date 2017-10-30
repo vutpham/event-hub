@@ -90,7 +90,7 @@ class AuthForm extends React.Component{
         this.setState({password: this.state.password.concat(password_arr.shift())});
       } else {
         clearInterval(stop);
-        this.props.login(this.state);
+        this.props.login({username: 'DemoUser', password: 'password'});
       }}.bind(this);
     const stop = setInterval(shiftFunction, 60);
     window.scrollTo(0,0);
