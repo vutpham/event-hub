@@ -4,6 +4,8 @@ EventHub is a full stack web application inspired by Eventbrite. It was built us
 
 The application allows users to create events, browse events, and register for event tickets.
 
+![home](./docs/screenshots/home_img.png)
+
 ## Technologies Used
 
 * Ruby on Rails
@@ -17,9 +19,19 @@ Ruby on Rails is a back-end MVC framework that was used to build a RESTful API a
 
 The front end application was written using Javascript's React library for reuseable, modular code. It was used in conjunction with the Redux framework to add in the benefits of a unidirectional data flow which made the application easier to debug.
 
-## Features and Implementation
+## Project Design and Development
+
+To get started on this app, I spent a day designing the database schema, creating the initial project wireframes, and mapping out my API endpoints.
+
+After the plan was complete, I began developing the site in slices. With each slice, I created static components that helped me visualize the data structure I would need when making AJAX requests. Next, I would move into the backend, testing my endpoints to ensure the data would be easily consumed in my React views. After the backend for a given slice was finished, I began my redux cycle implementation. I would work from my AJAX request to my actions and finally into the reducers, testing after each piece. And finally, I would make my static components dynamic, creating container components where necessary.
+
+Styling was done after functionality was achieved. I tried to make my clone look as similar to Eventbrite as possible. Styling was organized by CSS nesting rules which is supported by the use of SASS.
+
+## Features
 
 ### User Authentication
+
+![auth_img](./docs/screenshots/auth_img.png)
 
 BCrypt is used for secured salting and hashing of passwords. Salting a password prepends a random string to the password so duplicate passwords will not have the same hash stored in the backend.
 
@@ -56,9 +68,13 @@ Users can create, update and destroy their own hosted events.
 
 ### Event Categories
 
+![browse_categories](./docs/screenshots/browse_categories.gif)
+
 Events have a many-to-many relationship with different categories through a joins table in the database called EventCategories. An event can have multiple categories, while a category can list multiple events.
 
-Users can browse events by the seven top categories:  music, food & drinks, classes, business, parties, arts, and sports.  A "filter" component listens for selection of a category in its list. When a category is clicked, a change in the route triggers an API call to a controller action, which fetches all of events associated with the particular category clicked on.
+![browse_events](./docs/screenshots/browse_events.gif)
+
+Users can browse events by the seven top categories:  music, food & drinks, classes, business, parties, arts, and sports.  A "filter" component listens for selection of a category in its list. When a category is clicked, a change in the route triggers an API call to a controller action, which fetches all of events associated with the particular category clicked on. Lazy loading is implemented so the database is not hit with a huge query.
 
 ```javascript
 navigateToCategory(key){
@@ -100,6 +116,8 @@ Users can currently search for events via a search form on the homepage. When th
 ### Google Maps Integration
 
 This application uses the Google Maps API to render the event locations. A call to Google's Geolocation API retrieves the latitude and longitude associated with that address, which is in turn used to make an additional call to pin a marker on the map component. Google maps is integrated into both the event browse page and the event detail page.
+
+![event_show](./docs/screenshots/event_show.png)
 
 ## Future Implementations
 
