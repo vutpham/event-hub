@@ -22,7 +22,7 @@
 | venue           | string    |                           |
 | street_address  | string    |                           |
 | city_state_zip  | string    |                           |
-| host_id         | integer   | not null, foreign key     |
+| host_id         | integer   | not null, foreign key (references users)   |
 
 ## tickets
 

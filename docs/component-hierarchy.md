@@ -39,3 +39,16 @@
 
 **CheckOutContainer**
 - CheckOutForm
+
+## Routes
+
+| Path | Component |
+| ---  | --------- |
+| "/sign-up" | AuthFormContainer |
+| "/sign-in" | AuthFormContainer |
+| "/home"    | HomeContainer     |
+| "/events/:eventId" | EventShowContainer |
+| "/new-event" | EventFormContainer |
+| "/browse-events/:category" | BrowseEventsContainer |
+| "/browse-events/:category/:searchString?" | BrowseEventsContainer |
+| "/user-events" | UserEventsContainer |
