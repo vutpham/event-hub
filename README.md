@@ -21,9 +21,9 @@ The front end application was written using Javascript's React library for reuse
 
 ## Project Design and Development
 
-To get started on this app, I spent a day designing the database schema, creating the initial project wireframes, and mapping out my API endpoints.
+To get started on this app, I spent a day designing the [database schema](https://github.com/vutpham/event-hub/blob/master/docs/schema.md), creating the initial project wireframes, and mapping out my [API endpoints](https://github.com/vutpham/event-hub/blob/master/docs/api-endpoints.md).
 
-After the plan was complete, I began developing the site in slices. With each slice, I created static components that helped me visualize the data structure I would need when making AJAX requests. Next, I would move into the backend, testing my endpoints to ensure the data would be easily consumed in my React views. After the backend for a given slice was finished, I began my redux cycle implementation. I would work from my AJAX request to my actions and finally into the reducers, testing after each piece. And finally, I would make my static components dynamic, creating container components where necessary.
+After the plan was complete, I began developing the site in [state slices](https://github.com/vutpham/event-hub/blob/master/docs/sample-state.md). With each slice, I created static components that helped me visualize the data structure I would need when making AJAX requests. Next, I would move into the backend, testing my endpoints to ensure the data would be easily consumed in my React views. After the backend for a given slice was finished, I began my redux cycle implementation. I would work from my AJAX request to my actions and finally into the reducers, testing after each piece. And finally, I would make my static components dynamic, creating container components where necessary.
 
 Styling was done after functionality was achieved. I tried to make my clone look as similar to Eventbrite as possible. Styling was organized by CSS nesting rules which is supported by the use of SASS.
 
