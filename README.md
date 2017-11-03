@@ -68,11 +68,9 @@ Users can create, update and destroy their own hosted events.
 
 ### Event Categories
 
-![browse_categories](./docs/screenshots/browse_categories.gif)
+![browse_categories](./docs/screenshots/browse_categories.png)
 
 Events have a many-to-many relationship with different categories through a joins table in the database called EventCategories. An event can have multiple categories, while a category can list multiple events.
-
-![browse_events](./docs/screenshots/browse_events.gif)
 
 Users can browse events by the seven top categories:  music, food & drinks, classes, business, parties, arts, and sports.  A "filter" component listens for selection of a category in its list. When a category is clicked, a change in the route triggers an API call to a controller action, which fetches all of events associated with the particular category clicked on. Lazy loading is implemented so the database is not hit with a huge query.
 
